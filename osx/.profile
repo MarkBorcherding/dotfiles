@@ -2,6 +2,7 @@ export PATH=~/bin:/usr/local/bin:$PATH:
 alias ls="ls -G"
 
 
+
 initializeANSI()
 {
   esc=""
