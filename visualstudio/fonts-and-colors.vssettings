@@ -1,0 +1,372 @@
+<UserSettings>
+	<ApplicationIdentity version="10.0"/>
+	<ToolsOptions>
+		<ToolsOptionsCategory name="Environment" RegisteredName="Environment"/>
+		<ToolsOptionsCategory name="TextEditor" RegisteredName="TextEditor"/>
+	</ToolsOptions>
+	<Category name="Environment_Group" RegisteredName="Environment_Group">
+		<Category name="Environment_FontsAndColors" Category="{1EDA5DD4-927A-43a7-810E-7FD247D0DA1D}" Package="{DA9FB551-C724-11d0-AE1F-00A0C90FFFC3}" RegisteredName="Environment_FontsAndColors" PackageName="Visual Studio Environment Package">
+			<PropertyValue name="Version">2</PropertyValue>
+			<FontsAndColors Version="2.0">
+				<Categories>
+					<Category GUID="{40660F54-80FA-4375-89A3-8D06AA954EBA}" FontIsDefault="Yes">
+						<Items>
+							<Item Name="Plain Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Inactive Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{5C48B2CB-0366-4FBF-9786-0BB37E945687}" FontIsDefault="Yes">
+						<Items>
+							<Item Name="Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Inactive Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Current List Location" Foreground="0x00A3DBFF" Background="0x01000007" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{6BB65C5A-2F31-4BDE-9F48-8A38DC0C63E7}" FontIsDefault="Yes">
+						<Items>
+							<Item Name="Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Inactive Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{9973EFDF-317D-431C-8BC1-5E88CBFD4F7F}" FontIsDefault="Yes">
+						<Items>
+							<Item Name="Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Inactive Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Current List Location" Foreground="0x00A3DBFF" Background="0x01000007" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{9E632E6E-D786-4F9A-8D3E-B9398836C784}" FontIsDefault="Yes">
+						<Items>
+							<Item Name="Plain Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Inactive Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{A27B4E24-A735-4D1D-B8E7-9716E1E3D8E0}" FontName="Monaco" FontSize="11" CharSet="0" FontIsDefault="No">
+						<Items>
+							<Item Name="Plain Text" Foreground="0x00FFFFFF" Background="0x00131313" BoldFont="No"/>
+							<Item Name="Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Indicator Margin" Foreground="0x02000000" Background="0x00232323" BoldFont="No"/>
+							<Item Name="Line Numbers" Foreground="0x00404040" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Brace Matching (Highlight)" Foreground="0x0000FFFF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Brace Matching (Rectangle)" Foreground="0x02000000" Background="0x002A2A2A" BoldFont="No"/>
+							<Item Name="outlining.collapsehintadornment" Foreground="0x00E8DDD7" Background="0x00626262" BoldFont="No"/>
+							<Item Name="Comment" Foreground="0x00ADADA1" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Comment" Foreground="0x00AEAEAE" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Keyword" Foreground="0x006489E2" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Property Name" Foreground="0x0075AFC5" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Property Value" Foreground="0x0098EEF9" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS Selector" Foreground="0x003F709B" Background="0x02000000" BoldFont="No"/>
+							<Item Name="CSS String Value" Foreground="0x0035A964" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Definition Window Background" Foreground="0x01000002" Background="0x00000000" BoldFont="Yes"/>
+							<Item Name="MarkerFormatDefinition/HighlightedReference" Foreground="0x02000000" Background="0x00595959" BoldFont="Yes"/>
+							<Item Name="HTML Attribute" Foreground="0x00FFBD89" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Attribute Value" Foreground="0x0035A964" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Comment" Foreground="0x00AEAEAE" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Element Name" Foreground="0x00FFBD89" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Entity" Foreground="0x00408000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Operator" Foreground="0x00FFBD89" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Server-Side Script" Foreground="0x00F2CAA8" Background="0x02000000" BoldFont="No"/>
+							<Item Name="HTML Tag Delimiter" Foreground="0x00FFBD89" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Keyword" Foreground="0x006489E2" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Number" Foreground="0x00E3873F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Operator" Foreground="0x009CB1DC" Background="0x02000000" BoldFont="No"/>
+							<Item Name="outlining.square" Foreground="0x00555555" Background="0x006A4935" BoldFont="No"/>
+							<Item Name="Preprocessor Keyword" Foreground="0x00FFBD89" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Class Identifier" Foreground="0x00EFA398" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Constant Identifier" Foreground="0x00FF80FF" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="ReSharper Current Line Highlight" Foreground="0x00E0FFFF" Background="0x003B3B3B" BoldFont="No"/>
+							<Item Name="ReSharper Delegate Identifier" Foreground="0x00FE927A" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Enum Identifier" Foreground="0x00E3873F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Event Identifier" Foreground="0x00E2A0E2" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Extension Method Identifier" Foreground="0x00EF9D38" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Field Identifier" Foreground="0x00C989C2" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Highlight" Foreground="0x00FACE87" Background="0x00B39662" BoldFont="No"/>
+							<Item Name="ReSharper HTML ID attribute" Foreground="0x00E3873F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Hyperlink" Foreground="0x00FF8A8A" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Interface Identifier" Foreground="0x00D5B39B" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Late Bound Identifier" Foreground="0x00E3873F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper LiveTemplates Inactive HotSpot" Foreground="0x00000000" Background="0x00AAE8EE" BoldFont="No"/>
+							<Item Name="ReSharper Matched Brace" Foreground="0x02000000" Background="0x009F9C60" BoldFont="No"/>
+							<Item Name="ReSharper Method Identifier" Foreground="0x004DCF99" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Namespace Identifier" Foreground="0x00FFFFFF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Parameter Identifier" Foreground="0x00FFFFFF" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="ReSharper Static Class Identifier" Foreground="0x00D98F80" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Struct Identifier" Foreground="0x00D87321" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Suggestion" Foreground="0x0084FF84" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Template Editor Template Keyword" Foreground="0x00FFFF00" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Todo Item" Foreground="0x00FFA4A4" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="ReSharper Type Parameter Identifier" Foreground="0x00E1E470" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Underlined Error Highlighting" Foreground="0x007D7DFF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ReSharper Warning" Foreground="0x0072E0E9" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Comment" Foreground="0x00808080" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Function Block Start" Foreground="0x00FF80FF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Keyword" Foreground="0x006489E2" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Number" Foreground="0x00E3873F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Operator" Foreground="0x009CB1DC" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script String" Foreground="0x005CC2A5" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Stale Code" Foreground="0x00FF00FF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="String" Foreground="0x005CC2A5" Background="0x02000000" BoldFont="No"/>
+							<Item Name="String(C# @ Verbatim)" Foreground="0x005CC2A5" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Syntax Error" Foreground="0x007D7DFF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="UnderlineClassificationFormat" Foreground="0x00FFAEAE" Background="0x02000000" BoldFont="No"/>
+							<Item Name="urlformat" Foreground="0x00EFBC92" Background="0x02000000" BoldFont="No"/>
+							<Item Name="User Types" Foreground="0x00D5C986" Background="0x02000000" BoldFont="No"/>
+							<Item Name="User Types(Delegates)" Foreground="0x00D5C986" Background="0x02000000" BoldFont="No"/>
+							<Item Name="User Types(Enums)" Foreground="0x00D5C986" Background="0x02000000" BoldFont="No"/>
+							<Item Name="User Types(Interfaces)" Foreground="0x00D5C986" Background="0x02000000" BoldFont="No"/>
+							<Item Name="User Types(Type parameters)" Foreground="0x00D5C986" Background="0x02000000" BoldFont="No"/>
+							<Item Name="User Types(Value types)" Foreground="0x00D5C986" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Attribute Quotes" Foreground="0x00FFFFFF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Attribute Value" Foreground="0x00FF9797" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Keyword" Foreground="0x00E3873F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Markup Extension Class" Foreground="0x00FF80FF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XAML Markup Extension Parameter Value" Foreground="0x00E3873F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Attribute" Foreground="0x0037A5FF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Attribute Quotes" Foreground="0x005CC2A5" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Attribute Value" Foreground="0x005CC2A5" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Comment" Foreground="0x00C0C0C0" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Delimiter" Foreground="0x00C07B7B" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Doc Comment" Foreground="0x00C0C0C0" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Doc Tag" Foreground="0x00808080" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Keyword" Foreground="0x00E3873F" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Name" Foreground="0x00FCD0C3" Background="0x02000000" BoldFont="No"/>
+							<Item Name="XML Text" Foreground="0x00FFFFFF" Background="0x02000000" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{CE2ECED5-C21C-464C-9B45-15E10E9F9EF9}" FontIsDefault="Yes">
+						<Items>
+							<Item Name="Plain Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Inactive Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+						</Items>
+					</Category>
+					<Category GUID="{EE1BE240-4E81-4BEB-8EEA-54322B6B1BF5}" FontIsDefault="Yes">
+						<Items>
+							<Item Name="Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Inactive Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
+						</Items>
+					</Category>
+				</Categories>
+			</FontsAndColors>
+		</Category>
+	</Category>
+	<Category name="HTML Tag Specific" Category="{7583bb73-a453-40e8-8951-b6986ddb1d9b}" Package="{1B437D20-F8FE-11D2-A6AE-00104BCC7269}" RegisteredName="HTML Tag Specific" PackageName="Visual Studio HTM Editor Package">
+		<PropertyValue name="HTMLFormatOptions">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;VWDFormatOptions&gt;
+	&lt;Category id="Default Settings" readonly="true" _locAttrData="id" _locID="Default Settings"&gt;
+		&lt;Element id="Server tag supports contents" DefaultSettingType="ServerContainer" readonly="true" ClosingTag="2" DisableClosingTag="0" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="3" _locAttrData="id" _locID="Server tag supports contents"/&gt;
+		&lt;Element id="Server tag does not support contents" DefaultSettingType="ServerNonContainer" readonly="true" ClosingTag="1" DisableClosingTag="0" LineBreaks="1" IndentContents="1" Outlining="1" OutliningMinLines="3" _locAttrData="id" _locID="Server tag does not support contents"/&gt;
+		&lt;Element id="Client tag supports contents" DefaultSettingType="ClientContainer" readonly="true" ClosingTag="2" DisableClosingTag="0" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="3" _locAttrData="id" _locID="Client tag supports contents"/&gt;
+		&lt;Element id="Client tag does not support contents" DefaultSettingType="ClientNonContainer" readonly="true" ClosingTag="1" DisableClosingTag="2" LineBreaks="1" IndentContents="1" Outlining="1" OutliningMinLines="3" _locAttrData="id" _locID="Client tag does not support contents"/&gt;
+	&lt;/Category&gt;
+	&lt;Category id="Client HTML Tags" _locAttrData="id" _locID="Client HTML Tags"&gt;
+		&lt;Element id="a" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" OutliningMinLines="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="acronym" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="b" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="basefont" ClosingTag="0" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="bdo" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="big" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="body" ClosingTag="2" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="3"/&gt;
+		&lt;Element id="cite" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" OutliningMinLines="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="code" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="del" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="dfn" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="div" ClosingTag="2" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="3"/&gt;
+		&lt;Element id="dt" ClosingTag="2" LineBreaks="1" IndentContents="1" Outlining="0" OutliningMinLines="0"/&gt;
+		&lt;Element id="em" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="embed" ClosingTag="2" LineBreaks="1" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="font" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="form" ClosingTag="2" LineBreaks="4" IndentContents="0" Outlining="1" OutliningMinLines="3"/&gt;
+		&lt;Element id="head" ClosingTag="2" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="3"/&gt;
+		&lt;Element id="html" ClosingTag="2" LineBreaks="4" IndentContents="0" Outlining="1" OutliningMinLines="3"/&gt;
+		&lt;Element id="i" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" OutliningMinLines="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="iframe" ClosingTag="2" LineBreaks="1" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="ins" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="kbd" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="legend" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="li" ClosingTag="2" LineBreaks="1" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="option" ClosingTag="2" LineBreaks="1" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="q" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="rt" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="s" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="script" ClosingTag="2" LineBreaks="5" IndentContents="1" Outlining="1" OutliningMinLines="3" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="small" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" OutliningMinLines="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="span" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="strike" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="strong" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="sub" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="sup" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0"/&gt;
+		&lt;Element id="table" ClosingTag="2" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="5"/&gt;
+		&lt;Element id="tbody" ClosingTag="2" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="5"/&gt;
+		&lt;Element id="td" ClosingTag="2" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="3"/&gt;
+		&lt;Element id="tfoot" ClosingTag="2" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="5"/&gt;
+		&lt;Element id="thead" ClosingTag="2" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="5"/&gt;
+		&lt;Element id="title" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="1" OutliningMinLines="3" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="tr" ClosingTag="2" LineBreaks="4" IndentContents="1" Outlining="1" OutliningMinLines="5"/&gt;
+		&lt;Element id="tt" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" OutliningMinLines="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="u" ClosingTag="2" LineBreaks="0" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="label" ClosingTag="1" LineBreaks="1" IndentContents="1" Outlining="0" OutliningMinLines="0" ForegroundColor="89C5E0"/&gt;&lt;/Category&gt;
+	&lt;Category id="ASP.NET Controls" _locAttrData="id" _locID="ASP.NET Controls"&gt;
+		&lt;Element id="AddVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="AlternatingItemStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="AlternatingRowStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ApplyVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:AccessDataSource" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:BoundColumn" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:BoundField" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:Button" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="asp:ButtonColumn" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:ButtonField" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:Calendar" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:CheckBoxField" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:CircleHotSpot" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:CommandField" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:ControlParameter" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:CookieParameter" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:EditCommandColumn" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:FormParameter" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:HyperLinkColumn" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:HyperLinkField" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="asp:Label" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1" ForegroundColor="89C5E0"/&gt;
+		&lt;Element id="asp:ListBox" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:Literal" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:MenuItem" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:MenuItemBinding" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:MenuItemStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:ObjectDataSource" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:Parameter" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:PlaceHolder" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:PolygonHotSpot" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:QueryStringParameter" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:RectangleHotSpot" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:SessionParameter" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:SiteMapDataSource" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:SqlDataSource" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:Style" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:SubMenuStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:TableItemStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:TableStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:TemplateColumn" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:TemplateField" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:TreeNode" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:TreeNodeBinding" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:TreeNodeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:WebPartMenuStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="asp:XmlDataSource" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="CancelButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="CancelVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ChangePasswordButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="CheckBoxStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="CloseVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="CommandRowStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="CompleteSuccessTextStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ConfigureVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ConnectVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ContinueButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ControlStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="CreateUserButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="CurrentNodeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DayHeaderStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DayStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DeleteVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DetailLinkStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DetailTitleStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DisconnectVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DynamicHoverStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DynamicMenuItemStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DynamicMenuStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="DynamicSelectedStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="EditItemStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="EditRowStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="EditUIStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="EditVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="EmptyDataRowStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="EmptyZoneTextStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ErrorStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ErrorMessageStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ExportVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="FailureTextStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="FieldHeaderStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="FinishStepButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="FinishStepPreviousButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="FooterStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="HeaderCloseVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="HeaderStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="HeaderVerbStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="HelpVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="HoverNodeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="HyperLinkStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="InsertRowStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="InstructionTextStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ItemStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="LabelStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="LeafNodeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="LevelMenuItemStyles" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="LevelSelectedStyles" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="LevelStyles" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="LevelSubMenuStyles" OutliningMinLines="3" ClosingTag="2" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="LoginButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="MenuCheckImageStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="MenuItemStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="MenuLabelHoverStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="MenuLabelStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="MenuStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="MenuVerbStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="MenuVerbHoverStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="MinimizeVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="NavigationButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="NavigationStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="NextPrevStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="NextStepButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="NodeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="OKVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="OtherMonthDayStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="PagerStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ParentNodeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="PartChromeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="PartLinkStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="PartStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="PartTitleStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="PasswordHintStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="PathSeparatorStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="PreviousStepButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="RestoreVerb" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="RootNodeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="RowStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SelectedDayStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SelectedItemStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SelectedNodeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SelectedPartChromeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SelectedPartLinkStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SelectedRowStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SelectorStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SeparatorStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SideBarButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SideBarStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="StartStepNextButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="StaticHoverStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="StaticMenuItemStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="StaticMenuStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="StaticSelectedStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="StepStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SubMenuStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SubmitButtonStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SuccessTextStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="SummaryTitleStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="TextBoxStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="TitleStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="TitleTextStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="TodayDayStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="TreeNodeStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="ValidatorTextStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="VerbStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="WeekendDayStyle" OutliningMinLines="3" ClosingTag="1" IndentContents="1" Outlining="1" LineBreaks="1"/&gt;
+		&lt;Element id="Page" ClosingTag="1" LineBreaks="5" IndentContents="1" Outlining="0" OutliningMinLines="0"/&gt;
+		&lt;Element id="Master" ClosingTag="1" LineBreaks="5" IndentContents="1" Outlining="0" OutliningMinLines="0"/&gt;
+	&lt;/Category&gt;
+	&lt;CustomColors&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;Color n="0" value="FFFFFF"/&gt;&lt;Color n="1" value="FFFFFF"/&gt;&lt;Color n="2" value="FFFFFF"/&gt;&lt;Color n="3" value="FFFFFF"/&gt;&lt;Color n="4" value="FFFFFF"/&gt;&lt;Color n="5" value="89C5E0"/&gt;&lt;Color n="6" value="FFFFFF"/&gt;&lt;Color n="7" value="FFFFFF"/&gt;&lt;Color n="8" value="FFFFFF"/&gt;&lt;Color n="9" value="FFFFFF"/&gt;&lt;Color n="10" value="FFFFFF"/&gt;&lt;Color n="11" value="FFFFFF"/&gt;&lt;Color n="12" value="FFFFFF"/&gt;&lt;Color n="13" value="FFFFFF"/&gt;&lt;Color n="14" value="FFFFFF"/&gt;&lt;Color n="15" value="FFFFFF"/&gt;&lt;/CustomColors&gt;&lt;Category id="Client Inline HTML Tags"&gt;&lt;Element id="Input" ClosingTag="1" LineBreaks="1" IndentContents="1" Outlining="0" ForegroundColor="89C5E0"/&gt;&lt;/Category&gt;&lt;/VWDFormatOptions&gt;
+</PropertyValue>
+	</Category>
+</UserSettings>
