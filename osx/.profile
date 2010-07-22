@@ -54,4 +54,9 @@ branch_color ()
 
 initializeANSI
 
-PS1='${bblackf}\u@\h${reset} ${bgreenf}\w${reset} $(branch_color)$(parse_git_branch)${whitef}\$${reset} '
+export TERM=xterm-color
+export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+export CLICOLOR=1 
+export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
+
+export PS1='\[${blackf}\u@\h${reset} ${bgreenf}\w${reset} $(branch_color)$(parse_git_branch)${whitef}\$${reset} '
