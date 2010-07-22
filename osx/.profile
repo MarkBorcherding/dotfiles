@@ -38,9 +38,9 @@ branch_color ()
                 color=""
                 if git diff --quiet 2>/dev/null >&2 
                 then
-                        color="${greenf}"
+                        color="${bgreenf}"
                 else
-                        color=${redf}
+                        color=${bredf}
                 fi
         else
                 return 0
@@ -59,4 +59,4 @@ export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1 
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 
-export PS1='\[${blackf}\u@\h${reset} ${bgreenf}\w${reset} $(branch_color)$(parse_git_branch)${whitef}\$${reset} '
+export PS1='\[${blackf}\u@\h${reset} ${bblackf}\w${reset} $(branch_color)$(parse_git_branch)${whitef}\$${reset}\] '
