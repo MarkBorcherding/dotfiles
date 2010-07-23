@@ -33,6 +33,17 @@ initializeANSI()
 
 initializeANSI
 
+# Set git autocompletion and PS1 integration
+if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
+  . /usr/local/git/contrib/completion/git-completion.bash
+fi
+GIT_PS1_SHOWDIRTYSTATE=true
+
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
+
+
 parse_git_branch (){
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
@@ -59,6 +70,7 @@ export PS1="${blackf}\u@\h ${bblackf} \w $(branch_color)$(parse_git_branch)${res
 }
 
 PROMPT_COMMAND=setup_prompt
+
 
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
