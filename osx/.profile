@@ -33,7 +33,7 @@ initializeANSI()
 
 initializeANSI
 
-function parse_git_branch {
+parse_git_branch (){
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
@@ -44,9 +44,9 @@ branch_color()
                 color=""
                 if git diff --quiet 2>/dev/null >&2 
                 then
-                        color="${bgreenf}"
+                        color="$bgreenf"
                 else
-                        color="${bredf}"
+                        color="$bredf"
                 fi
         else
                 return 0
@@ -54,6 +54,11 @@ branch_color()
         echo -ne $color
 }
 
-export PS1="${blackf}\u@\h ${bblackf} \w $(branch_color)$(parse_git_branch)${reset} \$"
+setup_prompt(){
+export PS1="${blackf}\u@\h ${bblackf} \w $(branch_color)$(parse_git_branch)${reset} \$ "
+}
+
+PROMPT_COMMAND=setup_prompt
+
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
