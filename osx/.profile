@@ -43,11 +43,6 @@ if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
 
-
-parse_git_branch (){
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-}
-
 branch_color()
 {
         if git rev-parse --git-dir >/dev/null 2>&1
@@ -66,7 +61,7 @@ branch_color()
 }
 
 setup_prompt(){
-export PS1="${blackf}\u@\h ${bblackf} \w $(branch_color)$(parse_git_branch)${reset} \$ "
+export PS1="${blackf}\u@\h ${bblackf} \w $(branch_color)$(__git_ps1)${reset} \$ "
 }
 
 PROMPT_COMMAND=setup_prompt
