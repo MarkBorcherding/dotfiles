@@ -2,7 +2,7 @@
 function gitBranchColor {
 	$color = "Green"
 	git diff | foreach {	    
-    	$color = "Red";		    
+    	return $color = "Red";		    
 	}
 	return $color;
 }
