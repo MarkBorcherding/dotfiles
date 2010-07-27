@@ -13,12 +13,31 @@ function Write-GitBranch(){
 		#$color = gitBranchColor        
 		$status = myGitStatus
 		$color = 'Red'
-		if($status.totalchanges -match 0){
+		if($status.staged_changes -gt 0){
+			$color = 'Yellow'
+		} 
+		elseif($status.totalchanges -match 0){
 			$color = 'Green'
 		}		
         Write-Host(' (') -nonewline -foregroundcolor Gray
         Write-Host($currentBranch) -nonewline -foregroundcolor $color 
         
+        
+        if($status.staged_added -gt 0){
+        	Write-Host(' +' + $status.staged_added) -nonewline -foregroundcolor Yellow        	
+        }
+        
+        if($status.staged_deleted -gt 0){
+        	Write-Host(' -' + $status.staged_deleted) -nonewline -foregroundcolor Yellow        	
+        }
+        
+        if($status.staged_modified -gt 0){
+        	Write-Host(' ~' + $status.staged_modified) -nonewline -foregroundcolor Yellow        	
+        }
+        
+        if($status.staged_rename -gt 0){
+        	Write-Host(' ->' + $status.staged_rename) -nonewline -foregroundcolor Yellow        	
+        }
         
         if($status.added -gt 0){
         	Write-Host(' +' + $status.added) -nonewline -foregroundcolor DarkGreen        	
@@ -46,6 +65,10 @@ function myGitStatus {
     $added = 0
     $modified = 0
     $deleted = 0
+    $staged_added = 0
+    $staged_modified = 0
+    $staged_deleted = 0
+    $staged_rename = 0
         
     $output = git status -s
     
@@ -57,18 +80,36 @@ function myGitStatus {
         elseif (($_ -match "^ M") ) {
             $modified += 1
         }
-        elseif ($_ -match "^A") {
+        elseif ($_ -match "^ A") {
             $added += 1
         }
         elseif ($_ -match "^\?\?") {
             $untracked += 1
         }
+        elseif (($_ -match "^M") ) {
+            $staged_modified += 1
+        }
+        elseif ($_ -match "^A") {
+            $staged_added += 1
+        }
+        elseif ($_ -match "^D") {
+            $staged_deleted += 1
+        }
+        elseif ($_ -match "^R") {
+            $staged_rename += 1
+        }
+        
     }
     
     return @{"untracked" = $untracked;
              "added" = $added;
              "modified" = $modified;
              "deleted" = $deleted;    
-             "totalchanges" = $untracked + $added + $modified + $deleted;         
+             "staged_added" = $staged_added;
+             "staged_modified" = $staged_modified;
+             "staged_deleted" = $staged_deleted;    
+             "staged_rename" = $staged_rename;    
+             "staged_changes" = $staged_added + $staged_deleted + $staged_modified + $staged_rename;
+             "totalchanges" = $untracked + $added + $modified + $deleted + $staged_added + $staged_deleted + $staged_modified + $staged_rename;         
              }
 }
