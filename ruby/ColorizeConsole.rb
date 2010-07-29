@@ -1,17 +1,30 @@
 require 'rubygems'
 require 'win32console'
 
+require 'rubygems'
+require 'win32console'
+
 class ConsoleColor
+	
+	@@colors = { :red => 31, 
+				 :green => 21
+				}
+				
+	@@effects = { :normal => 0,
+				  :bright => 1
+				}		
+	
 	def self.colorize(text, color_code, effect)
-  		"\e[#{effect};#{color_code}m#{text}\e[0m"
+  		"\e[#{@@effects[effect]};#{@@colors[color_code]}m#{text}\e[0m"
 	end
+
 	
-	@@normal = 0;
-	@@bright = 1;
+	#eventually replace this with method missing 
+	def self.red(text); colorize(text, :red , :normal); end
+	def self.light_red(text); colorize(text, :red , :bright ); end
+	def self.green(text); colorize(text, :green , :normal); end
 	
-	def self.red(text); colorize(text, 31, @@normal); end
-	def self.light_red(text); colorize(text, 31, @@bright); end
-	def self.green(text); colorize(text, 32, @@normal); end
+	
 end
 
 
