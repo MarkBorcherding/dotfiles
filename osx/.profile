@@ -132,7 +132,7 @@ git_prompt(){
   else
      echo -ne "${bblackf}("
      branch_color
-     echo -ne "branch"
+     echo -ne "$git_branch_name"
      show_if_exists "$git_staged_added"  "+"  "${byellowf}"
      show_if_exists "$git_staged_deleted"  "-"  "${byellowf}"
      show_if_exists "$git_staged_modified"  "~"  "${byellowf}"
