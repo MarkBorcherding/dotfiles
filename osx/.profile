@@ -47,32 +47,32 @@ fi
 
 
 function count_git_changes(){
-    git_staged_add=0;
-    git_staged_delete=0;
+    git_staged_added=0;
+    git_staged_deleted=0;
     git_staged_modified=0;
     git_added=0;
     git_deleted=0;
     git_modified=0;
     git_untracked=0;
-
+    git_staged_renamed=0;
 
 
     origIFS=$IFS
     IFS=$'\n'
-    for line in $(git status -s);
+    for line in $(git status -sb);
     do
     
         if [[ "$line" =~ ^\?\? ]]
         then
          let "git_untracked = git_untracked + 1"
-        fi
+        fi 
     
-        if [[ "$line" =~ ^\wM ]]
+        if [[ "$line" =~ ^.M ]]
         then
          let "git_modified = git_modified + 1"
         fi
     
-        if [[ "$line" =~ ^\wD ]]
+        if [[ "$line" =~ ^.D ]]
         then
          let "git_deleted = git_deleted + 1"
         fi
@@ -86,6 +86,11 @@ function count_git_changes(){
         then
          let "git_staged_modified = git_staged_modified + 1"
         fi
+        
+       if [[ "$line" =~ ^R ]]
+       then
+        let "git_staged_renamed = git_staged_renamed + 1"
+       fi        
     
         if [[ "$line" =~ ^D ]]
         then
@@ -94,7 +99,7 @@ function count_git_changes(){
     done
     IFS=$orifIFS
 
-    let "git_staged=git_staged_added+git_staged_deleted+git_staged_modified"
+    let "git_staged=git_staged_added+git_staged_deleted+git_staged_modified+git_staged_renamed"
     let "git_changed=git_staged+git_untracked+git_deleted+git_modified"
 
 }
@@ -103,19 +108,6 @@ function count_git_changes(){
 
 branch_color()
 {
- #     if git rev-parse --git-dir >/dev/null 2>&1
- #     then
- #             color=""
- #             if git diff --quiet 2>/dev/null >&2 
- #             then
- #                     color="$bgreenf"
- #             else
- #                     color="$bredf"
- #             fi
- #     else
- #             return 0
- #     fi
- #     echo -ne $color
  
  if [ $git_staged -ne 0 ]; then
     echo -ne "${byellowf}"
@@ -124,14 +116,39 @@ branch_color()
  else 
     echo -ne "${bgreenf}"
  fi
- 
 
- 
+}
+
+git_prompt(){
+  
+   echo -ne "${bblackf}("
+   branch_color
+   echo -ne "branch"
+   show_if_exists "$git_staged_added"  "+"  "${yellowf}"
+   show_if_exists "$git_staged_deleted"  "-"  "${yellowf}"
+   show_if_exists "$git_staged_modified"  "~"  "${yellowf}"
+   show_if_exists "$git_staged_renamed"  "->"  "${yellowf}"
+   show_if_exists "$git_added"  "+"  "${greenf}"
+   show_if_exists "$git_deleted"  "-"  "${redf}"
+   show_if_exists "$git_modified"  "~"  "${bluef}"
+   show_if_exists "$git_untracked"  "?"  "${bredf}"   
+   echo -ne "${bblackf})${reset}"
+}
+
+show_if_exists(){
+    if [ $1 -ne 0 ]; then
+        echo -ne "$3"
+        
+        if [ $1 -ne 0 ]; then
+            echo -ne " $2$1"
+        fi
+        
+    fi   
 }
 
 setup_prompt(){
      count_git_changes
-     export PS1="${blackf}\u@\h ${bblackf} \w '$git_changed' $(branch_color)$(__git_ps1)${reset} \$ "
+     export PS1="${blackf}\u@\h ${bblackf} \w $(git_prompt)${reset} \$ "
 }
 
 PROMPT_COMMAND=setup_prompt
