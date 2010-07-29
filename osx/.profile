@@ -59,7 +59,7 @@ function count_git_changes(){
 
     origIFS=$IFS
     IFS=$'\n'
-    for line in $(git status -sb);
+    for line in $(git status -sb 2>/dev/null);
     do
     
         if [[ "$line" =~ ^\?\? ]]
@@ -119,20 +119,30 @@ branch_color()
 
 }
 
+
+parse_git_branch_name(){
+    git_branch_name=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /')
+}
+
 git_prompt(){
+   parse_git_branch_name
   
-   echo -ne "${bblackf}("
-   branch_color
-   echo -ne "branch"
-   show_if_exists "$git_staged_added"  "+"  "${yellowf}"
-   show_if_exists "$git_staged_deleted"  "-"  "${yellowf}"
-   show_if_exists "$git_staged_modified"  "~"  "${yellowf}"
-   show_if_exists "$git_staged_renamed"  "->"  "${yellowf}"
-   show_if_exists "$git_added"  "+"  "${greenf}"
-   show_if_exists "$git_deleted"  "-"  "${redf}"
-   show_if_exists "$git_modified"  "~"  "${bluef}"
-   show_if_exists "$git_untracked"  "?"  "${bredf}"   
-   echo -ne "${bblackf})${reset}"
+  if [ "$git_branch_name"="" ]; then
+     echo -ne ""
+  else
+     echo -ne "${bblackf}("
+     branch_color
+     echo -ne "branch"
+     show_if_exists "$git_staged_added"  "+"  "${yellowf}"
+     show_if_exists "$git_staged_deleted"  "-"  "${yellowf}"
+     show_if_exists "$git_staged_modified"  "~"  "${yellowf}"
+     show_if_exists "$git_staged_renamed"  "->"  "${yellowf}"
+     show_if_exists "$git_added"  "+"  "${greenf}"
+     show_if_exists "$git_deleted"  "-"  "${redf}"
+     show_if_exists "$git_modified"  "~"  "${bluef}"
+     show_if_exists "$git_untracked"  "?"  "${bredf}"   
+     echo -ne "${bblackf})${reset}"
+   fi
 }
 
 show_if_exists(){
