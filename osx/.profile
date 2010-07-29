@@ -133,14 +133,14 @@ git_prompt(){
      echo -ne "${bblackf}("
      branch_color
      echo -ne "branch"
-     show_if_exists "$git_staged_added"  "+"  "${yellowf}"
-     show_if_exists "$git_staged_deleted"  "-"  "${yellowf}"
-     show_if_exists "$git_staged_modified"  "~"  "${yellowf}"
-     show_if_exists "$git_staged_renamed"  "->"  "${yellowf}"
+     show_if_exists "$git_staged_added"  "+"  "${byellowf}"
+     show_if_exists "$git_staged_deleted"  "-"  "${byellowf}"
+     show_if_exists "$git_staged_modified"  "~"  "${byellowf}"
+     show_if_exists "$git_staged_renamed"  "->"  "${byellowf}"
      show_if_exists "$git_added"  "+"  "${bgreenf}"
      show_if_exists "$git_deleted"  "-"  "${bredf}"
      show_if_exists "$git_modified"  "~"  "${bbluef}"
-     show_if_exists "$git_untracked"  "?"  "${bredf}"   
+     show_if_exists "$git_untracked"  "?"  "${yellowf}"   
      echo -ne "${blackf})${reset}"
    fi
 }
