@@ -121,13 +121,13 @@ branch_color()
 
 
 parse_git_branch_name(){
-    git_branch_name=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /')
+    git_branch_name="$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /')"
 }
 
 git_prompt(){
    parse_git_branch_name
-  
-  if [ "$git_branch_name"="" ]; then
+    
+  if [ -z $git_branch_name ]; then
      echo -ne ""
   else
      echo -ne "${bblackf}("
@@ -137,11 +137,11 @@ git_prompt(){
      show_if_exists "$git_staged_deleted"  "-"  "${yellowf}"
      show_if_exists "$git_staged_modified"  "~"  "${yellowf}"
      show_if_exists "$git_staged_renamed"  "->"  "${yellowf}"
-     show_if_exists "$git_added"  "+"  "${greenf}"
-     show_if_exists "$git_deleted"  "-"  "${redf}"
-     show_if_exists "$git_modified"  "~"  "${bluef}"
+     show_if_exists "$git_added"  "+"  "${bgreenf}"
+     show_if_exists "$git_deleted"  "-"  "${bredf}"
+     show_if_exists "$git_modified"  "~"  "${bbluef}"
      show_if_exists "$git_untracked"  "?"  "${bredf}"   
-     echo -ne "${bblackf})${reset}"
+     echo -ne "${blackf})${reset}"
    fi
 }
 
@@ -152,7 +152,6 @@ show_if_exists(){
         if [ $1 -ne 0 ]; then
             echo -ne " $2$1"
         fi
-        
     fi   
 }
 
