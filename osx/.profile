@@ -141,7 +141,7 @@ git_prompt(){
      show_if_exists "$git_deleted"  "-"  "${bredf}"
      show_if_exists "$git_modified"  "~"  "${bbluef}"
      show_if_exists "$git_untracked"  "?"  "${yellowf}"   
-     echo -ne "${blackf})${reset}"
+     echo -ne "$bblackf)${reset}"
    fi
 }
 
