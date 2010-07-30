@@ -24,23 +24,23 @@ function Write-GitBranch(){
         
         
         if($status.staged_added -gt 0){
-        	Write-Host(' +' + $status.staged_added) -nonewline -foregroundcolor Yellow        	
+        	Write-Host(' +' + $status.staged_added) -nonewline -foregroundcolor DarkYellow        	
         }
         
         if($status.staged_deleted -gt 0){
-        	Write-Host(' -' + $status.staged_deleted) -nonewline -foregroundcolor Yellow        	
+        	Write-Host(' -' + $status.staged_deleted) -nonewline -foregroundcolor DarkYellow        	
         }
         
         if($status.staged_modified -gt 0){
-        	Write-Host(' ~' + $status.staged_modified) -nonewline -foregroundcolor Yellow        	
+        	Write-Host(' ~' + $status.staged_modified) -nonewline -foregroundcolor DarkYellow        	
         }
         
         if($status.staged_rename -gt 0){
-        	Write-Host(' ->' + $status.staged_rename) -nonewline -foregroundcolor Yellow        	
+        	Write-Host(' ->' + $status.staged_rename) -nonewline -foregroundcolor DarkYellow        	
         }
         
         if($status.added -gt 0){
-        	Write-Host(' +' + $status.added) -nonewline -foregroundcolor DarkGreen        	
+        	Write-Host(' +' + $status.added) -nonewline -foregroundcolor DarkRed        	
         }
         
         if($status.deleted -gt 0){
@@ -48,11 +48,11 @@ function Write-GitBranch(){
         }
         
         if($status.modified -gt 0){
-        	Write-Host(' ~' + $status.modified) -nonewline -foregroundcolor DarkCyan        	
+        	Write-Host(' ~' + $status.modified) -nonewline -foregroundcolor DarkRed        	
         }
         
         if($status.untracked -gt 0){
-        	Write-Host(' ?' + $status.untracked) -nonewline -foregroundcolor DarkYellow        	
+        	Write-Host(' ?' + $status.untracked) -nonewline -foregroundcolor DarkRed        	
         }                        
         
            
