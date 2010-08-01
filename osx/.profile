@@ -110,9 +110,9 @@ branch_color()
 {
  
  if [ $git_staged -ne 0 ]; then
-    echo -ne "${byellowf}"
+    echo -ne "${yellowf}"
  elif [ $git_changed -ne 0 ]; then
-    echo -ne "${bredf}"
+    echo -ne "${redf}"
  else 
     echo -ne "${bgreenf}"
  fi
@@ -133,14 +133,19 @@ git_prompt(){
      echo -ne "${bblackf}("
      branch_color
      echo -ne "$git_branch_name"
+
+     show_if_exists "$git_staged_modified"  "~"  "${byellowf}"
      show_if_exists "$git_staged_added"  "+"  "${byellowf}"
      show_if_exists "$git_staged_deleted"  "-"  "${byellowf}"
-     show_if_exists "$git_staged_modified"  "~"  "${byellowf}"
      show_if_exists "$git_staged_renamed"  "->"  "${byellowf}"
-     show_if_exists "$git_added"  "+"  "${bgreenf}"
-     show_if_exists "$git_deleted"  "-"  "${bredf}"
-     show_if_exists "$git_modified"  "~"  "${bbluef}"
-     show_if_exists "$git_untracked"  "?"  "${yellowf}"   
+     
+     show_if_exists "$git_modified"  "~"  "${bredf}"            
+     show_if_exists "$git_untracked"  "?"  "${bredf}"        
+     show_if_exists "$git_added"  "+"  "${bredf}"
+     show_if_exists "$git_deleted"  "-"  "${bredf}"     
+
+ 
+     
      echo -ne "$bblackf)${reset}"
    fi
 }
