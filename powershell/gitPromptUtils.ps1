@@ -55,6 +55,12 @@ function Write-GitBranch(){
         	Write-Host(' ?' + $status.untracked) -nonewline -foregroundcolor DarkRed        	
         }                        
         
+        
+        if($status.upstream_changes -gt 0){
+        	Write-Host(' ^' + $status.upstream_changes) -nonewline -foregroundcolor DarkRed        	
+        }                        
+        
+        
            
         Write-Host(') ') -nonewline -foregroundcolor Gray 
     }    
@@ -69,6 +75,7 @@ function myGitStatus {
     $staged_modified = 0
     $staged_deleted = 0
     $staged_rename = 0
+    $upstream_changes = 0
         
     $output = git status -s
     
@@ -98,6 +105,9 @@ function myGitStatus {
         elseif ($_ -match "^R") {
             $staged_rename += 1
         }
+        elseif ($_ -match "^UU") {
+            $upstream_changes += 1
+        }
         
     }
     
@@ -110,6 +120,6 @@ function myGitStatus {
              "staged_deleted" = $staged_deleted;    
              "staged_rename" = $staged_rename;    
              "staged_changes" = $staged_added + $staged_deleted + $staged_modified + $staged_rename;
-             "totalchanges" = $untracked + $added + $modified + $deleted + $staged_added + $staged_deleted + $staged_modified + $staged_rename;         
+             "totalchanges" = $untracked + $added + $modified + $deleted + $staged_added + $staged_deleted + $staged_modified + $staged_rename + $upstream_changes ;         
              }
 }
