@@ -2,7 +2,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
 
-(load-file "~/.emacs.d/appearance.el")
+(load-file (expand-file-name "~/.emacs.d/appearance.el"))
 
 
 ;; use the option key as M
@@ -45,3 +45,9 @@
           (lambda ()
             (add-to-list 'ac-sources 'ac-source-rsense-method)
             (add-to-list 'ac-sources 'ac-source-rsense-constant)))
+
+
+(add-to-list 'load-path "~/.emacs.d/my_emacs_for_rails/plugins/javascript")
+(add-to-list 'auto-mode-alist '("\\.js\\'" . javascript-mode))
+(autoload 'javascript-mode "javascript" nil t)
+    
