@@ -2,6 +2,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t) ;; enable fuzzy matching
 
+ (add-to-list 'load-path "~/.emacs.d/color-theme/")
 (load-file (expand-file-name "~/.emacs.d/appearance.el"))
 
 
