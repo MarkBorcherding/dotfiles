@@ -1,0 +1,8 @@
+#!/usr/bin/ruby
+`gem install 'map_by_method'`
+`gem install 'what_methods'`
+`gem install 'awesome_print'`
+`gem install 'net-http-spy'`
+`gem install 'hirb'`
+`gem install 'looksee'`
+`gem install 'wirble'`
