@@ -8,23 +8,24 @@ class ConsoleColor
 				    }
 				
 	EFFECTS = { :normal => 0,
-				      :bright => 1
+				      :light => 1
 			      }		
 	
-	def self.colorize(text, color_code, effect)
-  		"\e[#{EFFECTS[effect]};#{COLORS[color_code]}m#{text}\e[0m"
+	def self.colorize(text, options = {})
+	    color = options[:color] || :green
+	    effect = options[:effect] || :normal
+  		"\e[#{EFFECTS[effect]};#{COLORS[color]}m#{text}\e[0m"
 	end
-
 	
-	def self.red(text); colorize(text, :red , :normal); end
-	def self.light_red(text); colorize(text, :red , :bright ); end
-	def self.green(text); colorize(text, :green , :normal); end
-	def self.light_green(text); colorize(text, :green , :bright); end
-	
+	def self.puts(text, options = {})
+	  super colorize text,options
+  end
 	
 end
 
-puts 'light red [ ' + ConsoleColor.light_red('light') + ' ]'
-puts 'dark red  [ ' + ConsoleColor.red('dark') +  '  ]'
-puts 'dark green  [ ' + ConsoleColor.green('dark') +  '  ]'
-puts 'light green  [ ' + ConsoleColor.light_green('light') +  '  ]'
+puts 'light red [ ' + ConsoleColor.colorize('light', :color => :red, :effect => :light) + ' ]'
+puts 'dark red  [ ' + ConsoleColor.colorize('dark', :color => :red) +  '  ]'
+puts 'dark green  [ ' + ConsoleColor.colorize('dark') +  '  ]'
+puts 'light green  [ ' + ConsoleColor.colorize('light', :effect => :light) +  '  ]'
+
+ConsoleColor.puts "Green"
