@@ -1,21 +1,18 @@
 require 'rubygems'
-require 'win32console'
-
-require 'rubygems'
-require 'win32console'
+#require 'win32console'
 
 class ConsoleColor
 	
-	@@colors = { :red => 31, 
+	COLORS = { :red => 31, 
 				 :green => 21
 				}
 				
-	@@effects = { :normal => 0,
+	EFFECTS = { :normal => 0,
 				  :bright => 1
 				}		
 	
 	def self.colorize(text, color_code, effect)
-  		"\e[#{@@effects[effect]};#{@@colors[color_code]}m#{text}\e[0m"
+  		"\e[#{EFFECTS[effect]};#{COLORS[color_code]}m#{text}\e[0m"
 	end
 
 	
