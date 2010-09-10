@@ -162,7 +162,7 @@ show_if_exists(){
 
 setup_prompt(){
      count_git_changes
-     export PS1="${blackf}\u@\h ${bblackf} \w $(git_prompt)${reset} \$ "
+     export PS1="${bblackf} \W/ $(git_prompt)${reset} \$ "
 }
 
 PROMPT_COMMAND=setup_prompt
