@@ -1,13 +1,18 @@
-$env:TERM='cygwin'
+$executingScriptDirectory = Split-Path -Path $MyInvocation.MyCommand.Definition -Parent
 
-. (Resolve-Path ~/Documents/WindowsPowershell/gitutils.ps1)
-. (Resolve-Path ~/Documents/WindowsPowershell/gitPromptUtils.ps1)
-. (Resolve-Path ~/Documents/WindowsPowershell/ssh-agent-utils.ps1)
+. "$executingScriptDirectory/gitutils.ps1"
+. "$executingScriptDirectory/gitPromptUtils.ps1"
+. "$executingScriptDirectory/ssh-agent-utils.ps1"
+
+
+$env:TERM='cygwin'
 
 Push-Location (Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
 
 # Load posh-git module from current directory
-Import-Module d:\vendor\posh-git
+Import-Module ../../posh-git
+
+
 
 if(-not (Test-Path Function:\DefaultTabExpansion)) {
     Rename-Item Function:\TabExpansion DefaultTabExpansion
