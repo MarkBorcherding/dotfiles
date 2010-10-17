@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/mark'
+let g:netrw_dirhist_2='/Users/mark/Source/workout-tracker/app/models'
+let g:netrw_dirhist_3='/Users/mark/Source/workout-tracker/db/migrate'
