@@ -34,13 +34,22 @@ Enable-GitColors
 
 Pop-Location
 
+function shortenPwd(){
+  $s = $pwd.Path.split("\")
+
+  if($s.length -ne 2){
+    return $s[0] + "\...\" + $s[$s.length-1]
+  } else {
+   return $pwd
+  }
+}
 
 function prompt {
-	$path = [string]$pwd
-    Write-Host($path) -nonewline -foregroundcolor DarkGray     
-    Write-GitBranch
-	Write-Host('>') -nonewline -foregroundcolor DarkGray    
-	return " "
+  $path = shortenPwd
+  Write-Host($path) -nonewline -foregroundcolor DarkGray     
+  Write-GitBranch
+  Write-Host('>') -nonewline -foregroundcolor DarkGray    
+  return " "
 }
 
 
