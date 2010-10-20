@@ -38,7 +38,11 @@ function shortenPwd(){
   $s = $pwd.Path.split("\")
 
   if($s.length -ne 2){
-    return $s[0] + "\...\" + $s[$s.length-1]
+    $p = $s[0]
+    for($i=1; $i -le $s.length-2; $i++){
+      $p += "\" + $s[$i].substring(0,1)
+    }
+    return $p + "\" + $s[$s.length-1]
   } else {
    return $pwd
   }
