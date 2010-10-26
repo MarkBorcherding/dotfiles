@@ -56,4 +56,4 @@ function prompt {
   return " "
 }
 
-
+New-Alias which get-command
