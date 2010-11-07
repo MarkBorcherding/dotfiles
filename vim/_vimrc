@@ -6,7 +6,7 @@ set nocompatible                  " Must come first because it changes other opt
 silent! call pathogen#runtime_append_all_bundles()
 
 " Use , as leader instead of default \
-let mapleader=","
+" let mapleader=","
 
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
@@ -62,23 +62,23 @@ set t_Co=256
 colorscheme twilight
 
 " Tab mappings.
-"map <leader>tt :tabnew<cr>
-"map <leader>te :tabedit
-"map <leader>tc :tabclose<cr>
-"map <leader>to :tabonly<cr>
-"map <leader>tn :tabnext<cr>
-"map <leader>tp :tabprevious<cr>
-"map <leader>tf :tabfirst<cr>
-"map <leader>tl :tablast<cr>
-"map <leader>tm :tabmove
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
 
 " Use Jamis Buck's file opening plugin FuzzyFinder
-"map <leader>t :FuzzyFinderTextMate<Enter>
-"map <leader><S-t> :FuzzyFinderTag<Enter>
-"map <leader>b :FuzzyFinderBuffer<Enter>
-"map <leader>] :FuzzyFinderMruFile<Enter>
-"let g:fuzzy_ceiling=25000
-"let g:fuzzy_ignore=".git/**/*;.svn/**/*;*.gif;*.png;*.jpg;*.log;tmp/**/*"
+map <leader>t :FuzzyFinderTextMate<Enter>
+map <leader><S-t> :FuzzyFinderTag<Enter>
+map <leader>b :FuzzyFinderBuffer<Enter>
+map <leader>] :FuzzyFinderMruFile<Enter>
+let g:fuzzy_ceiling=25000
+let g:fuzzy_ignore=".git/**/*;.svn/**/*;*.gif;*.png;*.jpg;*.log;tmp/**/*"
 
 " Automatic fold settings for specific files.
 "autocmd FileType ruby setlocal foldmethod=syntax
