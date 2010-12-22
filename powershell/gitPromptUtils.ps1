@@ -20,6 +20,15 @@ function Write-GitBranch(){
 			$color = 'Green'
 		}		
         Write-Host(' (') -nonewline -foregroundcolor Gray
+
+        if($status.behind){
+          Write-Host("^ ") -nonewline -foregroundcolor Red
+        }
+        
+        if($status.ahead){
+          Write-Host("v ") -nonewline -foregroundcolor DarkGreen
+        }
+
         Write-Host($currentBranch) -nonewline -foregroundcolor $color 
         
         
@@ -77,7 +86,7 @@ function myGitStatus {
     $staged_rename = 0
     $upstream_changes = 0
         
-    $output = git status -s
+    $output = git status -sb
     
     $output | foreach {
         
@@ -108,8 +117,13 @@ function myGitStatus {
         elseif ($_ -match "^UU") {
             $upstream_changes += 1
         }
+        elseif($_ -match "^##"){
+            $ahead_or_behind = [regex]::Match($_,"(ahead|behind)").Value
+        }
         
     }
+
+
     
     return @{"untracked" = $untracked;
              "added" = $added;
@@ -121,5 +135,8 @@ function myGitStatus {
              "staged_rename" = $staged_rename;    
              "staged_changes" = $staged_added + $staged_deleted + $staged_modified + $staged_rename;
              "totalchanges" = $untracked + $added + $modified + $deleted + $staged_added + $staged_deleted + $staged_modified + $staged_rename + $upstream_changes ;         
+             "ahead" = $ahead_or_behind -eq "ahead";
+             "behind" = $ahead_or_behind -eq "behind";
+             "offset" = $number_of_commits_off;
              }
 }
