@@ -16,3 +16,6 @@
 [submodule "vim/vimfiles/bundle/vim-fuzzyfinder"]
 	path = vim/vimfiles/bundle/vim-fuzzyfinder
 	url = https://github.com/itspriddle/vim-fuzzyfinder-pathogen.git
+[submodule "vim/vimfiles/bundle/vim-fugitive"]
+	path = vim/vimfiles/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
