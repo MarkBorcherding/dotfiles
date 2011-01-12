@@ -1,3 +1,6 @@
 [submodule "twilight-emacs"]
 	path = twilight-emacs
 	url = http://github.com/crafterm/twilight-emacs.git
+[submodule "vim/bundle/conque-shell"]
+	path = vim/bundle/conque-shell
+	url = https://github.com/vim-scripts/Conque-Shell.git
