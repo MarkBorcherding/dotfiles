@@ -7,3 +7,6 @@
 [submodule "vim/vimfiles/bundle/nerdtree"]
 	path = vim/vimfiles/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "textmate/bundles/ini.tmbundle"]
+	path = textmate/bundles/ini.tmbundle
+	url = https://github.com/textmate/ini.tmbundle.git
