@@ -10,3 +10,6 @@
 [submodule "textmate/bundles/ini.tmbundle"]
 	path = textmate/bundles/ini.tmbundle
 	url = https://github.com/textmate/ini.tmbundle.git
+[submodule "vim/vimfiles/bundle/fuzzy_finder"]
+	path = vim/vimfiles/bundle/fuzzy_finder
+	url = https://github.com/jamis/fuzzy_file_finder.git
