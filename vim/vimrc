@@ -4,3 +4,6 @@ set nocompatible                  " Must come first because it changes other opt
 silent! call pathogen#runtime_append_all_bundles()
 
 set t_Co=256
+
+
+nnoremap <leader>d :NERDTreeToggle<Enter> 
