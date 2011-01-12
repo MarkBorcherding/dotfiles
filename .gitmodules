@@ -13,3 +13,6 @@
 [submodule "vim/vimfiles/bundle/fuzzy_finder"]
 	path = vim/vimfiles/bundle/fuzzy_finder
 	url = https://github.com/jamis/fuzzy_file_finder.git
+[submodule "vim/vimfiles/bundle/vim-fuzzyfinder"]
+	path = vim/vimfiles/bundle/vim-fuzzyfinder
+	url = https://github.com/itspriddle/vim-fuzzyfinder-pathogen.git
