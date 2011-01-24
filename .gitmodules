@@ -1,8 +1,5 @@
-[submodule "twilight-emacs"]
-	path = twilight-emacs
-	url = http://github.com/crafterm/twilight-emacs.git
 [submodule "vim/bundle/conque-shell"]
-	path = vim/bundle/conque-shell
+	path = vim/vimfiles/bundle/conque-shell
 	url = https://github.com/vim-scripts/Conque-Shell.git
 [submodule "vim/vimfiles/bundle/nerdtree"]
 	path = vim/vimfiles/bundle/nerdtree
@@ -28,3 +25,6 @@
 [submodule "vim/vimfiles/bundle/vim-markdown"]
 	path = vim/vimfiles/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
+[submodule ".\\powershell\\posh-git"]
+	path = .\\powershell\\posh-git
+	url = https://github.com/dahlbyk/posh-git.git
