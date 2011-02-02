@@ -1,3 +1,30 @@
-[submodule "twilight-emacs"]
-	path = twilight-emacs
-	url = http://github.com/crafterm/twilight-emacs.git
+[submodule "vim/bundle/conque-shell"]
+	path = vim/vimfiles/bundle/conque-shell
+	url = https://github.com/vim-scripts/Conque-Shell.git
+[submodule "vim/vimfiles/bundle/nerdtree"]
+	path = vim/vimfiles/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "textmate/bundles/ini.tmbundle"]
+	path = textmate/bundles/ini.tmbundle
+	url = https://github.com/textmate/ini.tmbundle.git
+[submodule "vim/vimfiles/bundle/fuzzy_finder"]
+	path = vim/vimfiles/bundle/fuzzy_finder
+	url = https://github.com/jamis/fuzzy_file_finder.git
+[submodule "vim/vimfiles/bundle/vim-fuzzyfinder"]
+	path = vim/vimfiles/bundle/vim-fuzzyfinder
+	url = https://github.com/itspriddle/vim-fuzzyfinder-pathogen.git
+[submodule "vim/vimfiles/bundle/vim-fugitive"]
+	path = vim/vimfiles/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/vimfiles/bundle/vim-surround"]
+	path = vim/vimfiles/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/vimfiles/bundle/vim-json"]
+	path = vim/vimfiles/bundle/vim-json
+	url = https://github.com/leshill/vim-json.git
+[submodule "vim/vimfiles/bundle/vim-markdown"]
+	path = vim/vimfiles/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule ".\\powershell\\posh-git"]
+	path = .\\powershell\\posh-git
+	url = https://github.com/dahlbyk/posh-git.git
