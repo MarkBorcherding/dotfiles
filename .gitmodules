@@ -25,6 +25,6 @@
 [submodule "vim/vimfiles/bundle/vim-markdown"]
 	path = vim/vimfiles/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule ".\\powershell\\posh-git"]
-	path = .\\powershell\\posh-git
+[submodule "powershell/posh-git"]
+	path = powershell/posh-git
 	url = https://github.com/dahlbyk/posh-git.git
