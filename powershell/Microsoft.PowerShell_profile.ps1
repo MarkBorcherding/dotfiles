@@ -10,8 +10,9 @@ $env:TERM='cygwin'
 Push-Location (Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
 
 # Load posh-git module from current directory
-Import-Module ./posh-git
-
+Import-Module posh-git
+Import-Module Pscx
+Import-Module PowerTab
 
 
 if(-not (Test-Path Function:\DefaultTabExpansion)) {
