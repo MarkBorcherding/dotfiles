@@ -21,3 +21,5 @@ map <leader>b :FuzzyFinderBuffer<Enter>
 map <leader>] :FuzzyFinderMruFile<Enter>
 let g:fuzzy_ceiling=25000
 let g:fuzzy_ignore=".git/**/*;.svn/**/*;*.gif;*.png;*.jpg;*.log;tmp/**/*"
+
+colorscheme ir_black

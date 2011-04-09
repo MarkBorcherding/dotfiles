@@ -8,5 +8,4 @@ set lines=25 columns=100          " Window dimensions.
 set guioptions-=r                 " Don't show right scrollbar
 
 set t_Co=256
-colorscheme vilight
 set transparency=10
