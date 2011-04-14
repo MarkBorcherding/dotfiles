@@ -34,3 +34,6 @@
 [submodule "vim/vimfiles/bundle/molly"]
 	path = vim/vimfiles/bundle/molly
 	url = https://github.com/vim-scripts/molly.vim
+[submodule "vim/vimfiles/bundle/zencoding"]
+	path = vim/vimfiles/bundle/zencoding
+	url = https://github.com/mattn/zencoding-vim.git
