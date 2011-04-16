@@ -40,3 +40,9 @@
 [submodule "vim/vimfiles/bundle/vim-coffee-script"]
 	path = vim/vimfiles/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vim/vimfiles/bundle/vim-ruby"]
+	path = vim/vimfiles/bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/vimfiles/bundle/vim-rails"]
+	path = vim/vimfiles/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
