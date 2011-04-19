@@ -30,5 +30,5 @@ set tabstop=2                     " Global tab width.
 set shiftwidth=2                  " And again, related.
 set expandtab                     " Use spaces instead of tabs
 set smarttab                      " sw at start of line, sts everywhere else
-
+set autoindent
 
