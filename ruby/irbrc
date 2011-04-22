@@ -13,6 +13,7 @@ begin
   require 'hirb/import_object'
   Hirb.enable
   extend Hirb::Console
+  Hirb::Formatter.dynamic_config['ActiveRecord::Base']
 rescue LoadError  
 end
 
