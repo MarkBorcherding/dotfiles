@@ -12,5 +12,5 @@ colorscheme ir_black
 set t_Co=256
 
 if has('mac')
-  set transparency=10
+  set transparency=5
 endif

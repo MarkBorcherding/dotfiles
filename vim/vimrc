@@ -22,7 +22,7 @@ map <leader>] :FuzzyFinderMruFile<Enter>
 let g:fuzzy_ceiling=25000
 let g:fuzzy_ignore=".git/**/*;.svn/**/*;*.gif;*.png;*.jpg;*.log;tmp/**/*"
 
-colorscheme molokai
+colorscheme ir_black
 
 set visualbell                    " No beeping.
 
@@ -32,3 +32,5 @@ set expandtab                     " Use spaces instead of tabs
 set smarttab                      " sw at start of line, sts everywhere else
 set autoindent
 
+let g:user_zen_expandabbr_key = '<c-e>'
+let g:use_zen_complete_tag = 1
