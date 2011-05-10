@@ -34,3 +34,26 @@ set autoindent
 
 let g:user_zen_expandabbr_key = '<c-e>'
 let g:use_zen_complete_tag = 1
+
+  " Fast window resizing with +/- keys (horizontal); / and * keys (vertical)
+if bufwinnr(1)
+  map <kPlus> <C-W>+
+  map <kMinus> <C-W>-
+  map <kDivide> <c-w><
+  map <kMultiply> <c-w>>
+
+
+  " Maps Alt-[h,j,k,l] to resizing a window split
+  map  <A-h> <C-w><
+  map  <A-j> <C-W>-
+  map  <A-k> <C-W>+
+  map  <A-l> <C-w>>
+  " Maps Alt-[s.v] to horizontal and vertical split respectively
+  map  <A-s> :split<CR>
+  map  <A-v> :vsplit<CR>
+  " Maps Alt-[n,p] for moving next and previous window respectively
+  map  <A-n> <C-w><C-w>
+  map  <A-p> <C-w><S-w>
+
+endif
+
