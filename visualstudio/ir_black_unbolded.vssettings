@@ -138,7 +138,7 @@
 							<Item Name="Inactive Selected Text" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
 						</Items>
 					</Category>
-					<Category GUID="{A27B4E24-A735-4D1D-B8E7-9716E1E3D8E0}" FontName="Monaco" FontSize="11" CharSet="0" FontIsDefault="No">
+					<Category GUID="{A27B4E24-A735-4D1D-B8E7-9716E1E3D8E0}" FontName="Monaco" FontSize="9" CharSet="0" FontIsDefault="No">
 						<Items>
 							<Item Name="Plain Text" Foreground="0x00FFFFFF" Background="0x00000000" BoldFont="No"/>
 							<Item Name="Selected Text" Foreground="0x00FFFFFF" Background="0x006A4B48" BoldFont="No"/>
@@ -150,6 +150,17 @@
 							<Item Name="Breakpoint (Disabled)" Foreground="0x00FFFFFF" Background="0x00463A96" BoldFont="No"/>
 							<Item Name="Breakpoint - Advanced (Disabled)" Foreground="0x00FFFFFF" Background="0x00463A96" BoldFont="No"/>
 							<Item Name="Breakpoint - Mapped (Disabled)" Foreground="0x00FFFFFF" Background="0x00463A96" BoldFont="No"/>
+							<Item Name="ClojureBoolean" Foreground="0x00FFAAAA" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ClojureBuiltIn" Foreground="0x008CD7FF" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="ClojureCharacter" Foreground="0x0045CF5A" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="ClojureKeyword" Foreground="0x00F080DC" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="ClojureList" Foreground="0x00C3C3C3" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ClojureMap" Foreground="0x00D3D3D3" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ClojureNumber" Foreground="0x00FF7777" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ClojureString" Foreground="0x0093DD9C" Background="0x02000000" BoldFont="Yes"/>
+							<Item Name="ClojureSymbol" Foreground="0x00FFA6A6" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ClojureMetadataTypeHint" Foreground="0x00DAC687" Background="0x02000000" BoldFont="No"/>
+							<Item Name="ClojureVector" Foreground="0x00A4A4A4" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Code Snippet Dependent Field" Foreground="0x00FFFFFF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Code Snippet Field" Foreground="0x02000000" Background="0x00824D48" BoldFont="Yes"/>
 							<Item Name="Collapsible Text" Foreground="0x00C0C0C0" Background="0x01000003" BoldFont="No"/>
@@ -181,6 +192,11 @@
 							<Item Name="ReSharper Constant Identifier" Foreground="0x00800080" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Mutable Local Variable Identifier" Foreground="0x02000000" Background="0x02000000" BoldFont="No"/>
 							<Item Name="ReSharper Todo Item" Foreground="0x008B0000" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Comment" Foreground="0x003C3C3C" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Function Block Start" Foreground="0x00BEF4FC" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Keyword" Foreground="0x00FECB96" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script Number" Foreground="0x00FD73FF" Background="0x02000000" BoldFont="No"/>
+							<Item Name="Script String" Foreground="0x0060FFA8" Background="0x02000000" BoldFont="No"/>
 							<Item Name="Stale Code" Foreground="0x00C0C0C0" Background="0x02000000" BoldFont="No"/>
 							<Item Name="String" Foreground="0x0060FFA8" Background="0x02000000" BoldFont="No"/>
 							<Item Name="String(C# @ Verbatim)" Foreground="0x0060FFA8" Background="0x02000000" BoldFont="No"/>
@@ -198,6 +214,7 @@
 							<Item Name="Tracepoint - Mapped (Enabled)" Foreground="0x00FFFFFF" Background="0x00463A96" BoldFont="No"/>
 							<Item Name="Tracepoint - Mapped (Error)" Foreground="0x00A3DBFF" Background="0x00463A96" BoldFont="No"/>
 							<Item Name="Tracepoint - Mapped (Warning)" Foreground="0x00FFFFFF" Background="0x00463A96" BoldFont="No"/>
+							<Item Name="urlformat" Foreground="0x00FFBFBF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="User Types" Foreground="0x00B6FFFF" Background="0x02000000" BoldFont="No"/>
 							<Item Name="User Types(Delegates)" Foreground="0x00FECB96" Background="0x02000000" BoldFont="No"/>
 							<Item Name="User Types(Enums)" Foreground="0x00FECB96" Background="0x02000000" BoldFont="No"/>
