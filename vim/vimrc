@@ -32,6 +32,15 @@ set expandtab                     " Use spaces instead of tabs
 set smarttab                      " sw at start of line, sts everywhere else
 set autoindent
 
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+compiler ruby         " Enable compiler support for ruby
+
+
+
 let g:user_zen_expandabbr_key = '<c-e>'
 let g:use_zen_complete_tag = 1
 
