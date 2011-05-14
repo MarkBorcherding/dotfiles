@@ -24,7 +24,9 @@ nnoremap <leader>d :NERDTreeToggle<Enter>
 
 " Command-T
 map <leader>t :CommandT<Enter>
+map <leader><S-t> :CommandTFlush<Enter>:CommandT<Enter>
 map <leader>b :CommandTBuffer<Enter>
+let g:CommandTMatchWindowAtTop=1
 
 colorscheme ir_black
 
