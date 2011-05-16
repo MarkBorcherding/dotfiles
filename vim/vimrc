@@ -66,3 +66,7 @@ if bufwinnr(1)
 
 endif
 
+imap <Tab> <C-N>
+imap <S-Tab> <C-P>
+
+
