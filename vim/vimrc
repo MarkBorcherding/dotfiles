@@ -75,4 +75,4 @@ endif
 imap <Tab> <C-N>
 imap <S-Tab> <C-P>
 
-
+map <Leader>] <Plug>MakeGreen " change from <Leader>t to <Leader>]
