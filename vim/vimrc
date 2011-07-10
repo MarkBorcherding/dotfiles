@@ -73,8 +73,12 @@ if bufwinnr(1)
 endif
 
 " autocomplete tab and shift tab
-imap <Tab> <C-N>
-imap <S-Tab> <C-P>
+"imap <Tab> <C-N>
+"imap <S-Tab> <C-P>
 
-
+map tn :tabnew<cr>
+map tj :tabprevious<cr>
+map tk :tabnext<cr>
+map tx :tabclose<cr>
+    
 map <Leader>] <Plug>MakeGreen " change from <Leader>t to <Leader>]

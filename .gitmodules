@@ -58,3 +58,6 @@
 [submodule "vim/vimfiles/bundle/mustache.vim"]
 	path = vim/vimfiles/bundle/mustache.vim
 	url = https://github.com/juvenn/mustache.vim.git
+[submodule "zsh/git-flow-completion"]
+	path = zsh/git-flow-completion
+	url = https://github.com/bobthecow/git-flow-completion.git
