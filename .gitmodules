@@ -61,3 +61,6 @@
 [submodule "zsh/git-flow-completion"]
 	path = zsh/git-flow-completion
 	url = https://github.com/bobthecow/git-flow-completion.git
+[submodule "vim/vimfiles/bundle/vim-cucumber"]
+	path = vim/vimfiles/bundle/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
