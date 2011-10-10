@@ -15,7 +15,7 @@ nnoremap <leader>d :NERDTreeToggle<Enter>
 
 
 " Use Jamis Buck's file opening plugin FuzzyFinder
-map <leader>t :FuzzyFinderTextMate<Enter>
+map <leader>t :FuzzyFinderFile<Enter>
 map <leader><S-t> :FuzzyFinderTag<Enter>
 map <leader>b :FuzzyFinderBuffer<Enter>
 map <leader>] :FuzzyFinderMruFile<Enter>
@@ -28,7 +28,7 @@ let g:fuzzy_ignore=".git/**/*;.svn/**/*;*.gif;*.png;*.jpg;*.log;tmp/**/*"
 "map <leader>b :CommandTBuffer<Enter>
 "let g:CommandTMatchWindowAtTop=1
 
-colorscheme ir_black
+colorscheme ir_mark
 
 set visualbell                    " No beeping.
 
