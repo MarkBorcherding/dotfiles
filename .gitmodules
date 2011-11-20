@@ -64,3 +64,6 @@
 [submodule "vim/vimfiles/bundle/vim-cucumber"]
 	path = vim/vimfiles/bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
+[submodule "vim/vimfiles/bundle/fuzzyfinder_textmate"]
+	path = vim/vimfiles/bundle/fuzzyfinder_textmate
+	url = https://github.com/jamis/fuzzyfinder_textmate.git
