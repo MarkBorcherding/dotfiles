@@ -30,13 +30,14 @@ plugins=(git rails3 ruby brew github osx gem bundler git-flow)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/bin:/usr/local/bin:$PATH:
-export NODE_PATH="/usr/local/lib/node"
+export PATH=./node_modules/.bin:~/bin:/usr/local/bin:$PATH:
+export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 alias ls="ls -G"
 
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 unsetopt auto_name_dirs
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
