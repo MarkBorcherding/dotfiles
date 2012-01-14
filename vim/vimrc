@@ -15,18 +15,18 @@ nnoremap <leader>d :NERDTreeToggle<Enter>
 
 
 " Use Jamis Buck's file opening plugin FuzzyFinder
-map <leader>t :FuzzyFinderFile<Enter>
-map <leader><S-t> :FuzzyFinderTag<Enter>
-map <leader>b :FuzzyFinderBuffer<Enter>
-map <leader>] :FuzzyFinderMruFile<Enter>
-let g:fuzzy_ceiling=25000
-let g:fuzzy_ignore=".git/**/*;.svn/**/*;*.gif;*.png;*.jpg;*.log;tmp/**/*"
+"map <leader>t :FuzzyFinderFile<Enter>
+"map <leader><S-t> :FuzzyFinderTag<Enter>
+"map <leader>b :FuzzyFinderBuffer<Enter>
+"map <leader>] :FuzzyFinderMruFile<Enter>
+"let g:fuzzy_ceiling=25000
+"let g:fuzzy_ignore=".git/**/*;.svn/**/*;*.gif;*.png;*.jpg;*.log;tmp/**/*"
 
 " Command-T
-"map <leader>t :CommandT<Enter>
-"map <leader><S-t> :CommandTFlush<Enter>:CommandT<Enter>
-"map <leader>b :CommandTBuffer<Enter>
-"let g:CommandTMatchWindowAtTop=1
+map <leader>t :CommandT<Enter>
+map <leader><S-t> :CommandTFlush<Enter>:CommandT<Enter>
+map <leader>b :CommandTBuffer<Enter>
+let g:CommandTMatchWindowAtTop=1
 
 colorscheme ir_mark
 
