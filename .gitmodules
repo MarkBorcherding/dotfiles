@@ -67,3 +67,6 @@
 [submodule "vim/vimfiles/bundle/fuzzyfinder_textmate"]
 	path = vim/vimfiles/bundle/fuzzyfinder_textmate
 	url = https://github.com/jamis/fuzzyfinder_textmate.git
+[submodule "vim/vimfiles/bundle/vim-powerline"]
+	path = vim/vimfiles/bundle/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
