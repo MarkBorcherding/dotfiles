@@ -26,7 +26,9 @@ nnoremap <leader>d :NERDTreeToggle<Enter>
 map <leader>t :CommandT<Enter>
 map <leader><S-t> :CommandTFlush<Enter>:CommandT<Enter>
 map <leader>b :CommandTBuffer<Enter>
-let g:CommandTMatchWindowAtTop=1
+" lets try and put the command t window at the bottom
+"let g:CommandTMatchWindowAtTop=1
+let g:CommandTMatchWindowReverse=1
 
 set background=dark
 colorscheme tir_black
