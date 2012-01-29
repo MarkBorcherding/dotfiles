@@ -28,7 +28,8 @@ map <leader><S-t> :CommandTFlush<Enter>:CommandT<Enter>
 map <leader>b :CommandTBuffer<Enter>
 let g:CommandTMatchWindowAtTop=1
 
-colorscheme ir_mark
+set background=dark
+colorscheme tir_black
 
 set visualbell                    " No beeping.
 
@@ -78,7 +79,8 @@ map th :tabprevious<cr>
 map tl :tabnext<cr>
 map tt :tabnext <cr>
 map tx :tabclose<cr>
-    
+
+set t_Co=256
 
 " power line 
 let g:Powerline_symbols = 'fancy'
