@@ -76,3 +76,6 @@
 [submodule "vim/vimfiles/bundle/vim-taglist"]
 	path = vim/vimfiles/bundle/vim-taglist
 	url = https://github.com/int3/vim-taglist-plus.git
+[submodule "vim/vimfiles/bundle/vim-less"]
+	path = vim/vimfiles/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
