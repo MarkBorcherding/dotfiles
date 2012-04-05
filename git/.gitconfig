@@ -18,7 +18,6 @@
   excludefiles = /Users/markborcherding/.gitignore_global
 [github]
   user = markborcherding
-  token = 2641ae517c90e35542ce03ef99a7ccb7
 [rerere]
   enabled = 1
 [alias]
