@@ -49,7 +49,7 @@ setopt prompt_subst
 local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
 
 PROMPT='
-%{$terminfo[bold]%}%{$fg[black]%}$(whoami)@$(hostname)%{$reset_color%} %~
+$(display-rails-env)%{$terminfo[bold]%}%{$fg[black]%}$(whoami)@$(hostname)%{$reset_color%} %~
 ${smiley}  %{$reset_color%}'
 
 RPROMPT='%{$fg[white]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
@@ -65,3 +65,5 @@ compinit
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
