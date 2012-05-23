@@ -90,6 +90,10 @@ let g:Powerline_symbols = 'fancy'
 " auto remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Helpful shortcuts
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>P :silent !touch tmp/restart.txt<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Running tests

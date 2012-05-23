@@ -40,6 +40,11 @@ export CLICOLOR=1
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 unsetopt auto_name_dirs
 
+# Multiple Move
+# example:  mmv *.data *.backup_data
+autoload -U zmv
+alias mmv='noglob zmv -W'
+
 # Colors
 autoload -U colors
 colors
