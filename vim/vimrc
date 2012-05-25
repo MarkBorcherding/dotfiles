@@ -25,10 +25,12 @@ nnoremap <leader>d :NERDTreeToggle<Enter>
 " Command-T
 map <leader>t :CommandT<Enter>
 map <leader><S-t> :CommandTFlush<Enter>:CommandT<Enter>
+map <leader><c-t> :CommandTTag<Enter>
 map <leader>b :CommandTBuffer<Enter>
 " lets try and put the command t window at the bottom
 "let g:CommandTMatchWindowAtTop=1
 let g:CommandTMatchWindowReverse=1
+:set wildignore+=*.o,*.obj,.git,*.png,*.jpg
 
 set background=dark
 colorscheme tir_black
