@@ -1,44 +1,36 @@
+# Break out of the Bundler jail
+# # from https://github.com/ConradIrwin/pry-debundle/blob/master/lib/pry-debundle.rb
+if defined? Bundler
+  Gem.post_reset_hooks.reject! { |hook| hook.source_location.first =~ %r{/bundler/} }
+  Gem::Specification.reset
+  load 'rubygems/custom_require.rb'
+end
+
 # Tab completion
 require 'irb/completion'
 
-# Make gems available
-require 'rubygems'
-
 #Require awesome print
-require 'ap'
+begin
+  require 'awesome_print'
+rescue LoadError
+end
 
-# hirb gem: Draw ASCII tables when outputting certain objects
 begin
   require 'hirb'
-  require 'hirb/import_object'
   Hirb.enable
-  extend Hirb::Console
-  Hirb::Formatter.dynamic_config['ActiveRecord::Base']
-rescue LoadError  
+rescue LoadError
 end
-
 
 begin
-  require 'wirble'
-  Wirble.init
-  Wirble.colorize
-  rescue LoadError
+  require 'fancy_irb'
+  FancyIrb.start
+rescue LoadError
 end
 
-# for rails 2
-if ENV.include?('RAILS_ENV')
-  if !Object.const_defined?('RAILS_DEFAULT_LOGGER')
-    require 'logger'
-    Object.const_set('RAILS_DEFAULT_LOGGER', Logger.new(STDOUT))
-  end
-
-  def sql(query)
-    ActiveRecord::Base.connection.select_all(query)
-  end
-# for rails 3
-elsif defined?(Rails) && !Rails.env.nil?
-  if Rails.logger
-    Rails.logger = Logger.new(STDOUT)
-    ActiveRecord::Base.logger = Rails.logger
-  end
+begin
+  require 'wirb'
+  Wirb.start
+rescue LoadError
 end
+
+IRB.conf[:PROMPT_MODE] = :SIMPLE
