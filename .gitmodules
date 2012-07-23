@@ -88,3 +88,6 @@
 [submodule "vim/vimfiles/bundle/snipmate"]
 	path = vim/vimfiles/bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim.git
+[submodule "vim/vimfiles/bundle/vim-commentary"]
+	path = vim/vimfiles/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
