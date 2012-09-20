@@ -191,3 +191,10 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
+" Switch between relative and absolute number
+nnoremap <F3> :NumbersToggle<CR>
+
+
+" Start the Corna Simulator with F3 for iPhone skin. Shift-F3 for iPad skin.
+map <leader>s :!/Applications/CoronaSDK/simulator -project %:p -skin iPhone4<CR>
+map <leader>sp :!/Applications/CoronaSDK/simulator -project %:p -skin iPad<CR>
