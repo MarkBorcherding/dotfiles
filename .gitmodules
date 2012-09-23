@@ -91,12 +91,6 @@
 [submodule "vim/vimfiles/bundle/vim-commentary"]
 	path = vim/vimfiles/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "vim/vimfiles/bundle/snipmate-snippets-rubymotion"]
-	path = vim/vimfiles/bundle/snipmate-snippets-rubymotion
-	url = https://github.com/rcyrus/snipmate-snippets-rubymotion.git
 [submodule "vim/vimfiles/bundle/numbers.vim"]
 	path = vim/vimfiles/bundle/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
-[submodule "vim/vimfiles/bundle/snipmate.vim"]
-	path = vim/vimfiles/bundle/snipmate.vim
-	url = https://github.com/msanders/snipmate.vim.git
