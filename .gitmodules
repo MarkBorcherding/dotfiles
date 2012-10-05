@@ -96,4 +96,4 @@
 	url = https://github.com/myusuf3/numbers.vim.git
 [submodule "tmux/tmux-powerline"]
 	path = tmux/tmux-powerline
-	url = git://github.com/erikw/tmux-powerline.git
+	url = git://github.com/markborcherding/tmux-powerline.git
