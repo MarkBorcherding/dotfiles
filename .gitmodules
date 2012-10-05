@@ -94,3 +94,6 @@
 [submodule "vim/vimfiles/bundle/numbers.vim"]
 	path = vim/vimfiles/bundle/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
+[submodule "tmux/tmux-powerline"]
+	path = tmux/tmux-powerline
+	url = git://github.com/erikw/tmux-powerline.git
