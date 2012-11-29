@@ -97,3 +97,6 @@
 [submodule "tmux/tmux-powerline"]
 	path = tmux/tmux-powerline
 	url = git://github.com/markborcherding/tmux-powerline.git
+[submodule "vim/vimfiles/bundle/syntastic"]
+	path = vim/vimfiles/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git

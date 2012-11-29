@@ -51,6 +51,7 @@ filetype plugin on    " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
 
 let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
+set tags+=gems.tags
 
 let g:user_zen_expandabbr_key = '<c-e>'
 let g:use_zen_complete_tag = 1
@@ -196,5 +197,10 @@ nnoremap <F3> :NumbersToggle<CR>
 
 
 " Start the Corna Simulator with F3 for iPhone skin. Shift-F3 for iPad skin.
-map <leader>s :!/Applications/CoronaSDK/simulator -project %:p -skin iPhone4<CR>
-map <leader>sp :!/Applications/CoronaSDK/simulator -project %:p -skin iPad<CR>
+map <leader>s :!corona -project %:p -skin iPhone4<CR>
+map <leader>sp :!corona -project %:p -skin iPad<CR>
+
+
+"PHP Code Sniffer standards
+let g:phpcs_std_list="NatronBaxter"
+let g:syntastic_phpcs_conf="--standard=NatronBaxter"

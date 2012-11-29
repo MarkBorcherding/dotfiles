@@ -31,7 +31,7 @@ plugins=(git rails3 ruby brew github osx gem bundler git-flow heroku node npm te
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=./node_modules/.bin:~/bin:/usr/local/bin:$PATH:
+export PATH=~/pear/bin:./node_modules/.bin:~/bin:/usr/local/bin:$PATH:
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 alias ls="ls -G"
 
@@ -77,3 +77,6 @@ compinit
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
