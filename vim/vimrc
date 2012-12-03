@@ -23,14 +23,17 @@ nnoremap <leader>d :NERDTreeToggle<Enter>
 "let g:fuzzy_ignore=".git/**/*;.svn/**/*;*.gif;*.png;*.jpg;*.log;tmp/**/*"
 
 " Command-T
-map <leader>t :CommandT<Enter>
-map <leader><S-t> :CommandTFlush<Enter>:CommandT<Enter>
-map <leader><c-t> :CommandTTag<Enter>
-map <leader>b :CommandTBuffer<Enter>
-" lets try and put the command t window at the bottom
-"let g:CommandTMatchWindowAtTop=1
-let g:CommandTMatchWindowReverse=1
-:set wildignore+=*.o,*.obj,.git,*.png,*.jpg
+" map <leader>t :CommandT<Enter>
+" map <leader><S-t> :CommandTFlush<Enter>:CommandT<Enter>
+" map <leader><c-t> :CommandTTag<Enter>
+" map <leader>b :CtrlPBuffer<Enter>
+" let g:CommandTMatchWindowReverse=1
+" :set wildignore+=*.o,*.obj,.git,*.png,*.jpg
+
+" CtrlP.vim
+map <leader>t :CtrlP<Enter>
+map <leader>b :CtrlPBuffer<Enter>
+let g:ctrlp_working_path_mode = '0'
 
 set background=dark
 colorscheme tir_black
