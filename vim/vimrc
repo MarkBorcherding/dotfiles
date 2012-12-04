@@ -32,8 +32,12 @@ nnoremap <leader>d :NERDTreeToggle<Enter>
 
 " CtrlP.vim
 map <leader>t :CtrlP<Enter>
+map <leader>T :CtrlPClearAllCaches<Enter>:CtrlP<Enter>
+map <leader>] :CtrlPTag<Enter>
 map <leader>b :CtrlPBuffer<Enter>
 let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\tags'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 
 set background=dark
 colorscheme tir_black
