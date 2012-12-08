@@ -212,6 +212,13 @@ map <leader>sp :!corona -project %:p -skin iPad<CR>
 let g:phpcs_std_list="NatronBaxter"
 let g:syntastic_phpcs_conf="--standard=NatronBaxter"
 
-
 au BufRead,BufNewFile *.js.php set filetype=javascript
 au BufRead,BufNewFile *.css.php set filetype=css
+
+
+" Gist setup
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_show_privates = 1
+let g:gist_post_private = 1
+
