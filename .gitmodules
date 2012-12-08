@@ -103,3 +103,6 @@
 [submodule "vim/vimfiles/bundle/ctrip.vim"]
 	path = vim/vimfiles/bundle/ctrip.vim
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/vimfiles/bundle/webapi-vim"]
+	path = vim/vimfiles/bundle/webapi-vim
+	url = git://github.com/mattn/webapi-vim.git
