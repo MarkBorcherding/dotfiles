@@ -211,3 +211,7 @@ map <leader>sp :!corona -project %:p -skin iPad<CR>
 "PHP Code Sniffer standards
 let g:phpcs_std_list="NatronBaxter"
 let g:syntastic_phpcs_conf="--standard=NatronBaxter"
+
+
+au BufRead,BufNewFile *.js.php set filetype=javascript
+au BufRead,BufNewFile *.css.php set filetype=css
