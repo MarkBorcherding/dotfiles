@@ -8,27 +8,13 @@ syntax on
 set directory=$HOME/.vimtmp//,.  " Keep swap files in one location
 
 set laststatus=2                  " Show the status line all the time
+
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 set shell=/bin/sh
 
+" NERDTree
 nnoremap <leader>d :NERDTreeToggle<Enter>
-
-" Use Jamis Buck's file opening plugin FuzzyFinder
-"map <leader>t :FuzzyFinderFile<Enter>
-"map <leader><S-t> :FuzzyFinderTag<Enter>
-"map <leader>b :FuzzyFinderBuffer<Enter>
-"map <leader>] :FuzzyFinderMruFile<Enter>
-"let g:fuzzy_ceiling=25000
-"let g:fuzzy_ignore=".git/**/*;.svn/**/*;*.gif;*.png;*.jpg;*.log;tmp/**/*"
-
-" Command-T
-" map <leader>t :CommandT<Enter>
-" map <leader><S-t> :CommandTFlush<Enter>:CommandT<Enter>
-" map <leader><c-t> :CommandTTag<Enter>
-" map <leader>b :CtrlPBuffer<Enter>
-" let g:CommandTMatchWindowReverse=1
-" :set wildignore+=*.o,*.obj,.git,*.png,*.jpg
 
 " CtrlP.vim
 map <leader>t :CtrlP<Enter>
@@ -39,19 +25,23 @@ let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\tags'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 
+" colors
 set t_Co=256
 set background=dark
 colorscheme tir_black
 
+
 set visualbell                    " No beeping.
+
+set history=1000                  " Store a lot of history
 
 set tabstop=2                     " Global tab width.
 set shiftwidth=2                  " And again, related.
 set expandtab                     " Use spaces instead of tabs
 set smarttab                      " sw at start of line, sts everywhere else
+set autoread                      " Reload files changed outside vim
 set autoindent
 
-set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -61,6 +51,12 @@ compiler ruby         " Enable compiler support for ruby
 let Tlist_Ctags_Cmd = '/usr/local/Cellar/ctags/5.8/bin/ctags'
 set tags+=gems.tags
 
+" Indentation
+set list listchars=tab:\ \ ,trail:·
+set nowrap       "Don't wrap lines
+set linebreak    "Wrap lines at convenient points
+
+" Zen Coding Settings
 let g:user_zen_expandabbr_key = '<c-e>'
 let g:use_zen_complete_tag = 1
 
@@ -86,20 +82,28 @@ if bufwinnr(1)
 
 endif
 
-
+" Tab Settings
 map tn :tabnew<cr>
 map th :tabprevious<cr>
 map tl :tabnext<cr>
 map tt :tabnext <cr>
 map tx :tabclose<cr>
 
-set t_Co=256
 
 " power line
 let g:Powerline_symbols = 'fancy'
 
 " auto remove trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set incsearch        "Find the next match as we type the search
+set hlsearch         "Hilight searches by default
+
+:nnoremap <CR> :nohlsearch<cr>  " Clear the search buffer when hitting return
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helpful shortcuts
@@ -190,8 +194,7 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 " " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
-" " Clear the search buffer when hitting return
-:nnoremap <CR> :nohlsearch<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
