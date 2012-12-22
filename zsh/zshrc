@@ -76,6 +76,8 @@ compinit
 [[ -s $HOME/.secrets ]] && source $HOME/.secrets
 
 
+export PATH="/usr/local/sbin:$PATH" #added to keep brew happy
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ### Added by the Heroku Toolbelt
