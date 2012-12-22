@@ -151,6 +151,12 @@ function! RunTestFile(...)
         let command_suffix = ""
     endif
 
+    "If were in Elgg throw it all out and just launch the web page
+    if filereadable("start.php")
+      exec ":!open http://evoke.dev/engine/tests/suite.php"
+      return
+    end
+
     " Run the tests for the previously-marked file.
     let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\|.js\|Test.php\)$') != -1
     if in_test_file
