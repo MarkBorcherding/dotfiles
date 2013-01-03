@@ -7,12 +7,6 @@
 [submodule "textmate/bundles/ini.tmbundle"]
 	path = textmate/bundles/ini.tmbundle
 	url = https://github.com/textmate/ini.tmbundle.git
-[submodule "vim/vimfiles/bundle/fuzzy_finder"]
-	path = vim/vimfiles/bundle/fuzzy_finder
-	url = https://github.com/jamis/fuzzy_file_finder.git
-[submodule "vim/vimfiles/bundle/vim-fuzzyfinder"]
-	path = vim/vimfiles/bundle/vim-fuzzyfinder
-	url = https://github.com/itspriddle/vim-fuzzyfinder-pathogen.git
 [submodule "vim/vimfiles/bundle/vim-fugitive"]
 	path = vim/vimfiles/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
@@ -46,9 +40,6 @@
 [submodule "vim/vimfiles/bundle/vim-endwise"]
 	path = vim/vimfiles/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "vim/vimfiles/bundle/command-t"]
-	path = vim/vimfiles/bundle/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
