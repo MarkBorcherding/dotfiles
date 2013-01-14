@@ -205,16 +205,7 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
-" Switch between relative and absolute number
-nnoremap <F3> :NumbersToggle<CR>
-
-
-" Start the Corna Simulator with F3 for iPhone skin. Shift-F3 for iPad skin.
-map <leader>s :!corona -project %:p -skin iPhone4<CR>
-map <leader>sp :!corona -project %:p -skin iPad<CR>
-
-
-"PHP Code Sniffer standards
+" PHP Code Sniffer standards
 let g:phpcs_std_list="NatronBaxter"
 let g:syntastic_phpcs_conf="--standard=NatronBaxter"
 
