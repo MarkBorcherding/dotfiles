@@ -26,8 +26,6 @@ plugins=(git rails3 ruby brew github osx gem bundler git-flow heroku node npm te
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/pear/bin:./node_modules/.bin:~/bin:/usr/local/bin:$PATH:
-export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 alias ls="ls -G"
 
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
@@ -39,6 +37,19 @@ unsetopt auto_name_dirs
 # example:  mmv *.data *.backup_data
 autoload -U zmv
 alias mmv='noglob zmv -W'
+
+# Paths
+export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
+
+PATH="$HOME/pear/bin:$PATH"                 # Pear bins
+PATH="./node_modules/.bin:$PATH"            # Add the local node modules bins
+PATH="/usr/local/share/npm/bin:$PATH"       # Add the global npm bins to the path
+PATH="/usr/local/bin:/usr/local/sbin:$PATH" # Add to keep brew happy
+PATH="/usr/local/heroku/bin:$PATH"          # Added by the Heroku Toolbelt
+PATH="$HOME/.rvm/bin:$PATH"                 # Add RVM to PATH for scripting
+PATH="$HOME/bin:$PATH"                      # My additional bins
+export PATH
+
 
 # Colors
 autoload -U colors
@@ -71,7 +82,3 @@ compinit
 [[ -s $HOME/.secrets ]] && source $HOME/.secrets
 
 
-export PATH="/usr/local/share/npm/bin:$PATH" # Add the global npm bins to the path
-export PATH="/usr/local/sbin:$PATH"           # Add to keep brew happy
-export PATH=$PATH:$HOME/.rvm/bin              # Add RVM to PATH for scripting
-export PATH="/usr/local/heroku/bin:$PATH"     # Added by the Heroku Toolbelt
