@@ -28,6 +28,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 set t_Co=256
 set background=dark
 colorscheme tir_black
+"colorscheme Tomorrow-Night
 
 set visualbell                    " No beeping.
 set history=1000                  " Store a lot of history
@@ -38,6 +39,9 @@ set expandtab                     " Use spaces instead of tabs
 set smarttab                      " sw at start of line, sts everywhere else
 set autoread                      " Reload files changed outside vim
 set autoindent
+
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc files
 
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
