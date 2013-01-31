@@ -94,3 +94,6 @@
 [submodule "vim/vimfiles/bundle/gist-vim"]
 	path = vim/vimfiles/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
+[submodule "vim/vimfiles/bundle/editorconfig-vim"]
+	path = vim/vimfiles/bundle/editorconfig-vim
+	url = git://github.com/editorconfig/editorconfig-vim.git
