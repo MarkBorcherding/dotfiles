@@ -97,3 +97,6 @@
 [submodule "vim/vimfiles/bundle/editorconfig-vim"]
 	path = vim/vimfiles/bundle/editorconfig-vim
 	url = git://github.com/editorconfig/editorconfig-vim.git
+[submodule "vim/vimfiles/bundle/vim-indent-guides"]
+	path = vim/vimfiles/bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git

@@ -21,7 +21,7 @@ map <leader>T :CtrlPClearAllCaches<Enter>:CtrlP<Enter>
 map <leader>] :CtrlPTag<Enter>
 map <leader>b :CtrlPBuffer<Enter>
 let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\tags'
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\tags$|\node_modules$'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 
 " colors
@@ -224,3 +224,10 @@ let g:gist_show_privates = 1
 let g:gist_post_private = 1
 
 map <leader>f :w<CR>:!forge build ios; forge run ios<CR>
+
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=232
+hi IndentGuidesEven ctermbg=234
+
