@@ -179,7 +179,6 @@ endfunction
 map <leader>r :call RunTestFile()<cr>
 map <leader>R :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
-map <leader>c :w\|:!script/features<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
 map <leader>D :silent !rake db:test:prepare<cr>
 
@@ -225,15 +224,15 @@ let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
 
+" Launch a forge project in the simulator
 map <leader>f :w<CR>:!yeoman sim<CR>
 
+" Indent guidelines
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=234
 hi IndentGuidesEven ctermbg=235
-
-
 
 
 
@@ -281,3 +280,29 @@ function! SearchDash()
   redraw!
 endfunction
 map <leader>D :call SearchDash()<CR>
+
+
+
+" Quick CoffeeScript compile
+map <leader>c :CoffeeCompile vert<cr>
+map <leader>C :CoffeeCompile watch vert<cr>
+
+
+
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
+nmap <leader>] :TagbarToggle<Enter>
+nmap <leader>} :TagbarOpenAutoClose<Enter>
