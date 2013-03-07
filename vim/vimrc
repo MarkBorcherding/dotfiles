@@ -305,5 +305,5 @@ if executable('coffeetags')
         \ }
         \ }
 endif
-nmap <leader>] :TagbarToggle<Enter>
-nmap <leader>} :TagbarOpenAutoClose<Enter>
+nmap <leader>[ :TagbarToggle<Enter>
+nmap <leader>{ :TagbarOpenAutoClose<Enter>
