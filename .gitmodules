@@ -100,3 +100,6 @@
 [submodule "vim/vimfiles/bundle/vim-indent-guides"]
 	path = vim/vimfiles/bundle/vim-indent-guides
 	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "vim/vimfiles/bundle/vim-gutter"]
+	path = vim/vimfiles/bundle/vim-gutter
+	url = git://github.com/airblade/vim-gitgutter.git
