@@ -103,3 +103,6 @@
 [submodule "vim/vimfiles/bundle/vim-gutter"]
 	path = vim/vimfiles/bundle/vim-gutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "vim/vimfiles/bundle/vim-loomscript"]
+	path = vim/vimfiles/bundle/vim-loomscript
+	url = git://github.com/netmute/vim-loomscript.git
