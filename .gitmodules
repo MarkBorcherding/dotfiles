@@ -106,3 +106,6 @@
 [submodule "vim/vimfiles/bundle/vim-loomscript"]
 	path = vim/vimfiles/bundle/vim-loomscript
 	url = git://github.com/netmute/vim-loomscript.git
+[submodule "vim/vimfiles/bundle/tagbar"]
+	path = vim/vimfiles/bundle/tagbar
+	url = git://github.com/majutsushi/tagbar.git
