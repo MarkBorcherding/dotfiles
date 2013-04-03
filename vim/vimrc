@@ -27,8 +27,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 " colors
 set t_Co=256
 set background=dark
-colorscheme tir_black
-"colorscheme Tomorrow-Night
+"colorscheme tir_black
+colorscheme Tomorrow-Night
 
 set visualbell                    " No beeping.
 set history=1000                  " Store a lot of history
