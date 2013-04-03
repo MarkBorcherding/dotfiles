@@ -11,3 +11,7 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Disable the dashbord
 defaults write com.apple.dashboard mcx-disabled -boolean YES
+
+
+# Show all files
+# defaults write com.apple.finder AppleShowAllFiles TRUE
