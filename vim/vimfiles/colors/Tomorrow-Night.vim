@@ -20,7 +20,7 @@ let s:window = "4d5057"
 
 " Console 256 Colours
 if !has("gui_running")
-	let s:background = "303030"
+	let s:background = "252525"
 	let s:window = "5e5e5e"
 	let s:line = "3a3a3a"
 	let s:selection = "585858"
@@ -332,6 +332,17 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("javaScriptRepeat", s:purple, "", "")
 	call <SID>X("javaScriptNumber", s:orange, "", "")
 	call <SID>X("javaScriptMember", s:orange, "", "")
+
+  " CoffeeScript Highlighting
+	call <SID>X("coffeeConditional", s:purple, "", "")
+	call <SID>X("coffeeRepeat", s:purple, "", "")
+	call <SID>X("coffeeKeyword", s:blue, "", "")
+	call <SID>X("coffeeInterpString", s:red, "", "")
+	call <SID>X("coffeeIdentifier", s:red, "", "")
+	call <SID>X("coffeeParens", s:orange, "", "")
+	call <SID>X("coffeeBrackets", s:yellow, "", "")
+	call <SID>X("coffeeSpecialOp", s:orange, "", "")
+	call <SID>X("coffeeProtoAccess", s:yellow, "", "")
 
 	" HTML Highlighting
 	call <SID>X("htmlTag", s:red, "", "")
