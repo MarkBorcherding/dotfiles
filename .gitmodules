@@ -106,3 +106,6 @@
 [submodule "vim/vimfiles/bundle/tagbar"]
 	path = vim/vimfiles/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "vim/vimfiles/bundle/syntastic"]
+	path = vim/vimfiles/bundle/syntastic
+	url = git@github.com:MarkBorcherding/syntastic.git
