@@ -54,8 +54,12 @@ PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres.app to
 PATH="/usr/local/lib/python2.7/site-packages:$PATH"        # Add Python packages to path
 export PATH
 
-
 # Colors
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  export TERM='xterm-256color'
+else
+  export TERM='xterm-color'
+fi
 autoload -U colors
 colors
 setopt prompt_subst
@@ -70,7 +74,7 @@ PROMPT='
 $(display-rails-env)%{$terminfo[bold]%}%{$fg[black]%}$(whoami)@$(hostname)%{$reset_color%} %~
 ${smiley}  %{$reset_color%}'
 
-RPROMPT='%{$fg[white]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
+RPROMPT='%{$fg[black]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
 
 # Show completion on first TAB
 setopt menucomplete
