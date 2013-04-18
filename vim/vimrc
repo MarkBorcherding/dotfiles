@@ -218,6 +218,13 @@ au BufRead,BufNewFile *.js.php set filetype=javascript
 au BufRead,BufNewFile *.css.php set filetype=css
 
 
+" AngularJS Syntastic Tweaks
+let g:syntastic_html_tidy_ignore_errors = [
+      \ "proprietary attribute",
+      \ "trimming empty"
+      \]
+
+
 " Gist setup
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
