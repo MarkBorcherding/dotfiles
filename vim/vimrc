@@ -226,7 +226,8 @@ au BufRead,BufNewFile *.css.php set filetype=css
 " AngularJS Syntastic Tweaks
 let g:syntastic_html_tidy_ignore_errors = [
       \ "proprietary attribute",
-      \ "trimming empty"
+      \ "trimming empty",
+      \ "<ng-include> is not recognized!"
       \]
 
 
