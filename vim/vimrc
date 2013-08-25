@@ -1,0 +1,13 @@
+set nocompatible                  " Must come first because it changes other options.
+
+silent! call pathogen#runtime_append_all_bundles()
+
+syntax on
+
+set directory=$HOME/.vimtmp//,.  " Keep swap files in one location
+
+set laststatus=2                  " Show the status line all the time
+
+set t_Co=256
+set background=dark
+colorscheme Tomorrow-Night
