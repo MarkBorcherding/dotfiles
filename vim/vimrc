@@ -11,8 +11,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
-
-
+Bundle 'scrooloose/syntastic'
 
 let g:airline_powerline_fonts = 1
 
@@ -41,4 +40,3 @@ set laststatus=2                  " Show the status line all the time
 set t_Co=256
 set background=dark
 colorscheme Tomorrow-Night
-
