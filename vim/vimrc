@@ -13,6 +13,7 @@ Bundle 'tpope/vim-git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdtree'
 Bundle 'airblade/vim-gitgutter'
 
 let g:airline_powerline_fonts = 1
