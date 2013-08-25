@@ -8,10 +8,31 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
+Bundle 'kien/ctrlp.vim'
+Bundle 'bling/vim-airline'
 
-filetype plugin indent on
 
-syntax on
+
+let g:airline_powerline_fonts = 1
+
+set visualbell                    " No beeping.
+set history=1000                  " Store a lot of history
+set number                        " Turn on line numbers
+set tabstop=2                     " Global tab width.
+set shiftwidth=2                  " And again, related.
+set expandtab                     " Use spaces instead of tabs
+set smarttab                      " sw at start of line, sts everywhere else
+set autoread                      " Reload files changed outside vim
+set autoindent
+
+set exrc            " enable per-directory .vimrc files
+set secure          " disable unsafe commands in local .vimrc files
+
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
 
 set directory=$HOME/.vimtmp//,.  " Keep swap files in one location
 
