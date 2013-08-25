@@ -1,6 +1,15 @@
 set nocompatible                  " Must come first because it changes other options.
 
-silent! call pathogen#runtime_append_all_bundles()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+Bundle 'tpope/vim-fugitive'
+
+filetype plugin indent on
 
 syntax on
 
@@ -11,3 +20,4 @@ set laststatus=2                  " Show the status line all the time
 set t_Co=256
 set background=dark
 colorscheme Tomorrow-Night
+
