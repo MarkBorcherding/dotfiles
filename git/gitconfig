@@ -1,3 +1,27 @@
 [user]
 	email = markborcherding@gmail.com
 	name = Mark Borcherding
+
+[color]
+  ui = true
+
+
+[github]
+  user = markborcherding
+[rerere]
+  enabled = 1
+[alias]
+  ra = !git r --all
+  r = !git l -20
+  l = log --graph --abbrev-commit --date=relative
+  lg = log --graph --abbrev-commit --date=relative
+  st = status
+  ci = commit
+  co = checkout
+  di = diff
+  dc = diff --cached
+  amend = commit --amend
+  aa = add --all
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+
