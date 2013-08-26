@@ -26,6 +26,21 @@ set directory=$HOME/.vimtmp//,.  " Keep swap files in one location
 
 set laststatus=2                  " Show the status line all the time
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Appearance
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
 set background=dark
 colorscheme Tomorrow-Night
+
+
+autocmd BufWritePre * :%s/\s\+$//e     " auto remove trailing whitespace
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set incsearch        "Find the next match as we type the search
+set hlsearch         "Hilight searches by default
+
+:nnoremap <CR> :nohlsearch<cr>  " Clear the search buffer when hitting return
