@@ -21,8 +21,9 @@ map <leader>T :CtrlPClearAllCaches<Enter>:CtrlP<Enter>
 map <leader>] :CtrlPTag<Enter>
 map <leader>b :CtrlPBuffer<Enter>
 let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$|\tags$|\node_modules$'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|dist|src|temp|development|tags)$'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
+
 
 " colors
 set t_Co=256

@@ -48,10 +48,10 @@ PATH="./node_modules/.bin:$PATH"                  # Add the local node modules b
 PATH="/usr/local/share/npm/bin:$PATH"             # Add the global npm bins to the path
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"       # Add to keep brew happy
 PATH="/usr/local/heroku/bin:$PATH"                # Added by the Heroku Toolbelt
-PATH="$HOME/.rvm/bin:$PATH"                       # Add RVM to PATH for scripting
 PATH="$HOME/bin:$PATH"                            # My additional bins
 PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH" # Add Postgres.app to the path
 PATH="/usr/local/lib/python2.7/site-packages:$PATH"        # Add Python packages to path
+PATH="$HOME/.rvm/bin:$PATH"                       # Add RVM to PATH for scripting
 export PATH
 
 # Colors
