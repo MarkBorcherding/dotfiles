@@ -1,3 +1,5 @@
+#!/bin/bash
+#
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -14,9 +16,11 @@ unset file
 # If possible, add tab completion for many more commands
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 [ -f /usr/share/bash-completion/bash_completion ] && source /usr/share/bash-completion/bash_completion
-for f in $HOME/bash_completion.d/*; do
-  source $f;
-done
+if [ -d $HOME/bash_completion.d ]; then
+  for f in $HOME/bash_completion.d/*; do
+    source $f;
+  done
+fi;
 
 export TERM="xterm-256color"
 
