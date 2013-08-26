@@ -36,4 +36,7 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+# vi mode on the command line
+set -o vi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
