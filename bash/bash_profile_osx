@@ -8,4 +8,4 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 alias ios_sim="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 
 # Don't for get to brew install bash-completion
-[ -f /usr/local/etc/bash_completion ] && source /usr/local/etc/bash_completion
+[ -f $(brew --prefix)/etc/bash_completion ] && source $(brew --prefix)/etc/bash_completion
