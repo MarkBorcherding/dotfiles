@@ -29,6 +29,7 @@ Bundle "tpope/vim-rails.git"
 Bundle "tpope/vim-rake.git"
 Bundle "tpope/vim-rvm.git"
 Bundle 'ck3g/vim-change-hash-syntax'
+Bundle 'vim-ruby/vim-ruby'
 
 
 
