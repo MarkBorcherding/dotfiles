@@ -7,17 +7,20 @@ Bundle 'gmarik/vundle'
 
 
 " Git
+Bundle 'gregsexton/gitv'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-git'
 Bundle 'airblade/vim-gitgutter'
 
 
 " General Vim
+Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 
 " Cosmetic
+Bundle 'vim-scripts/hexHighlight.vim'
 Bundle 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
 
