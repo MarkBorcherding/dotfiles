@@ -1,0 +1,60 @@
+#!/bin/bash
+
+
+move_old_file (){
+  existing_file="$1"
+  backup_file="$existing_file".old
+  echo "Backing up existing $existing_file to $backup_file "
+  mv $existing_file $backup_file
+}
+
+link_file () {
+  source=$(readlink -f $1)
+  destination=$(readlink -f $2)
+
+  if [ "$source" == "$destination" ] ; then
+    echo "Already linked $source to $destination"
+    return 0;
+  fi
+
+  if [ -a $destination ]; then
+    move_old_file $destination
+  fi
+
+  echo "Linking $source to $destination"
+  ln -s $source $destination
+}
+
+link_dir () {
+  link_file $1 $2
+}
+
+# Setup Bash
+link_file bash/bashrc ~/.bashrc
+link_file bash/bash_aliases ~/.bash_aliases
+link_file bash/bash_profile ~/.bash_profile
+link_file bash/bash_prompt ~/.bash_prompt
+link_file bash/path ~/.path
+link_dir bash/bash_completion.d ~/bash_completion.d
+[ $(uname) = "Darwin" ] && link_file bash/bash_profile_osx ~/.bash_profile_osx
+
+
+# Setup Vim
+link_dir vim ~/.vim
+link_file vim/vimrc ~/.vimrc
+link_file vim/gvimrc ~/.gvrimrc
+[ ! -d ~/.vim/bundle/vundle ] && git clone https://github.com/gmarik/vundle.git /.vim/bundle/vundle
+vim +BundleInstall +qall
+
+# Setup Git
+link_file git/gitconfig ~/.gitconfig
+link_file git/gitignore_global ~/.gitignore_global
+
+
+# Setup Ruby
+link_file ruby/gemrc ~/.gemrc
+link_file ruby/irbrc ~/.irbrc
+
+# Create personal bin dir
+[ ! -d ~/bin ] && mkdir ~/bin
+link_file bin/gibo ~/bin/gibo
