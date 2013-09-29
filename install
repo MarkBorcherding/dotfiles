@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 move_old_file (){
   existing_file="$1"
   backup_file="$existing_file".old
