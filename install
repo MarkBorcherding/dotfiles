@@ -8,8 +8,20 @@ move_old_file (){
 }
 
 link_file () {
-  source=$(readlink -f $1)
-  destination=$(readlink -f $2)
+
+  if [ $(uname) = "Darwin" ]; then
+    if [ $(which greadlink) ]; then
+      source=$(greadlink -f $1)
+      destination=$(greadlink -f $2)
+    else
+      echo "Please install greadlink via: brew install coreutils"
+      exit 0;
+    fi
+  else
+    source=$(readlink -f $1)
+    destination=$(readlink -f $2)
+  fi
+
 
   if [ "$source" == "$destination" ] ; then
     echo "Already linked $source to $destination"
@@ -21,7 +33,7 @@ link_file () {
   fi
 
   echo "Linking $source to $destination"
-  ln -s $source $destination
+  ln -Fs $source $destination
 }
 
 link_dir () {
