@@ -42,6 +42,7 @@ link_dir () {
 
 # Setup Bash
 link_file bash/bashrc ~/.bashrc
+link_file bash/profile ~/.profile
 link_file bash/bash_aliases ~/.bash_aliases
 link_file bash/bash_profile ~/.bash_profile
 link_file bash/bash_prompt ~/.bash_prompt
