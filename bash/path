@@ -2,5 +2,6 @@
 
 PATH=$PATH:$HOME/bin      # Custom bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=/usr/local/sbin:$PATH
 
-export PATH="$HOME/bin:$PATH"
+export PATH
