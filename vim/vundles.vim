@@ -17,6 +17,9 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'majutsushi/tagbar'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
+map <Leader>d :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 Bundle 'scrooloose/syntastic'
 
 " Cosmetic
