@@ -21,18 +21,26 @@ syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+compiler ruby         " Enable compiler support for ruby
 
-set directory=$HOME/.vimtmp//,.  " Keep swap files in one location
-
+set directory=$HOME/.vimtmp//,.   " Keep swap files in one location
 set laststatus=2                  " Show the status line all the time
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
-set background=dark
-colorscheme Tomorrow-Night
-
+if  $ITERM_PROFILE == 'Tomorrow'
+  colorscheme Tomorrow
+  set background=light
+elseif $ITERM_PROFILE == 'IR_Black'
+  colorscheme ir_black
+  set background=dark
+else
+  colorscheme Tomorrow-Night
+  set background=dark
+endif
 
 autocmd BufWritePre * :%s/\s\+$//e     " auto remove trailing whitespace
 
@@ -59,3 +67,30 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" CtrlP """"""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-p> :CtrlP<Enter>
+map <C-P> :CtrlPClearAllCaches<Enter>:CtrlP<Enter>
+let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|dist|src|temp|development|tags)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
+
+" NERDTree """""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Leader>d :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Airline """"""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline_powerline_fonts = 1
+
+" Vim Indent Guides """""""""""""""""""""""""""""""""""""""""""""
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray28 ctermbg=238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray27 ctermbg=236
+                "oasasd
