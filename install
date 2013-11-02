@@ -66,6 +66,7 @@ link_file git/gitignore_global ~/.gitignore_global
 # Setup Ruby
 link_file ruby/gemrc ~/.gemrc
 link_file ruby/irbrc ~/.irbrc
+link_file ruby/rspec ~/.rspec
 
 # Create personal bin dir
 [ ! -d ~/bin ] && mkdir ~/bin
