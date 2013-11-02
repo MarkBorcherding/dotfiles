@@ -9,18 +9,22 @@ move_old_file (){
 
 link_file () {
 
-  if [ $(uname) = "Darwin" ]; then
-    if [ $(which greadlink) ]; then
-      source=$(greadlink -f $1)
-      destination=$(greadlink -f $2)
-    else
-      echo "Please install greadlink via: brew install coreutils"
-      exit 0;
-    fi
-  else
-    source=$(readlink -f $1)
-    destination=$(readlink -f $2)
-  fi
+  case "$(uname)" in
+    "Darwin")
+      if [ $(which greadlink) ]; then
+        readlink="greadlink"
+      else
+        echo "Please install greadlink via: brew install coreutils"
+        exit 0;
+      fi
+      ;;
+    *)
+      readlink="readlink"
+      ;;
+  esac
+
+  source=$($readlink -f $1)
+  destination=$($readlink -f $2)
 
 
   if [ "$source" == "$destination" ] ; then
@@ -40,15 +44,14 @@ link_dir () {
   link_file $1 $2
 }
 
+# Create a single path to link all files not needed in home
+link_dir . ~/.dotfiles
+
+
 # Setup Bash
 link_file bash/bashrc ~/.bashrc
 link_file bash/profile ~/.profile
-link_file bash/bash_aliases ~/.bash_aliases
-link_file bash/bash_profile ~/.bash_profile
-link_file bash/bash_prompt ~/.bash_prompt
-link_file bash/path ~/.path
 link_dir bash/bash_completion.d ~/bash_completion.d
-[ $(uname) = "Darwin" ] && link_file bash/bash_profile_osx ~/.bash_profile_osx
 
 
 # Setup Vim
