@@ -51,6 +51,7 @@ link_dir . ~/.dotfiles
 # Setup Bash
 link_file bash/bashrc ~/.bashrc
 link_file bash/profile ~/.profile
+link_file bash/inputrc ~/.inputrc
 link_dir bash/bash_completion.d ~/bash_completion.d
 
 
