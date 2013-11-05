@@ -54,6 +54,9 @@ link_file bash/profile ~/.profile
 link_file bash/inputrc ~/.inputrc
 link_dir bash/bash_completion.d ~/bash_completion.d
 
+# Tmux
+link_file tmux/tmux.conf ~/.tmux.conf
+
 
 # Setup Vim
 link_dir vim ~/.vim
