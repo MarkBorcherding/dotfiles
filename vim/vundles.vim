@@ -29,6 +29,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 
+" Language Specific
+Bundle "kchmck/vim-coffee-script"
+map <leader>c :CoffeeCompile vert<cr>
+map <leader>C :CoffeeCompile watch vert<cr>
+
 " Ruby / Rails
 Bundle "tpope/vim-rails.git"
 Bundle "tpope/vim-rake.git"
