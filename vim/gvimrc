@@ -1,6 +1,6 @@
 
 set t_Co=256 " Full Color
-set guifont=Droid\ Sans\ Mono\ for\ Powerline
+set guifont=Sauce\ Code\ Powerline:h13
 
 " Remove all scrollbars
 set guioptions-=l   " Left
