@@ -21,7 +21,7 @@ has_stow() {
 
 has_stow
 
-for package in bash git
+for package in bash git ruby vim
 do
   stow --verbose --target="$HOME" $package
 done
