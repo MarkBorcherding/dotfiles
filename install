@@ -19,15 +19,20 @@ has_stow() {
   return 0
 }
 
-has_stow
+install() {
+  has_stow
 
-for package in bash git ruby vim
-do
-  stow --verbose --target="$HOME" $package
-done
+  for package in bash git ruby vim
+  do
+    stow --verbose --target="$HOME" $force $package
+    [ $? -ne 0 ] && stow_failed=true
+  done
 
-# Setup Vim
-[ ! -d ~/.vim/bundle/vundle ] && git clone https://github.com/gmarik/vundle.git /.vim/bundle/vundle
-vim +BundleInstall +qall
+  # Setup Vim
+  [ ! -d ~/.vim/bundle/vundle ] && git clone https://github.com/gmarik/vundle.git /.vim/bundle/vundle
+  vim +BundleInstall +qall
 
-echo 'Installation complete'
+  echo 'Installation complete'
+}
+
+install
