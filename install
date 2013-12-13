@@ -20,7 +20,11 @@ has_stow() {
 }
 
 has_stow
-stow --verbose --target="$HOME" bash
+
+for package in bash git
+do
+  stow --verbose --target="$HOME" $package
+done
 
 # Setup Vim
 [ ! -d ~/.vim/bundle/vundle ] && git clone https://github.com/gmarik/vundle.git /.vim/bundle/vundle
