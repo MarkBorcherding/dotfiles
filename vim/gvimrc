@@ -1,4 +1,3 @@
-
 set t_Co=256 " Full Color
 set guifont=Sauce\ Code\ Powerline:h13
 

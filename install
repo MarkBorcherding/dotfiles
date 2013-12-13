@@ -1,80 +1,29 @@
 #!/bin/bash
 
-move_old_file (){
-  existing_file="$1"
-  backup_file="$existing_file".old
-  echo "Backing up existing $existing_file to $backup_file "
-  mv $existing_file $backup_file
-}
-
-link_file () {
-
-  case "$(uname)" in
-    "Darwin")
-      if [ $(which greadlink) ]; then
-        readlink="greadlink"
-      else
-        echo "Please install greadlink via: brew install coreutils"
-        exit 0;
-      fi
-      ;;
-    *)
-      readlink="readlink"
-      ;;
-  esac
-
-  source=$($readlink -f $1)
-  destination=$($readlink -f $2)
-
-
-  if [ "$source" == "$destination" ] ; then
-    echo "Already linked $source to $destination"
-    return 0;
+has_stow() {
+  if [ ! -f "$(which stow)" ]; then
+    echo 'Please install stow.'
+    echo '  See http://www.gnu.org/software/stow/'
+    echo ''
+    echo '  To install:'
+    case "$(uname)" in
+      "Darwin")
+        echo '  brew install stow'
+        ;;
+      "Linux")
+        echo ' apt-get install stow'
+        ;;
+    esac
+    exit 1
   fi
-
-  if [ -a $destination ]; then
-    move_old_file $destination
-  fi
-
-  echo "Linking $source to $destination"
-  ln -Fs $source $destination
+  return 0
 }
 
-link_dir () {
-  link_file $1 $2
-}
-
-# Create a single path to link all files not needed in home
-link_dir . ~/.dotfiles
-
-
-# Setup Bash
-link_file bash/bashrc ~/.bashrc
-link_file bash/profile ~/.profile
-link_file bash/inputrc ~/.inputrc
-link_dir bash/bash_completion.d ~/bash_completion.d
-
-# Tmux
-link_file tmux/tmux.conf ~/.tmux.conf
-
+has_stow
+stow --verbose --target="$HOME" bash
 
 # Setup Vim
-link_dir vim ~/.vim
-link_file vim/vimrc ~/.vimrc
-link_file vim/gvimrc ~/.gvrimrc
 [ ! -d ~/.vim/bundle/vundle ] && git clone https://github.com/gmarik/vundle.git /.vim/bundle/vundle
 vim +BundleInstall +qall
 
-# Setup Git
-link_file git/gitconfig ~/.gitconfig
-link_file git/gitignore_global ~/.gitignore_global
-
-
-# Setup Ruby
-link_file ruby/gemrc ~/.gemrc
-link_file ruby/irbrc ~/.irbrc
-link_file ruby/rspec ~/.rspec
-
-# Create personal bin dir
-[ ! -d ~/bin ] && mkdir ~/bin
-link_file bin/gibo ~/bin/gibo
+echo 'Installation complete'

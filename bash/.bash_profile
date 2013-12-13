@@ -3,12 +3,12 @@
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.dotfiles/bash/{profile,bash_prompt,bash_aliases,path}; do
+for file in ~/.bash/{prompt,aliases,path}; do
   [ -r "$file" ] && source "$file"
   done
 unset file
 
-[ $(uname) = "Darwin" ] && source "$HOME/.dotfiles/bash/bash_profile_osx"
+[ $(uname) = "Darwin" ] && source "$HOME/.bash/profile_osx"
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
