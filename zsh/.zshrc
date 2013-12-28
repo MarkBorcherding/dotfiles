@@ -21,8 +21,32 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-remove-branch rails ruby rvm brew github osx gem bundler heroku node npm textmate pow vagrant sublime pip vi-mode colored-man bower)
+plugins=(
+  battery
+  brew
+  osx
+  vagrant
+  vi-mode
+  colored-man
+  bower
 
+  capistrano
+  rails
+  ruby
+  rake
+  rvm
+  gem
+  pow
+  bundler
+  coffee
+
+  git
+  git-remove-branch
+  github
+
+  node
+  npm
+)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
