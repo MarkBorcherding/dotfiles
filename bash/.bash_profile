@@ -3,7 +3,7 @@
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
-for file in ~/.bash/{prompt,aliases,path}; do
+for file in ~/.bash/{prompt,aliases}; do
   [ -r "$file" ] && source "$file"
   done
 unset file
@@ -21,8 +21,6 @@ if [ -d $HOME/bash_completion.d ]; then
     source $f;
   done
 fi;
-
-export TERM="xterm-256color"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
