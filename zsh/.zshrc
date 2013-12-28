@@ -21,23 +21,19 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-remove-branch rails3 ruby rvm brew github osx gem bundler heroku node npm textmate pow vagrant sublime pip vi-mode colored-man bower)
+plugins=(git git-remove-branch rails ruby rvm brew github osx gem bundler heroku node npm textmate pow vagrant sublime pip vi-mode colored-man bower)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 alias ls="ls -G"
 
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-export CLICOLOR=1
-export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
 unsetopt auto_name_dirs
 
 # Multiple Move
 # example:  mmv *.data *.backup_data
 autoload -U zmv
 alias mmv='noglob zmv -W'
-
 
 # Colors
 autoload -U colors
@@ -48,6 +44,8 @@ setopt prompt_subst
 unsetopt correct_all
 
 [ -r "$HOME/.zsh/prompt" ] && source "$HOME/.zsh/prompt"
+[ -r "$HOME/.path" ] && source "$HOME/.path"
+
 # Show completion on first TAB
 setopt menucomplete
 

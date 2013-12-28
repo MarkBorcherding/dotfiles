@@ -33,11 +33,12 @@ has_oh_my_zsh() {
 install() {
   has_stow && has_oh_my_zsh
 
+  stow_failed=false
   for package in bash git ruby vim shell zsh
   do
     echo "Stowing $package"
     stow --verbose --target="$HOME" $force $package
-    [ $? -ne 0 ] && stow_failed=true
+    [ $? -ne 0 ] && echo "Unable to stow $package" && stow_failed=true
   done
   $stow_failed && echo "Unable to stow all files. Try ./install -f"
 
