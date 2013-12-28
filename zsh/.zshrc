@@ -29,6 +29,7 @@ plugins=(
   vi-mode
   colored-man
   bower
+  colorize
 
   capistrano
   rails

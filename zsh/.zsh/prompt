@@ -9,3 +9,20 @@ ${smiley}  %{$reset_color%}'
 
 RPROMPT='%{$fg[black]%} $(~/.rvm/bin/rvm-prompt)$(~/bin/git-cwd-info.rb)%{$reset_color%}'
 
+
+#orange='$FG[172]'
+#lime_green='$FG[190]'
+#pink='$FG[009]'
+#purple='$FG[141]'
+#
+#function parse_git_branch() {
+#  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
+#}
+#
+#function git_branch_prompt_info() {
+#  if [ -n "$(git branch --no-color 2> /dev/null)" ]; then
+#    "%{$fg_bold[black]on%} %{$purple%}$(parse_git_branch) %{$fg_bold[black]%}"
+#  fi
+#}
+#
+#PROMPT="%{$pink%}%n %{$fg_bold[black]%}at %{$orange%}%m %{$fg_bold[black]%}in $lime_green%d%{$fg_bold[black]%} $(git_branch_prompt_info)%{$reset_color%}"
