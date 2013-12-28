@@ -49,9 +49,6 @@ plugins=(
 )
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-alias ls="ls -G"
-
 unsetopt auto_name_dirs
 
 # Multiple Move
@@ -68,7 +65,10 @@ setopt prompt_subst
 unsetopt correct_all
 
 [ -r "$HOME/.zsh/prompt" ] && source "$HOME/.zsh/prompt"
-[ -r "$HOME/.path" ] && source "$HOME/.path"
+
+for file in ~/.{path,aliases}; do
+  [ -r "$file" ] && source "$file"
+done
 
 # Show completion on first TAB
 setopt menucomplete
