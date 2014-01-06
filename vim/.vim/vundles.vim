@@ -18,6 +18,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim'
 
 " Cosmetic
 Bundle 'vim-scripts/hexHighlight.vim'
