@@ -46,11 +46,7 @@ has_pygmentize() {
 }
 
 
-install() {
-  has_stow && has_oh_my_zsh
-
-  has_pygmentize
-
+stow_packages() {
   stow_failed=false
   for package in bash git ruby vim shell zsh
   do
@@ -59,12 +55,18 @@ install() {
     [ $? -ne 0 ] && echo "Unable to stow $package" && stow_failed=true
   done
   $stow_failed && echo "Unable to stow all files. Try ./install -f"
+}
 
-
-  # Setup Vim
+setup_vim() {
   [ ! -d $HOME/.vim/bundle/vundle ] && git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
   vim +BundleInstall +qall
+}
 
+install() {
+  has_stow && has_oh_my_zsh
+  has_pygmentize
+  stow_packages
+  setup_vim
   echo 'Installation complete'
 }
 
