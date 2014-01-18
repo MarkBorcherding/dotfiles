@@ -2,15 +2,7 @@
 " Running tests
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! RunTests(filename)
-
-    if a:filename == ''
-      let bg = '!'
-    else
-      let bg = ''
-    end
-
-
+function! RunTests()
     " Write the file and run tests for the given filename
     :w
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
@@ -22,51 +14,38 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    if match(a:filename, '\.feature$') != -1
-        exec ":Dispatch script/features " . a:filename
-    elseif match(a:filename, 'Test\.php$') != -1
-        exec ":!phpunit --colors " . a:filename
-    elseif filereadable("script/test")
-        exec ":!script/test " . a:filename
-    elseif filereadable("test/mocha.opts")
-        exec ":!mocha " . a:filename
-    elseif filereadable("Gruntfile.js")
-        exec ":!yeoman test"
-    elseif filereadable("gemfile")
-        exec ":Dispatch"  . bg . " bundle exec rspec --color " . a:filename
-    else
-        exec ":Dispatch" . bg . " rspec --color " . a:filename
-    end
+    exec ":Dispatch"
 
 endfunction
 
-function! SetTestFile()
+function! SetTestFile(suffix)
     " Set the spec file that tests will be run for.
     let t:grb_test_file=@%
+    if expand('%') =~# '_test\.rb$'
+      compiler rubyunit
+      exec "set makeprg=testrb\ " . @% . a:suffix
+    elseif expand('%') =~# '_spec\.rb$'
+      compiler rspec
+      exec "set makeprg=rspec\ \"" . @% . a:suffix . "\""
+    elseif expand('%') =~# '\.feature$'
+      compiler cucumber
+      exec "set makeprg=cucumber\ \"" . @% . a:suffix . "\""
+    else
+      compiler ruby
+      exec "set makeprg=ruby\ -wc\ \"". @% . a:suffix . "\""
+    endif
 endfunction
 
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    "If were in Elgg throw it all out and just launch the web page
-    if filereadable("start.php")
-      exec ":!open http://evoke.dev/engine/tests/suite.php"
-      return
-    end
-
+function! RunTestFile()
     " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '(.feature\|_spec.\(rb\|coffee\)\|tests.\(coffee\|js\)\|Test.php)$') != -1
+    let in_test_file = match(expand("%"), '.feature\|_spec.rb') != -1
     if in_test_file
-        call SetTestFile()
+        call SetTestFile(a:0)
     elseif !exists("t:grb_test_file")
         echo "no test to run"
         return
     end
-    call RunTests(t:grb_test_file . command_suffix)
+    call RunTests()
 endfunction
 
 function! RunNearestTest()
