@@ -45,3 +45,5 @@ HISTFILESIZE=2000
 
 # vi mode on the command line
 set -o vi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
