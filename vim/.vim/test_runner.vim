@@ -2,7 +2,7 @@
 " Running tests
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! RunTests()
+function! RunTests(filename)
     " Write the file and run tests for the given filename
     :w
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
@@ -14,40 +14,40 @@ function! RunTests()
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    exec ":Dispatch"
+
+    if a:filename =~# '_test\.rb'
+      exec ":Dispatch testrb " .  a:filename
+    elseif a:filename =~# '_spec\.rb'
+      exec ":Dispatch rspec " .  a:filename
+    elseif a:filename =~# '\.feature'
+      exec ":Dispatch cucumber " . a:filename
+    else
+      exec ":Dispatch rspec " .  a:filename
+    endif
 
 endfunction
 
-function! SetTestFile(suffix)
+function! SetTestFile()
     " Set the spec file that tests will be run for.
     let t:grb_test_file=@%
-    let filename = @% . a:suffix
-    if expand('%') =~# '_test\.rb$'
-      exec ":Focus testrb " .  filename
-    elseif expand('%') =~# '_spec\.rb$'
-      exec ":Focus rspec " .  filename
-    elseif expand('%') =~# '\.feature$'
-      exec ":Focus cucumber " . filename
-    else
-      exec ":Focus ruby -wc " . filename
-    endif
 endfunction
 
 function! RunTestFile(...)
-    " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '.feature\|_spec.rb') != -1
-    if in_test_file
-      if a:0 == 1
-        let suffix = a:1
-      else
-        let suffix = ""
-      endif
-      call SetTestFile(suffix)
-    elseif !exists("t:grb_test_file")
-        echo "no test to run"
-        return
-    end
-    call RunTests()
+  if a:0
+    let command_suffix = a:1
+  else
+    let command_suffix = ""
+  endif
+
+  " Run the tests for the previously-marked file.
+  let in_test_file = match(expand("%"), '.feature\|_spec.rb') != -1
+  if in_test_file
+    call SetTestFile()
+  elseif !exists("t:grb_test_file")
+    echo "no test to run"
+    return
+  end
+  call RunTests(t:grb_test_file . command_suffix)
 endfunction
 
 function! RunNearestTest()
@@ -57,6 +57,5 @@ endfunction
 
 map <leader>r :call RunTestFile()<cr>
 map <leader>R :call RunNearestTest()<cr>
-map <leader>a :call RunTests()<cr>
-map <leader>w :w\|:!script/features --profile wip<cr>
-map <leader>D :silent !rake db:test:prepare<cr>
+map <leader>a :call RunTests('')<cr>
+map <leader>w :Dispatch cucumber --profile wip<cr>
