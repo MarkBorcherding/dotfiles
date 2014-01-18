@@ -21,26 +21,28 @@ endfunction
 function! SetTestFile(suffix)
     " Set the spec file that tests will be run for.
     let t:grb_test_file=@%
+    let filename = @% . a:suffix
     if expand('%') =~# '_test\.rb$'
-      compiler rubyunit
-      exec "set makeprg=testrb\ " . @% . a:suffix
+      exec ":Focus testrb " .  filename
     elseif expand('%') =~# '_spec\.rb$'
-      compiler rspec
-      exec "set makeprg=rspec\ \"" . @% . a:suffix . "\""
+      exec ":Focus rspec " .  filename
     elseif expand('%') =~# '\.feature$'
-      compiler cucumber
-      exec "set makeprg=cucumber\ \"" . @% . a:suffix . "\""
+      exec ":Focus cucumber " . filename
     else
-      compiler ruby
-      exec "set makeprg=ruby\ -wc\ \"". @% . a:suffix . "\""
+      exec ":Focus ruby -wc " . filename
     endif
 endfunction
 
-function! RunTestFile()
+function! RunTestFile(...)
     " Run the tests for the previously-marked file.
     let in_test_file = match(expand("%"), '.feature\|_spec.rb') != -1
     if in_test_file
-        call SetTestFile(a:0)
+      if a:0 == 1
+        let suffix = a:1
+      else
+        let suffix = ""
+      endif
+      call SetTestFile(suffix)
     elseif !exists("t:grb_test_file")
         echo "no test to run"
         return
@@ -55,6 +57,6 @@ endfunction
 
 map <leader>r :call RunTestFile()<cr>
 map <leader>R :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
+map <leader>a :call RunTests()<cr>
 map <leader>w :w\|:!script/features --profile wip<cr>
 map <leader>D :silent !rake db:test:prepare<cr>
