@@ -1,0 +1,11 @@
+#!/bin/sh
+
+map_ctrl_to_capslock() {
+  grep ctrl:nocaps /etc/default/keyboard > /dev/null
+  if [ "$?" -ne "0" ]; then
+    echo "Making Capslock the CTRL key. You will need to log out and back in for this to work."
+    sudo sed -i s/^XKBOPTIONS=\".*\"/XKBOPTIONS=\"ctrl:nocaps\"/ /etc/default/keyboard
+  fi
+}
+
+map_ctrl_to_capslock
