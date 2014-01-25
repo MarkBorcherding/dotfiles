@@ -1,0 +1,9 @@
+#!/bin/sh
+
+setup_sshkeys() {
+  [ -f "$HOME/.ssh/id_rsa" ] && return
+  echo "Creating SSH keys"
+  ssh-keygen
+}
+
+setup_sshkeys

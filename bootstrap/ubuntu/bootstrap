@@ -44,20 +44,11 @@ setup_dotfiles() {
   fi
 }
 
-setup_sshkeys() {
-  [ -f "$HOME/.ssh/id_rsa" ] && return
-  echo "Creating SSH keys"
-  ssh-keygen
-}
-
-setup_ruby() {
-  echo "noop"
-  #\curl -sSL https://get.rvm.io | bash
-}
 
 create_temp_dir
 install_basic_packages
 install_google_chrome
 setup_keyboard
-setup_sshkeys
 setup_dotfiles
+../setup_sshkeys
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+setup_ruby() {
+  [ -d "$HOME/.rvm" ] && return
+  curl -sSL https://get.rvm.io | bash
+  rvm install 2.1.0
+  rvm use 2.1.0 --default
+}
+
+setup_ruby
