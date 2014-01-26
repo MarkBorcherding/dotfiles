@@ -51,4 +51,5 @@ install_google_chrome
 setup_keyboard
 setup_dotfiles
 ../setup_sshkeys
+./setup-git-keystore
 
