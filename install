@@ -34,11 +34,20 @@ has_pygmentize() {
   # TODO: This should be much more generalized. I need to figure out how to find the styles directory without knowing it
   # exactly. This will now work cross platform.
   if [ -n "$(which pygmentize)" ]; then
-    if [ -f "/Library/Python/2.7/site-packages/Pygments-1.6-py2.7.egg/pygments/styles/tomorrownight.py" ]; then
+
+    case "$(uname)" in
+      "Darwin")
+          local styles_dir="/Library/Python/2.7/site-packages/Pygments-1.6-py2.7.egg/pygments/styles"
+        ;;
+      "Linux")
+          local styles_dir="/usr/lib/python2.7/dist-packages/pygments/styles"
+        ;;
+    esac
+    if [ -f "$styles_dir/tomorrownight.py" ]; then
       echo "Pygments Tomorrow Night theme installed."
     else
       echo "The Pygments Tomorrow Night theme needs to be installed. Consider doing so by something like: "
-      echo "  cp your/dotfiles/pygments/styles/tomorrownight.py /Library/Python/2.7/site-packages/Pygments-1.6-py2.7.egg/pygments/styles"
+      echo "  cp your/dotfiles/pygments/styles/tomorrownight.py $styles_dir"
     fi
   else
     echo "Pygmentize is not installed. Consider doing so to get syntax highlighting."
