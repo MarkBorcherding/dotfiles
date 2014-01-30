@@ -51,5 +51,17 @@ function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+function ruby_version() {
+  ruby -v | awk '{ print $2 }'
+}
+
+
+PS1="\[${BOLD}${MAGENTA}\]\u"
+PS1="$PS1 \[$WHITE\]at \[$ORANGE\]\h"
+PS1="$PS1 \[$WHITE\]in \[$GREEN\]\w"
+PS1="$PS1\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)"
+PS1="$PS1 \[$WHITE\]w/ rb \[$MAGENTA\]\$(ruby_version)"
+PS1="$PS1 \[$WHITE\]\n\$ \[$RESET\]"
+
+export PS1
 export PS2="\[$ORANGE\]→ \[$RESET\]"
