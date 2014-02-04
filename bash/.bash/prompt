@@ -63,8 +63,8 @@ function parse_git_branch() {
 }
 
 function ruby_version_prompt() {
-  local ruby_version=$(ruby -v | awk '{ print $2 }')
-  RUBY_PROMPT=" ${WHITE}${BOLD}w/ rb ${MAGENTA}${ruby_version}"
+  local ruby_version=$(ruby -v | awk '{ print $1 " " $2 }')
+  RUBY_PROMPT=" ${WHITE}${BOLD}w/ ${MAGENTA}${ruby_version}"
   PS1="$PS1$RUBY_PROMPT"
 }
 
