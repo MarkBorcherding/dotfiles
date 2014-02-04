@@ -1,5 +1,5 @@
 set t_Co=256 " Full Color
-set guifont=Sauce\ Code\ Powerline
+set guifont=Sauce\ Code\ Powerline\ 11
 
 " Remove all scrollbars
 set guioptions-=l   " Left
