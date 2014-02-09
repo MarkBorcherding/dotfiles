@@ -9,7 +9,7 @@ create_temp_dir(){
 }
 
 install_basic_packages() {
-  sudo apt-get install git vim curl -y
+  sudo apt-get install git vim curl ack -y
 }
 
 install_google_chrome() {
