@@ -17,6 +17,7 @@ end
 
 begin
   require 'wirb'
+  Wirb.start
 rescue LoadError
   puts 'Install Wirb with "gem install wirb"'
 end

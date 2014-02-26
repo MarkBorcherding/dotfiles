@@ -17,8 +17,3 @@ rescue LoadError
   puts 'Install Awesome Print with "gem install awesome_print"'
 end
 
-begin
-  require 'wirb'
-rescue LoadError
-  puts 'Install Wirb with "gem install wirb"'
-end
