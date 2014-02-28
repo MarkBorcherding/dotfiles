@@ -43,6 +43,7 @@ Bundle "tpope/vim-bundler"
 Bundle "tpope/vim-endwise"
 Bundle 'ck3g/vim-change-hash-syntax'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'astashov/vim-ruby-debugger'
 
 
 
