@@ -57,7 +57,7 @@ has_pygmentize() {
 
 stow_packages() {
   stow_failed=false
-  for package in bash git ruby vim shell zsh
+  for package in bash git ruby vim shell zsh tmux
   do
     echo "Stowing $package"
     stow --verbose --target="$HOME" $force $package
