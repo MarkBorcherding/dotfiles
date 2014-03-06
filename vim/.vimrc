@@ -111,6 +111,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray28 ctermbg=238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray27 ctermbg=236
 
 
+set t_ut= "make the background work in tmux
 
 " Sane Vimdiff colors
 highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=white
