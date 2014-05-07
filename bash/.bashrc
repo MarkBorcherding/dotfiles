@@ -22,6 +22,9 @@ if [ -d $HOME/bash_completion.d ]; then
   done
 fi;
 
+[ -r "~/.bin/tmuxinator.bash" ] && source ~/.bin/tmuxinator.bash
+
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -42,6 +45,8 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
+
+export EDITOR=vim
 
 # vi mode on the command line
 set -o vi
