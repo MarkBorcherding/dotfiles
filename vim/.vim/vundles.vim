@@ -19,6 +19,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
+Bundle "christoomey/vim-tmux-navigator"
 
 " Cosmetic
 Bundle 'vim-scripts/hexHighlight.vim'
