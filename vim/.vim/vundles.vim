@@ -34,6 +34,7 @@ Bundle 'tpope/vim-abolish'
 Bundle 'terryma/vim-multiple-cursors'
 
 " Language Specific
+Bundle "slim-template/vim-slim"
 Bundle "kchmck/vim-coffee-script"
 map <leader>c :CoffeeCompile vert<cr>
 map <leader>C :CoffeeCompile watch vert<cr>
