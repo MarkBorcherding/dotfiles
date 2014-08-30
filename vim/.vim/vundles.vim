@@ -31,6 +31,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-abolish'
+Bundle 'terryma/vim-multiple-cursors'
 
 " Language Specific
 Bundle "kchmck/vim-coffee-script"
