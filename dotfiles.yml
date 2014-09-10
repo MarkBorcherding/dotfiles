@@ -1,0 +1,48 @@
+---
+- hosts: all
+  vars:
+    packages:
+      - curl
+      - git
+      - htop
+      - rbenv 
+      - ruby-build
+      - vim
+      - wget
+  tasks:
+  - apt: name={{item}}
+         state=present
+         update_cache=yes
+    sudo: yes
+    with_items: packages
+    when: ansible_distribution == 'Ubuntu'
+
+  - homebrew: name={{item}}} 
+              state=present
+    with_items: packages
+    when: ansible_distribution == 'MacOSX'
+
+  - name: symlink dotfiles and dotdirectories
+    file: dest=~/.{{item}}
+          src=~/.dotfiles/files/{{item}}
+          state=link
+          force=true
+    with_items:
+    - aliases
+    - bash_completion.d
+    - bash_profile
+    - bashrc
+    - gemrc
+    - gitconfig
+    - gitignore_global
+    - gvimrc
+    - inputrc
+    - irbrc
+    - lessfilter
+    - path
+    - profile
+    - pryrc
+    - rspec
+    - tmux.conf
+    - vim
+    - vimrc

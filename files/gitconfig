@@ -1,0 +1,47 @@
+[user]
+	email = markborcherding@gmail.com
+	name = Mark Borcherding
+
+[color]
+  ui = true
+
+[github]
+  user = markborcherding
+
+[rerere]
+  enabled = 1
+
+[alias]
+  ra = !git r --all
+  r = !git l -20
+  l = log --graph --abbrev-commit --date=relative
+  lg = log --graph --abbrev-commit --date=relative
+  st = status
+  ci = commit
+  co = checkout
+  di = diff
+  dc = diff --cached
+  amend = commit --amend
+  aa = add --all
+
+[format]
+  pretty=format:%C(yellow)%h%Creset -%C(red)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset
+
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore_global
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+
+[merge]
+  keepBackup = false;
+  tool = p4merge
+
+[mergetool "p4merge"]
+  cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
