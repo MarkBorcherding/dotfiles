@@ -5,6 +5,7 @@ grep Ubuntu /proc/version && \
 [ uname == 'Darwin' ] && \
   brew install git
 
-sudo easy_install pip
-sudo pip install paramiko PyYAML jinja2 httplib2
+which pip
+[ $? != 0 ] && sudo easy_install pip
 
+sudo pip install paramiko PyYAML jinja2 httplib2
