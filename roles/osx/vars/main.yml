@@ -4,5 +4,10 @@ additional_packages:
 
 applications:
   - firefox
+  - flux
   - google-chrome
+  - iterm2
   - spectacle
+  - vagrant
+  - vagrant-manager
+  - virtualbox
