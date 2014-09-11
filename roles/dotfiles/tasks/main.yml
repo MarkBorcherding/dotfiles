@@ -1,0 +1,7 @@
+---
+
+- include: osx.yml
+  when: ansible_distribution == 'MacOSX'
+
+- include: ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'

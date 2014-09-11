@@ -6,7 +6,7 @@
 - name: install brew packages
   homebrew: name={{item}}
             state=latest
-  with_items: packages | union(additional_packages)
+  with_items: packages | union(osx_additional_packages)
 
 - name: test for brew cask
   shell: brew cask
@@ -20,4 +20,6 @@
 
 - name: install applications
   shell: brew cask install {{item}}
-  with_items: applications
+  with_items: osx_applications
+  register: cask_install
+  changed_when: cask_install.stderr.find('installed to') != -1

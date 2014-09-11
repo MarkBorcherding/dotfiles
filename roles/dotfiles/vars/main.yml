@@ -1,0 +1,24 @@
+---
+packages:
+  - curl
+  - git
+  - rbenv
+  - ruby-build
+  - vim
+  - wget
+
+osx_additional_packages:
+  - htop-osx
+
+osx_applications:
+  - firefox
+  - flux
+  - google-chrome
+  - iterm2
+  - spectacle
+  - vagrant
+  - vagrant-manager
+  - virtualbox
+
+ubuntu_additional_packages:
+- htop
