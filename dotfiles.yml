@@ -4,24 +4,17 @@
     packages:
       - curl
       - git
-      - htop
-      - rbenv 
+      - rbenv
       - ruby-build
       - vim
       - wget
-  tasks:
-  - apt: name={{item}}
-         state=present
-         update_cache=yes
-    sudo: yes
-    with_items: packages
+  roles:
+  - role: osx
+    when: ansible_distribution == 'MacOSX'
+  - role: ubuntu
     when: ansible_distribution == 'Ubuntu'
 
-  - homebrew: name={{item}}} 
-              state=present
-    with_items: packages
-    when: ansible_distribution == 'MacOSX'
-
+  tasks:
   - name: symlink dotfiles and dotdirectories
     file: dest=~/.{{item}}
           src=~/.dotfiles/files/{{item}}
@@ -46,3 +39,10 @@
     - tmux.conf
     - vim
     - vimrc
+
+  - name: setup vundle
+    git: repo=https://github.com/gmarik/Vundle.vim.git
+         dest=~/.vim/bundle/Vundle.vim
+
+  - name: install vundle bundles
+    shell: vim +PluginInstall +qall

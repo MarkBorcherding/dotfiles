@@ -1,0 +1,8 @@
+---
+additional_packages:
+  - htop-osx
+
+applications:
+  - firefox
+  - google-chrome
+  - spectacle
