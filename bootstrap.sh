@@ -15,3 +15,5 @@ grep Ubuntu /proc/version && \
 git clone git@github.com:MarkBorcherding/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 git co ansible
+git submodule init
+git submodule update
