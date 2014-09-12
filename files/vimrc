@@ -13,6 +13,7 @@ set expandtab                     " Use spaces instead of tabs
 set smarttab                      " sw at start of line, sts everywhere else
 set autoread                      " Reload files changed outside vim
 set autoindent
+set backspace=2                   " make backspace work like most other apps
 
 set exrc            " enable per-directory .vimrc files
 set secure          " disable unsafe commands in local .vimrc files
