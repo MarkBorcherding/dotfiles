@@ -1,0 +1,42 @@
+---
+
+# test homebrew
+# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#
+- name: install brew packages
+  homebrew: name={{item}}
+            state=latest
+  with_items: packages | union(osx_additional_packages)
+
+- name: test for brew cask
+  shell: brew cask
+  register: cask_installed
+  ignore_errors: yes
+
+- name: install brew cask
+  shell: brew install caskroom/cask/brew-cask
+  sudo: yes
+  when: cask_installed | failed
+
+- name: install applications
+  shell: brew cask install {{item}}
+  with_items: osx_applications
+  register: cask_install
+  changed_when: cask_install.stderr.find('installed to') != -1
+
+- name: Expand save panel by default
+  shell: defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+- name: Expand print panel by default
+  shell: defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+- name: Enable tap to click (Trackpad) for this user and for the login screen
+  shell: defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+- shell: defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+- shell: defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+- name: Disable the dashbord
+  shell: defaults write com.apple.dashboard mcx-disabled -boolean YES
+
+- name: Show all files
+  shell: defaults write com.apple.finder AppleShowAllFiles TRUE

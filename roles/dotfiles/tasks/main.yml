@@ -1,7 +1,36 @@
 ---
 
-- include: osx.yml
+- include: platform/osx.yml
   when: ansible_distribution == 'MacOSX'
 
-- include: ubuntu.yml
+- include: platform/ubuntu.yml
   when: ansible_distribution == 'Ubuntu'
+
+- name: symlink dotfiles and dotdirectories
+  file: dest=~/.{{item}}
+        src=~/.dotfiles/roles/dotfiles/files/{{item}}
+        state=link
+        force=true
+  with_items:
+  - aliases
+  - bash_completion.d
+  - bash_profile
+  - bashrc
+  - gemrc
+  - gitconfig
+  - gitignore_global
+  - gvimrc
+  - inputrc
+  - irbrc
+  - lessfilter
+  - path
+  - profile
+  - pryrc
+  - rspec
+  - tmux.conf
+  - vim
+  - vimrc
+
+- include: apps/vim.yml
+- include: apps/ruby.yml
+

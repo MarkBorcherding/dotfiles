@@ -9,10 +9,10 @@ packages:
   - wget
 
 osx_additional_packages:
+  - boot2docker
   - htop-osx
 
 osx_applications:
-  - boot2docker
   - firefox
   - flux
   - google-chrome

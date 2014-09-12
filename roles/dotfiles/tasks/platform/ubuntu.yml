@@ -1,0 +1,11 @@
+---
+- apt: name={{item}}
+       state=present
+       update_cache=yes
+  sudo: yes
+  with_items: packages | union(ubuntu_additional_packages)
+
+- name: make capslock control
+  lineinfile: dest=/etc/default/keyboard
+              regexp=^XKBOPTIONS=
+              line=XKBOPTIONS="ctrl:nocaps"
