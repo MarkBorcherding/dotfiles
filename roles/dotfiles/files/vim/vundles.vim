@@ -37,6 +37,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'terryma/vim-multiple-cursors'
 
 " Language Specific
+Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'slim-template/vim-slim'
 Plugin 'kchmck/vim-coffee-script'
 map <leader>c :CoffeeCompile vert<cr>
