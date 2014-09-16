@@ -13,11 +13,13 @@ osx_additional_packages:
   - htop-osx
 
 osx_applications:
+  - dash
   - firefox
   - flux
   - google-chrome
   - iterm2
   - spectacle
+  - spotify
   - vagrant
   - vagrant-manager
   - virtualbox
