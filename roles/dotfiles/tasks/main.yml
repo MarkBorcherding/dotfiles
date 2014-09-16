@@ -13,7 +13,7 @@
         force=true
   with_items:
   - aliases
-  - bash_completion.d
+  - bash
   - bash_profile
   - bashrc
   - gemrc
@@ -30,6 +30,16 @@
   - tmux.conf
   - vim
   - vimrc
+  tags: symlinks
+
+- name: symlink dotfiles and dotdirectories
+  file: dest=~/{{item}}
+        src=~/.dotfiles/roles/dotfiles/files/{{item}}
+        state=link
+        force=true
+  tags: symlinks
+  with_items:
+  - bash_completion.d
 
 - include: apps/vim.yml
 - include: apps/ruby.yml

@@ -1,8 +1,5 @@
 ---
 
-# test homebrew
-# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-#
 - name: install brew packages
   homebrew: name={{item}}
             state=latest
