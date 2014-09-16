@@ -13,13 +13,17 @@ osx_additional_packages:
   - htop-osx
 
 osx_applications:
+  - airfoil
   - dash
+  - dropbox
   - firefox
   - flux
   - google-chrome
   - iterm2
+  - little-snitch
   - spectacle
   - spotify
+  - transmit
   - vagrant
   - vagrant-manager
   - virtualbox
