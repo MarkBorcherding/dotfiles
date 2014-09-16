@@ -37,3 +37,16 @@
 
 - name: Show all files
   shell: defaults write com.apple.finder AppleShowAllFiles TRUE
+
+- name: Show ~/Library
+  shell: chflags nohidden ~/Library
+
+- name: Fast repeat
+  shell: defaults write NSGlobalDomain KeyRepeat -int 0
+
+- name: Development Mode in Safari
+  shell: defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+- shell: defaults write com.apple.Safari IncludeDevelopMenu -bool true
+- shell: defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+- shell: defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+- shell: defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
