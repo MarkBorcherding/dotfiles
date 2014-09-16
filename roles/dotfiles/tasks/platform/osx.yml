@@ -50,3 +50,15 @@
 - shell: defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
 - shell: defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
 - shell: defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+- name: Add font directory
+  file: path=~/Library/Fonts
+        state=directory
+        recurse=yes
+
+- name: Copy fonts
+  copy: src=../../files/fonts/
+        dest=~/Library/Fonts
+  tags: fonts
+
+
