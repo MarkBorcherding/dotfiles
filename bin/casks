@@ -1,0 +1,20 @@
+#!/bin/bash
+
+brew tap caskroom/cask
+brew install brew-cask
+brew cask update
+brew cask upgrade
+brew cask install airfoil
+brew cask install dash
+brew cask install dropbox
+brew cask install firefox
+brew cask install flux
+brew cask install google-chrome
+brew cask install iterm2
+brew cask install little-snitch
+brew cask install spectacle
+brew cask install spotify
+brew cask install transmit
+brew cask install vagrant
+brew cask install vagrant-manager
+brew cask install virtualbox
