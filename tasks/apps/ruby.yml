@@ -1,6 +1,0 @@
----
-- name: install ruby
-  shell: rbenv install --skip-existing 2.1.2
-
-- name: set default ruby
-  shell: rbenv global 2.1.2

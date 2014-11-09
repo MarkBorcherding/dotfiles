@@ -1,8 +1,0 @@
----
-
-- name: setup vundle
-  git: repo=https://github.com/gmarik/Vundle.vim.git
-       dest=~/.vim/bundle/Vundle.vim
-
-- name: install vundle bundles
-  shell: vim +PluginInstall +qall
