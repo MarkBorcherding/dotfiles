@@ -41,20 +41,6 @@ if !has('gui_running')
 endif
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Appearance
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256
-colorscheme Tomorrow-Night
-set background=dark
-
-if $ITERM_PROFILE == 'Tomorrow'
-  colorscheme Tomorrow
-  set background=light
-elseif $ITERM_PROFILE == 'IR_Black'
-  colorscheme ir_black
-  set background=dark
-endif
 
 autocmd BufWritePre * :%s/\s\+$//e     " auto remove trailing whitespace
 
@@ -104,8 +90,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Airline """"""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 
-
-
 " Vim Indent Guides """""""""""""""""""""""""""""""""""""""""""""
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
@@ -113,11 +97,14 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray28 ctermbg=238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray27 ctermbg=236
 
-
-set t_ut= "make the background work in tmux
-
 " Sane Vimdiff colors
 highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=white
 highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
 highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
 highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
+
+" Appearance """""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set t_ut= "make the background work in tmux
+set t_Co=256
+colorscheme Tomorrow-Night
+set background=dark
