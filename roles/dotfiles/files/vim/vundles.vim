@@ -20,9 +20,11 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'mileszs/ack.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'scrooloose/syntastic'
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " Cosmetic
 Plugin 'vim-scripts/hexHighlight.vim'
