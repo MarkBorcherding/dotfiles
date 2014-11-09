@@ -13,3 +13,6 @@ brew install rbenv
 brew install ruby-build
 brew install vim
 brew install wget
+brew install rbenv
+brew install rbenv-gem-rehash
+brew install ruby-build
