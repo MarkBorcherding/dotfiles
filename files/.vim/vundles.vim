@@ -29,7 +29,8 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 " Cosmetic
 Plugin 'vim-scripts/hexHighlight.vim'
 Plugin 'bling/vim-airline'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'chriskempson/vim-tomorrow-theme'
+
 
 " Text Manipulation
 Plugin 'tpope/vim-surround'

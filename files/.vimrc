@@ -1,7 +1,7 @@
 set nocompatible                  " Must come first because it changes other options.
 
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
+if filereadable(expand("$HOME/.vim/vundles.vim"))
+  source $HOME/.vim/vundles.vim
 endif
 
 set visualbell                    " No beeping.
@@ -45,14 +45,14 @@ endif
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256
-if  $ITERM_PROFILE == 'Tomorrow'
+colorscheme Tomorrow-Night
+set background=dark
+
+if $ITERM_PROFILE == 'Tomorrow'
   colorscheme Tomorrow
   set background=light
 elseif $ITERM_PROFILE == 'IR_Black'
   colorscheme ir_black
-  set background=dark
-else
-  colorscheme Tomorrow-Night
   set background=dark
 endif
 

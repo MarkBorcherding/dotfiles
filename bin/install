@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if [ "$1" == '-f' ]; then
   force="--override=*"
@@ -26,12 +27,11 @@ has_stow() {
 }
 
 stow_it() {
-  stow --verbose --target="$HOME" $force files
-  [ $? -ne 0 ] && echo "Unable to stow."
+  stow --verbose --target="$HOME" $force files || echo "Unable to stow."
 }
 
 setup_vim() {
-  [ ! -d $HOME/.vim/bundle/vundle ] && git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+  [ ! -d $HOME/.vim/bundle/vundle ] && git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
 }
 
