@@ -38,7 +38,7 @@
 
 [merge]
   keepBackup = false;
-  tool = p4merge
+  tool = vimdiff
 
 [mergetool "p4merge"]
   cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
