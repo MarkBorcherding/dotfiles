@@ -1,0 +1,42 @@
+#!/bin/bash
+
+if [ "$1" == '-f' ]; then
+  force="--override=*"
+else
+  force=""
+fi
+
+has_stow() {
+  if [ ! -f "$(which stow)" ]; then
+    echo 'Please install stow.'
+    echo '  See http://www.gnu.org/software/stow/'
+    echo ''
+    echo '  To install:'
+    case "$(uname)" in
+      "Darwin")
+        echo '  brew install stow'
+        ;;
+      "Linux")
+        echo ' apt-get install stow'
+        ;;
+    esac
+    exit 1
+  fi
+  return 0
+}
+
+stow_it() {
+  stow --verbose --target="$HOME" $force files
+  [ $? -ne 0 ] && echo "Unable to stow."
+}
+
+setup_vim() {
+  [ ! -d $HOME/.vim/bundle/vundle ] && git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+  vim +PluginInstall +qall
+}
+
+
+has_stow
+stow_it
+setup_vim
+echo 'Installation complete'
