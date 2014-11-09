@@ -104,6 +104,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Airline """"""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_powerline_fonts = 1
 
+
+
 " Vim Indent Guides """""""""""""""""""""""""""""""""""""""""""""
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1

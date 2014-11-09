@@ -41,6 +41,11 @@ Plugin 'terryma/vim-multiple-cursors'
 " Language Specific
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'slim-template/vim-slim'
+
+Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_initial_foldlevel=10
+
 Plugin 'kchmck/vim-coffee-script'
 map <leader>c :CoffeeCompile vert<cr>
 map <leader>C :CoffeeCompile watch vert<cr>
