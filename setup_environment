@@ -1,2 +1,0 @@
-source ./ansible/hacking/env-setup
-export ANSIBLE_HOSTS=./inventory
