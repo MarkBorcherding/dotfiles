@@ -1,12 +1,11 @@
 #!/bin/sh
 
-PATH="$PATH:$HOME/bin"                 # Custom bin
-PATH="$PATH:$HOME/.rvm/bin"           # Add RVM to PATH for scripting
 PATH="/usr/local/share/npm/bin:$PATH" # Add the global npm bins to the path
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"       # Add to keep brew happy
 PATH="./node_modules/.bin:$PATH"                  # Add the local node modules bins
 PATH="$HOME/pear/bin:$PATH"                       # Pear bins
 PATH="/usr/local/share/npm/bin:$PATH"             # Add the global npm bins to the path
+PATH="$PATH:$HOME/bin"                 # Custom bin
 PATH="./bin:$PATH"                                # add Binstubs to path
 export PATH
 

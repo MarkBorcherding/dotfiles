@@ -1,8 +1,4 @@
 #!/bin/sh
-for file in ~/.{path,aliases}; do
-  [ -r "$file" ] && source "$file"
-done
-
 if [ -e /usr/share/terminfo/x/xterm-256color ]; then
   export TERM='xterm-256color'
 else
