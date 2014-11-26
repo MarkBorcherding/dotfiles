@@ -1,4 +1,5 @@
 #!/bin/bash
+eval "$(rbenv init -)"
 
 for file in ~/.profile ~/.bash/{colors,prompt,aliases} ~/.path ~/.aliases; do
   [ -r "$file" ] && source "$file"
@@ -48,6 +49,5 @@ export EDITOR=vim
 # vi mode on the command line
 set -o vi
 
-eval "$(rbenv init -)"
 
 export EDITOR=vim
