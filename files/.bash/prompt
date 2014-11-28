@@ -1,10 +1,3 @@
-function color_swatches() {
-  for i in {0..256}; do
-    echo -en "\e[38;5;${i}m$i \e[0m";
-  done;
-  echo
-}
-
 function parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != *"working directory clean"* ]] && echo "*"
 }
@@ -15,32 +8,39 @@ function parse_git_branch() {
 
 function ruby_version_prompt() {
   local ruby_version=$(ruby -v | awk '{ print $1 " " $2 }')
-  RUBY_PROMPT=" ${BLACK}${BOLD}w/ ${RED}${ruby_version}"
+  RUBY_PROMPT=" ${_PROMPT_DELIM_COLOR}w/ ${_PROMPT_RUBY_COLOR}${ruby_version}"
   PS1="$PS1$RUBY_PROMPT"
 }
 
 function user_prompt() {
-  PS1="$PS1${BLUE}\u"
+  PS1="$PS1${_PROMPT_USER_COLOR}\u"
 }
 
 function host_prompt() {
-  PS1="$PS1 ${BLACK}${BOLD} at ${ORANGE}\h"
+  PS1="$PS1 ${_PROMPT_DELIM_COLOR} at ${_PROMPT_HOST_COLOR}\h"
 }
 
 function git_prompt() {
-  PS1="$PS1${BLACK}${BOLD}\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)"
+  PS1="$PS1${_PROMPT_DELIM_COLOR}\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")${_PROMPT_GIT_COLOR}\$(parse_git_branch)"
 }
 
 function pwd_prompt() {
-  PS1="$PS1 ${BLACK}${BOLD} in \[$GREEN\]\w"
+  PS1="$PS1 ${_PROMPT_DELIM_COLOR} in ${_PROMPT_PWD_COLOR}\w"
 }
 
 function last_command_prompt() {
-  PS1="$PS1 ${WHITE}\n\$ $RESET_COLOR"
+  PS1="$PS1 ${WHITE}\n\$ ${RESET_COLOR}"
 }
 
+_PROMPT_DELIM_COLOR=$BRIGHT_BLACK
+_PROMPT_USER_COLOR=$BRIGHT_BLUE
+_PROMPT_HOST_COLOR=$BRIGHT_ORANGE
+_PROMPT_GIT_COLOR=$BRIGHT_PURPLE
+_PROMPT_PWD_COLOR=$BRIGHT_GREEN
+_PROMPT_RUBY_COLOR=$BRIGHT_RED
+
 function prompt(){
-  PS1="${BOLD}"
+  PS1=""
   user_prompt
   host_prompt
   pwd_prompt
@@ -49,7 +49,7 @@ function prompt(){
   last_command_prompt
   export PS1
 }
-export PS2="\[$ORANGE\]→ \[$RESET\]"
+export PS2="${ORANGE}→ ${RESET_COLOR}"
 export PROMPT_COMMAND=prompt
 
 
