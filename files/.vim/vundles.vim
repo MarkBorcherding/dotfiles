@@ -26,6 +26,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/syntastic'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
+Plugin 'ngmy/vim-rubocop'
+
 " Cosmetic
 Plugin 'vim-scripts/hexHighlight.vim'
 Plugin 'bling/vim-airline'
@@ -40,6 +42,7 @@ Plugin 'terryma/vim-multiple-cursors'
 " Language Specific
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'slim-template/vim-slim'
+Plugin 'guns/vim-clojure-static'
 
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_frontmatter=1
