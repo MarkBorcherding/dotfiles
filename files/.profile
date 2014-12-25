@@ -1,9 +1,6 @@
 #!/bin/sh
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-  export TERM='xterm-256color'
-else
-  export TERM='xterm-color'
-fi
+
+export TERM='xterm-256color'
 
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export LSCOLORS=ExGxFxDxCxHxHxCbCeEbEb
