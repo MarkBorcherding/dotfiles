@@ -2,16 +2,7 @@
 	"segments": {
 		"right": [
 			{
-				"function": "powerline.segments.common.sys.uptime",
-				"priority": 50
-			},
-			{
-				"function": "powerline.segments.common.net.external_ip",
-				"priority": 50
-			},
-			{
-				"function": "powerline.segments.common.bat.battery",
-				"priority": 50
+				"function": "powerline.segments.common.bat.battery"
 			},
 			{
 				"function": "powerline.segments.common.time.date"
