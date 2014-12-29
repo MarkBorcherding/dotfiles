@@ -31,10 +31,6 @@ Plugin 'ngmy/vim-rubocop'
 " Cosmetic
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-scripts/hexHighlight.vim'
-"Plugin 'bling/vim-airline'
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
 " Text Manipulation
 Plugin 'tpope/vim-surround'

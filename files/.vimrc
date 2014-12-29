@@ -108,3 +108,8 @@ set t_ut= "make the background work in tmux
 set t_Co=256
 colorscheme Tomorrow-Night
 set background=dark
+
+" Powerline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
