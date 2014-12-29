@@ -3,7 +3,7 @@
 	"groups": {
 		"information:unimportant":  { "fg": "gray8", "bg": "gray2", "attr": [] },
 		"information:additional":   { "fg": "gray9", "bg": "gray4", "attr": [] },
-		"background":               { "fg": "white", "bg": "red", "attr": [] },
+		"background":               { "fg": "white", "bg": "gray2", "attr": [] },
 		"background:divider":       { "fg": "gray6", "bg": "gray2", "attr": [] },
 		"mode":                     { "fg": "darkestgreen", "bg": "brightgreen", "attr": ["bold"] },
 		"visual_range":             { "fg": "brightestorange", "bg": "darkorange", "attr": ["bold"] },
