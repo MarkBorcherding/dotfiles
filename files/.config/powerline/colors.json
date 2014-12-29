@@ -79,6 +79,7 @@
 		"solarized:cyan": [6, "2aa198"],
 		"solarized:green": [2, "859900"],
 
+		"tomorrow-night:background": [234, "1d1f21"],
 		"tomorrow-night:yellow": [3, "f0c674"],
 		"tomorrow-night:orange": [9, "de935f"],
 		"tomorrow-night:red": [1, "cc6666"],

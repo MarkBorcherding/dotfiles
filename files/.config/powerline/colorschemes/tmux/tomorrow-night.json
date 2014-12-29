@@ -1,14 +1,20 @@
 {
 	"groups": {
-		"active_window_status": {"fg": "gray5",   "bg": "gray0",    "attr": []},
-		"window_status":        {"fg": "gray70",     "bg": "gray0",    "attr": []},
-		"activity_status":      {"fg": "yellow",     "bg": "gray0",    "attr": []},
-		"bell_status":          {"fg": "red",        "bg": "gray0",    "attr": []},
-		"window":               {"fg": "gray6",      "bg": "gray0",    "attr": []},
-		"window:divider":       {"fg": "gray4",      "bg": "gray0",    "attr": []},
+		"background":           { "fg": "white",     "bg": "tomorrow-night:background",    "attr": [] },
+		"background:divider":   { "fg": "gray5",     "bg": "tomorrow-night:background",    "attr": [] },
+		"active_window_status": {"fg": "gray5",      "bg": "tomorrow-night:background",    "attr": []},
+		"window_status":        {"fg": "gray70",     "bg": "tomorrow-night:background",    "attr": []},
+		"activity_status":      {"fg": "yellow",     "bg": "tomorrow-night:background",    "attr": []},
+		"bell_status":          {"fg": "red",        "bg": "tomorrow-night:background",    "attr": []},
+		"window":               {"fg": "gray6",      "bg": "tomorrow-night:background",    "attr": []},
+		"window:divider":       {"fg": "gray4",      "bg": "tomorrow-night:background",    "attr": []},
 		"window:current":       {"fg": "black",      "bg": "tomorrow-night:blue", "attr": []},
 		"window_name":          {"fg": "white",      "bg": "tomorrow-night:blue", "attr": ["bold"]},
 		"session":              {"fg": "black",      "bg": "gray90",   "attr": ["bold"]},
-		"session:prefix":       {"fg": "gray90",     "bg": "tomorrow-night:blue", "attr": ["bold"]}
+		"session:prefix":       {"fg": "gray90",     "bg": "tomorrow-night:blue", "attr": ["bold"]},
+		"battery":              { "fg": "gray8",     "bg": "gray1", "attr": [] },
+		"battery_gradient":     { "fg": "white_red", "bg": "gray1", "attr": [] },
+		"battery_full":         { "fg": "red",       "bg": "gray1", "attr": [] },
+		"battery_empty":        { "fg": "white",     "bg": "gray1", "attr": [] }
 	}
 }
