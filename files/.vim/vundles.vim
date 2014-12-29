@@ -38,10 +38,10 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-abolish'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'junegunn/vim-easy-align'
 
 " Language Specific
 Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'slim-template/vim-slim'
 Plugin 'guns/vim-clojure-static'
 
 Plugin 'plasticboy/vim-markdown'
@@ -55,7 +55,6 @@ map <leader>C :CoffeeCompile watch vert<cr>
 " Ruby / Rails
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-rake.git'
-Plugin 'tpope/vim-rvm.git'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-endwise'
 Plugin 'ck3g/vim-change-hash-syntax'
