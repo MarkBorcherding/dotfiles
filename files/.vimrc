@@ -93,16 +93,15 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray28 ctermbg=238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray27 ctermbg=236
 
 " Sane Vimdiff colors """""""""""""""""""""""""""""""""""""""""""""""""""""""
-highlight DiffAdd    term=reverse cterm=bold ctermbg=green ctermfg=white
-highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
-highlight DiffText   term=reverse cterm=bold ctermbg=gray ctermfg=black
-highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
+"highlight DiffAdd    term=reverse cterm=bold ctermbg=green ctermfg=white
+"highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
+"highlight DiffText   term=reverse cterm=bold ctermbg=gray ctermfg=black
+"highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
 
 " Appearance """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_ut= "make the background work in tmux
 set t_Co=256
-colorscheme Tomorrow-Night
-set background=dark
+colorscheme hybrid
 
 " Powerline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 python from powerline.vim import setup as powerline_setup

@@ -21,11 +21,11 @@
 			}
 		},
 		"tmux": {
-			"colorscheme": "tomorrow-night",
+			"colorscheme": "default",
 			"theme": "default"
 		},
 		"vim": {
-			"colorscheme": "tomorrow-night",
+			"colorscheme": "default",
 			"theme": "default",
 			"local_themes": {
 				"__tabline__": "tabline",

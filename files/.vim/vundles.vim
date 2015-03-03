@@ -42,7 +42,8 @@ Plugin 'junegunn/vim-easy-align'
 
 " Language Specific
 Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'guns/vim-clojure-static'
+
+
 
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_frontmatter=1
@@ -51,6 +52,10 @@ let g:vim_markdown_initial_foldlevel=10
 Plugin 'kchmck/vim-coffee-script'
 map <leader>c :CoffeeCompile vert<cr>
 map <leader>C :CoffeeCompile watch vert<cr>
+
+" Clojure
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
 
 " Ruby / Rails
 Plugin 'tpope/vim-rails.git'
