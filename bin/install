@@ -31,12 +31,19 @@ stow_it() {
 }
 
 setup_vim() {
-  [ ! -d $HOME/.vim/bundle/vundle ] && git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  [ ! -d $HOME/.vim/bundle/Vundle.vim ] && echo "Installing Vundle" && git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vim +PluginInstall +qall
 }
 
+make_non_symlink_dirs() {
+  mkdir -p ~/.profile.d
+  mkdir -p ~/bash_completion.d
+  mkdir -p ~/.zsh.d
+  mkdir -p ~/.bash.d
+}
 
 has_stow
+make_non_symlink_dirs
 stow_it
 setup_vim
 echo 'Installation complete'

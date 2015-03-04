@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# vi mode on the command line
+set -o vi
+
+export EDITOR=vim

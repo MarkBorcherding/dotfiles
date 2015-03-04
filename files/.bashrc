@@ -1,12 +1,13 @@
 #!/bin/bash
-eval "$(rbenv init -)"
 
-for file in ~/.profile ~/.bash/{colors,prompt,aliases} ~/.path ~/.aliases; do
+for file in ~/.profile.d/*; do
   [ -r "$file" ] && source "$file"
-  done
-unset file
+done
 
-[ $(uname) = "Darwin" ] && [ -r "$HOME/.bash/profile_osx" ] && source "$HOME/.bash/profile_osx"
+for file in ~/.bash.d/*; do
+  [ -r "$file" ] && source "$file"
+done
+unset file
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2 | tr ' ' '\n')" scp sftp ssh
@@ -44,10 +45,3 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-export EDITOR=vim
-
-# vi mode on the command line
-set -o vi
-
-
-export EDITOR=vim
