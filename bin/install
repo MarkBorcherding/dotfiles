@@ -42,8 +42,15 @@ make_non_symlink_dirs() {
   mkdir -p ~/.bash.d
 }
 
+setup_zsh(){
+  if [ ! -d $HOME/.antigen ]; then
+    git clone https://github.com/zsh-users/antigen.git $HOME/.antigen
+  fi
+}
+
 has_stow
 make_non_symlink_dirs
 stow_it
 setup_vim
+setup_zsh
 echo 'Installation complete'
