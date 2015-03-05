@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Turn off the spelling correct.
 unsetopt correct_all
 
@@ -16,7 +18,6 @@ antigen bundle <<EOBUNDLES
   git-prompt
   heroku
   lein
-  pip
   rails4
   rbenv
   ruby
@@ -28,7 +29,7 @@ EOBUNDLES
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme bira
+antigen theme MarkBorcherding/zsh-plugins themes/fooberry
 
 # Tell antigen that you're done.
 antigen apply
