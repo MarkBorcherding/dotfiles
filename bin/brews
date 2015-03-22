@@ -4,15 +4,13 @@ brew update
 brew upgrade
 
 brew install boot2docker
-brew install docker
 brew install curl
+brew install docker
 brew install git
 brew install htop-osx
 brew install iftop
 brew install rbenv
+brew install rbenv-gem-rehash
 brew install ruby-build
 brew install vim
 brew install wget
-brew install rbenv
-brew install rbenv-gem-rehash
-brew install ruby-build
