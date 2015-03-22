@@ -20,9 +20,6 @@ defaults write com.apple.finder AppleShowAllFiles TRUE
 #Show ~/Library
 chflags nohidden ~/Library
 
-#Fast repeat
-defaults write NSGlobalDomain KeyRepeat -int 0
-
 #Development Mode in Safari
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.apple.Safari IncludeDevelopMenu -bool true
