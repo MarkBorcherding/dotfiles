@@ -12,5 +12,6 @@ brew install iftop
 brew install rbenv
 brew install rbenv-gem-rehash
 brew install ruby-build
+brew install stow
 brew install vim
 brew install wget
