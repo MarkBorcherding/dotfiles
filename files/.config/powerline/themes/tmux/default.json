@@ -2,9 +2,6 @@
 	"segments": {
 		"right": [
 			{
-				"function": "powerline.segments.common.bat.battery"
-			},
-			{
 				"function": "powerline.segments.common.time.date"
 			},
 			{
