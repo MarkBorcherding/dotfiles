@@ -7,7 +7,7 @@ case "$1" in
     *.json|*.vim \
     )
         pygmentize -f 256 -O style=monokai "$1";;
-    .bashrc|.bash_aliases|.bash_environment)
+    .bashrc|.bash_aliases|.bash_environment|[Mm]akefile)
         pygmentize -f 256 -O style=monokai -l sh "$1"
         ;;
     Rakefile|Gemfile|Capfile|Guardfile)
