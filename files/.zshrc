@@ -37,3 +37,7 @@ antigen apply
 for file in ~/.profile.d/*; do
   [ -r "$file" ] && source "$file"
 done
+
+for file in ~/.zsh.d/*; do
+  [ -r "$file" ] && source "$file"
+done
