@@ -20,8 +20,12 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'mileszs/ack.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'mileszs/ack.vim'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
