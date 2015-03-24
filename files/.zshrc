@@ -59,3 +59,6 @@ bindkey -s "^[Ok" "+"
 bindkey -s "^[Om" "-"
 bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
+
+bindkey "^R" history-incremental-search-backward
+
