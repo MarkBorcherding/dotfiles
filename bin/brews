@@ -16,3 +16,6 @@ brew install stow
 brew install the_silver_searcher
 brew install vim
 brew install wget
+
+brew tap nviennot/tmate
+brew install tmate
