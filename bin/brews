@@ -13,5 +13,6 @@ brew install rbenv
 brew install rbenv-gem-rehash
 brew install ruby-build
 brew install stow
+brew install the_silver_searcher
 brew install vim
 brew install wget
