@@ -111,3 +111,5 @@ python del powerline_setup
 
 " Git """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+source ~/.vim/ftype.vim
