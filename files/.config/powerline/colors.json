@@ -14,8 +14,11 @@
 		"mediumcyan": 117,
 		"brightcyan": 159,
 
+    "blue": 4,
 		"darkestblue": 24,
 		"darkblue": 31,
+    "brightblue": 38,
+    "brightestblue": 45,
 
 		"red": 1,
 		"darkestred": 52,
