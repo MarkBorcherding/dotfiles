@@ -28,6 +28,8 @@ EOBUNDLES
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
 
+antigen bundle zsh-users/zsh-completions src
+
 # Load the theme.
 antigen theme MarkBorcherding/zsh-plugins themes/fooberry
 
