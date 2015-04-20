@@ -47,6 +47,7 @@ Plugin 'junegunn/vim-easy-align'
 " Language Specific
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
+Plugin 'mxw/vim-jsx'
 
 
 Plugin 'plasticboy/vim-markdown'
@@ -68,7 +69,6 @@ Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-endwise'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'astashov/vim-ruby-debugger'
 
 " Testing
 Plugin 'tpope/vim-dispatch'
