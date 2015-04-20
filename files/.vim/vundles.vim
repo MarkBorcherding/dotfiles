@@ -29,6 +29,7 @@ endif
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_javascript_checkers = ['jsxhint']
 
 Plugin 'ngmy/vim-rubocop'
 
