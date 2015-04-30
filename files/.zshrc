@@ -9,21 +9,20 @@ source ~/.antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle <<EOBUNDLES
-  battery
-  brew
-  brew-cask
-  command-not-found
-  git
-  git-prompt
-  heroku
-  lein
-  rails4
-  rbenv
-  ruby
-  tmux
-  tmuxinator
-EOBUNDLES
+antigen bundle battery
+antigen bundle brew
+antigen bundle brew-cask
+antigen bundle colorize
+antigen bundle command-not-found
+antigen bundle git
+antigen bundle lein
+antigen bundle osx
+antigen bundle rails
+antigen bundle rake
+antigen bundle rbenv
+antigen bundle ruby
+antigen bundle tmux
+antigen bundle tmuxinator
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
