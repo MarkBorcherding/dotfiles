@@ -36,6 +36,8 @@ Plugin 'ngmy/vim-rubocop'
 " Cosmetic
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-scripts/hexHighlight.vim'
+Plugin 'tomasr/molokai'
+
 
 " Text Manipulation
 Plugin 'tpope/vim-surround'
@@ -48,8 +50,8 @@ Plugin 'junegunn/vim-easy-align'
 " Language Specific
 Plugin 'Glench/Vim-Jinja2-Syntax'
 
+Plugin 'mtscout6/vim-cjsx'
 Plugin 'mxw/vim-jsx'
-
 
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_frontmatter=1
