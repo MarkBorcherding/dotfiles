@@ -24,8 +24,9 @@ antigen bundle ruby
 antigen bundle tmux
 antigen bundle tmuxinator
 
-# Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-history-substring-search
 
 # Load the theme.
 antigen theme MarkBorcherding/zsh-plugins themes/fooberry
