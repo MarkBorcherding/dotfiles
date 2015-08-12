@@ -18,11 +18,11 @@ function! RunTests(filename)
     if a:filename =~# '_test\.rb'
       exec ":Dispatch testrb " .  a:filename
     elseif a:filename =~# '_spec\.rb'
-      exec ":Dispatch rspec " .  a:filename
+      exec ":Dispatch bundle exec rspec " .  a:filename
     elseif a:filename =~# '\.feature'
-      exec ":Dispatch cucumber " . a:filename
+      exec ":Dispatch bundle exec cucumber " . a:filename
     else
-      exec ":Dispatch rspec " .  a:filename
+      exec ":Dispatch bundle exec rspec " .  a:filename
     endif
 
 endfunction

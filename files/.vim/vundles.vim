@@ -30,14 +30,13 @@ endif
 Plugin 'scrooloose/syntastic'
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_slim_checkers = ['slimrb', 'slim_lint']
 
 Plugin 'ngmy/vim-rubocop'
 
 " Cosmetic
 Plugin 'w0ng/vim-hybrid'
 Plugin 'vim-scripts/hexHighlight.vim'
-Plugin 'tomasr/molokai'
-
 
 " Text Manipulation
 Plugin 'tpope/vim-surround'
@@ -49,7 +48,7 @@ Plugin 'junegunn/vim-easy-align'
 
 " Language Specific
 Plugin 'Glench/Vim-Jinja2-Syntax'
-
+Plugin 'slim-template/vim-slim'
 Plugin 'mtscout6/vim-cjsx'
 Plugin 'mxw/vim-jsx'
 
