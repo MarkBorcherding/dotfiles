@@ -1,6 +1,31 @@
 {
 	"segments": {
 		"right": [
+      {
+        "function": "powerline.segments.common.wthr.weather",
+        "name": "weather",
+        "args": {
+          "unit": "F",
+          "icons": {
+            "day":           "☀️",
+            "blustery":      "🚩",
+            "rainy":         "☔",
+            "cloudy":        "☁️",
+            "snowy":         "❄️",
+            "stormy":        "↯",
+            "foggy":         "≡",
+            "sunny":         "☀️",
+            "night":         "🌙",
+            "windy":         "⤳",
+            "not_available": "❓",
+            "unknown":       "⚠️"
+          }
+        }
+      },
+      {
+        "function": "powerline.segments.common.bat.battery",
+        "name": "battery"
+      },
 			{
 				"function": "powerline.segments.common.time.date"
 			},
@@ -8,12 +33,15 @@
 				"function": "powerline.segments.common.time.date",
 				"name": "time",
 				"args": {
-					"format": "%H:%M",
+					"format": "%I:%M",
 					"istime": true
 				}
 			},
 			{
-				"function": "powerline.segments.common.net.hostname"
+				"function": "powerline.segments.common.net.hostname",
+        "args": {
+          "only_if_ssh": true
+        }
 			}
 		]
 	}
