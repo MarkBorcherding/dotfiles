@@ -6,19 +6,21 @@
         "name": "weather",
         "args": {
           "unit": "F",
+          "coldest_temp": 0.0,
+          "hottest_temp": 40.0,
           "icons": {
-            "day":           "☀️",
-            "blustery":      "🚩",
-            "rainy":         "☔",
-            "cloudy":        "☁️",
-            "snowy":         "❄️",
-            "stormy":        "↯",
-            "foggy":         "≡",
-            "sunny":         "☀️",
-            "night":         "🌙",
-            "windy":         "⤳",
-            "not_available": "❓",
-            "unknown":       "⚠️"
+            "day":           "☀️ ",
+            "blustery":      "🚩 ",
+            "rainy":         "☔ ",
+            "cloudy":        "☁️ ",
+            "snowy":         "❄️ ",
+            "stormy":        "↯ ",
+            "foggy":         "≡ ",
+            "sunny":         "☀️ ",
+            "night":         "🌙 ",
+            "windy":         "⤳ ",
+            "not_available": "❓ ",
+            "unknown":       "⚠️ "
           }
         }
       },
