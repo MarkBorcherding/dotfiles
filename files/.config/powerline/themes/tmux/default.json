@@ -6,6 +6,7 @@
         "name": "weather",
         "args": {
           "unit": "F",
+          "location_query": "63122",
           "coldest_temp": 0.0,
           "hottest_temp": 40.0,
           "icons": {
