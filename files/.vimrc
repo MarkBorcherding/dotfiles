@@ -48,7 +48,6 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray28 ctermbg=238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray27 ctermbg=236
 
-
 " Text Manipulation
 Plugin 'junegunn/vim-easy-align'
 Plugin 'terryma/vim-multiple-cursors'
@@ -104,6 +103,8 @@ filetype on                                    " Enable filetype detection
 filetype indent on                             " Enable filetype-specific indenting
 filetype plugin on                             " Enable filetype-specific plugins
 compiler ruby                                  " Enable compiler support for ruby
+
+:let mapleader = " "                           " Crazy leader
 
 " When you’re pressing Escape to leave insert mode in the terminal, it will by
 " default take a second or another keystroke to leave insert mode completely
