@@ -1,8 +1,85 @@
-set nocompatible                  " Must come first because it changes other options.
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-if filereadable(expand("$HOME/.vim/vundles.vim"))
-  source $HOME/.vim/vundles.vim
+set rtp+=~/.vim/bundle/Vundle.vim "set the runtime path to include Vundle and initialize
+call vundle#begin()
+
+" let Vundle manage Vundle
+" required!
+Plugin 'gmarik/Vundle.vim'
+
+" Git
+Plugin 'gregsexton/gitv'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'airblade/vim-gitgutter'
+
+" General Vim
+Plugin 'tpope/vim-unimpaired'
+Plugin 'scrooloose/nerdtree'
+Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'kien/ctrlp.vim'
+map <C-p> :CtrlP<Enter>
+map <C-P> :CtrlPClearAllCaches<Enter>:CtrlP<Enter>
+let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|dist|src|temp|development|tags)$'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
+
+Plugin 'mileszs/ack.vim'
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
 endif
+
+Plugin 'scrooloose/syntastic'
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_slim_checkers = ['slimrb', 'slim_lint']
+
+" Cosmetic
+Plugin 'tomasr/molokai'
+Plugin 'vim-scripts/hexHighlight.vim'
+Plugin 'w0ng/vim-hybrid'
+
+Plugin 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray28 ctermbg=238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray27 ctermbg=236
+
+
+" Text Manipulation
+Plugin 'junegunn/vim-easy-align'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+
+" Language Specific
+Plugin 'ck3g/vim-change-hash-syntax'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-rake.git'
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+
+Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_folding_disabled=1
+
+Plugin 'kchmck/vim-coffee-script'
+map <leader>c :CoffeeCompile vert<cr>
+map <leader>C :CoffeeCompile watch vert<cr>
+
+" Testing
+Plugin 'tpope/vim-dispatch'
+
+call vundle#end()            " required
 
 set visualbell                                 " No beeping.
 set history=1000                               " Store a lot of history
@@ -12,20 +89,21 @@ set shiftwidth=2                               " And again, related.
 set expandtab                                  " Use spaces instead of tabs
 set smarttab                                   " sw at start of line, sts everywhere else
 set autoread                                   " Reload files changed outside vim
-set autoindent
+set autoindent                                 " Indent the following line
 set backspace=2                                " make backspace work like most other apps
 set nobackup nowritebackup noswapfile autoread " no backup or swap
 set laststatus=2                               " Show the status line all the time
-
 set exrc                                       " enable per-directory .vimrc files
 set secure                                     " disable unsafe commands in local .vimrc files
+set t_ut=                                      " make the background work in tmux
+set t_Co=256                                   " Wide columns
+colorscheme hybrid                             " Beauty
 
 syntax on                                      " Enable syntax highlighting
 filetype on                                    " Enable filetype detection
 filetype indent on                             " Enable filetype-specific indenting
 filetype plugin on                             " Enable filetype-specific plugins
 compiler ruby                                  " Enable compiler support for ruby
-
 
 " When you’re pressing Escape to leave insert mode in the terminal, it will by
 " default take a second or another keystroke to leave insert mode completely
@@ -66,42 +144,67 @@ endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
 
-if filereadable(expand("~/.vim/test_runner.vim"))
-  source ~/.vim/test_runner.vim
-endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugin Configuration
+" Running tests
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" CtrlP """"""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <C-p> :CtrlP<Enter>
-map <C-P> :CtrlPClearAllCaches<Enter>:CtrlP<Enter>
-let g:ctrlp_working_path_mode = '0'
-let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|dist|src|temp|development|tags)$'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
+function! RunTests(filename)
+    " Write the file and run tests for the given filename
+    :w
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
+    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
 
-" NERDTree """""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Leader>d :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+    if a:filename =~# '_test\.rb'
+      exec ":Dispatch testrb " .  a:filename
+    elseif a:filename =~# '_spec\.rb'
+      exec ":Dispatch bundle exec rspec " .  a:filename
+    elseif a:filename =~# '\.feature'
+      exec ":Dispatch bundle exec cucumber " . a:filename
+    else
+      exec ":Dispatch bundle exec rspec " .  a:filename
+    endif
 
-" Vim Indent Guides """""""""""""""""""""""""""""""""""""""""""""
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray28 ctermbg=238
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray27 ctermbg=236
+endfunction
 
-" Sane Vimdiff colors """""""""""""""""""""""""""""""""""""""""""""""""""""""
-"highlight DiffAdd    term=reverse cterm=bold ctermbg=green ctermfg=white
-"highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
-"highlight DiffText   term=reverse cterm=bold ctermbg=gray ctermfg=black
-"highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
+function! SetTestFile()
+    " Set the spec file that tests will be run for.
+    let t:grb_test_file=@%
+endfunction
 
-" Appearance """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_ut= "make the background work in tmux
-set t_Co=256
-colorscheme hybrid
+function! RunTestFile(...)
+  if a:0
+    let command_suffix = a:1
+  else
+    let command_suffix = ""
+  endif
+
+  " Run the tests for the previously-marked file.
+  let in_test_file = match(expand("%"), '_test\.rb|\.feature\|_spec\.rb') != -1
+  if in_test_file
+    call SetTestFile()
+  elseif !exists("t:grb_test_file")
+    echo "no test to run"
+    return
+  end
+  call RunTests(t:grb_test_file . command_suffix)
+endfunction
+
+function! RunNearestTest()
+    let spec_line_number = line('.')
+    call RunTestFile(":" . spec_line_number . " -b")
+endfunction
+
+map <leader>r :call RunTestFile()<cr>
+map <leader>R :call RunNearestTest()<cr>
+map <leader>a :call RunTests('')<cr>
+map <leader>w :Dispatch cucumber --profile wip<cr>
 
 " Powerline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages")
@@ -109,7 +212,5 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 
-" Git """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd Filetype gitcommit setlocal spell textwidth=72
-
-source ~/.vim/ftype.vim
+autocmd bufread *.pxi setlocal filetype=clojure
