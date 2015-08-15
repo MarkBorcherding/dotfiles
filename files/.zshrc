@@ -34,13 +34,7 @@ antigen theme MarkBorcherding/zsh-plugins themes/fooberry
 # Tell antigen that you're done.
 antigen apply
 
-for file in ~/.profile.d/*; do
-  [ -r "$file" ] && source "$file"
-done
-
-for file in ~/.zsh.d/*; do
-  [ -r "$file" ] && source "$file"
-done
+source ~/.profile
 
 # Silly 10-Keypad
 bindkey -s "^[Op" "0"
