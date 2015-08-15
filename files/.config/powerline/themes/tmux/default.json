@@ -2,6 +2,28 @@
 	"segments": {
 		"right": [
       {
+        "function": "powerline.segments.common.bat.battery",
+        "name": "battery"
+      },
+			{
+				"function": "powerline.segments.common.time.date"
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%I:%M",
+					"istime": true
+				}
+			},
+      {
+        "function": "powerline.segments.tmux.attached_clients",
+        "name": "attached_clients",
+        "args": {
+          "minimum": 2
+        }
+      },
+      {
         "function": "powerline.segments.common.wthr.weather",
         "name": "weather",
         "args": {
@@ -25,27 +47,15 @@
           }
         }
       },
+      { "function": "powerline.segments.common.net.hostname" },
       {
-        "function": "powerline.segments.common.bat.battery",
-        "name": "battery"
-      },
-			{
-				"function": "powerline.segments.common.time.date"
-			},
-			{
-				"function": "powerline.segments.common.time.date",
-				"name": "time",
-				"args": {
-					"format": "%I:%M",
-					"istime": true
-				}
-			},
-			{
-				"function": "powerline.segments.common.net.hostname",
-        "args": {
-          "only_if_ssh": true
+        "function": "powerline.segments.common.net.internal_ip",
+        "name": "local_ip",
+        "args":  {
+          "ipv": 4,
+          "interface": "en0"
         }
-			}
+      }
 		]
 	}
 }

@@ -1,24 +1,27 @@
 {
-	"groups": {
-		"active_window_status": {"fg": "darkblue",   "bg": "gray0",    "attrs": []},
-		"window_status":        {"fg": "gray70",     "bg": "gray0",    "attrs": []},
-		"activity_status":      {"fg": "yellow",     "bg": "gray0",    "attrs": []},
-		"bell_status":          {"fg": "red",        "bg": "gray0",    "attrs": []},
-		"window":               {"fg": "gray6",      "bg": "gray0",    "attrs": []},
-		"window:divider":       {"fg": "gray4",      "bg": "gray0",    "attrs": []},
-		"window:current":       {"fg": "mediumcyan", "bg": "darkblue", "attrs": []},
-		"window_name":          {"fg": "white",      "bg": "darkblue", "attrs": ["bold"]},
-		"session":              {"fg": "brightblue", "bg": "darkestblue",   "attrs": ["bold"]},
-		"session:prefix":       {"fg": "darkestblue",     "bg": "brightestblue", "attrs": ["bold"]},
+  "groups": {
+    "active_window_status": {"fg": "darkblue",   "bg": "gray0",    "attrs": []},
+    "window_status":        {"fg": "gray70",     "bg": "gray0",    "attrs": []},
+    "activity_status":      {"fg": "yellow",     "bg": "gray0",    "attrs": []},
+    "bell_status":          {"fg": "red",        "bg": "gray0",    "attrs": []},
+    "window":               {"fg": "gray6",      "bg": "gray0",    "attrs": []},
+    "window:divider":       {"fg": "gray4",      "bg": "gray0",    "attrs": []},
+    "window:current":       {"fg": "mediumcyan", "bg": "darkblue", "attrs": []},
+    "window_name":          {"fg": "white",      "bg": "darkblue", "attrs": ["bold"]},
 
-		"date":                      { "fg": "gray8",                   "bg": "gray2", "attrs": [] },
-		"time":                      { "fg": "gray10",                  "bg": "gray2", "attrs": ["bold"] },
-		"time:divider":              { "fg": "gray5",                   "bg": "gray2", "attrs": [] },
+    "session":              {"fg": "brightblue",  "bg": "darkestblue",   "attrs": ["bold"]},
+    "session:prefix":       {"fg": "darkestblue", "bg": "brightestblue", "attrs": ["bold"]},
 
-		"battery":                   { "fg": "gray8",                   "bg": "gray9", "attrs": [] },
-		"battery_gradient":          { "fg": "green_yellow_orange_red", "bg": "gray0", "attrs": [] },
+    "attached_clients":      {"fg": "black",     "bg": "brightred",    "attrs": ["bold"]},
 
-		"weather":                   { "fg": "gray8",                   "bg": "gray0", "attrs": [] },
-		"weather_temp_gradient":     { "fg": "blue_green_red",          "bg": "gray0", "attrs": [] }
-	}
+    "date":                  { "fg": "gray6", "bg": "gray2", "attrs": [] },
+    "time":                  { "fg": "gray6", "bg": "gray2", "attrs": ["bold"] },
+
+    "weather":               { "fg": "red",            "bg": "gray5", "attrs": [] },
+    "weather_temp_gradient": { "fg": "blue_green_red", "bg": "gray5", "attrs": [] },
+
+    "hostname":              { "fg": "gray2",    "bg": "gray8",   "attrs": [] },
+    "internal_ip":           { "fg": "gray2",    "bg": "gray8",    "attrs": []}
+  }
 }
+
