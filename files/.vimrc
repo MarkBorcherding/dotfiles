@@ -63,6 +63,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-rake.git'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'slim-template/vim-slim'
 
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
