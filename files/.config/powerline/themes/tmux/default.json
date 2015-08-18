@@ -47,7 +47,12 @@
           }
         }
       },
-      { "function": "powerline.segments.common.net.hostname" },
+      {
+        "function": "powerline.segments.common.net.hostname",
+        "args": {
+          "exclude_domain": true
+        }
+      },
       {
         "function": "powerline.segments.common.net.internal_ip",
         "name": "local_ip",
