@@ -41,6 +41,10 @@ Plugin 'tomasr/molokai'
 Plugin 'vim-scripts/hexHighlight.vim'
 Plugin 'w0ng/vim-hybrid'
 
+Plugin 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+let g:airline_theme='powerlineish'
+
 Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
@@ -207,12 +211,6 @@ map <leader>r :call RunTestFile()<cr>
 map <leader>R :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
 map <leader>w :Dispatch cucumber --profile wip<cr>
-
-" Powerline """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-python import sys; sys.path.append("/usr/local/lib/python2.7/site-packages")
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
 
 autocmd Filetype gitcommit setlocal spell textwidth=72
 autocmd bufread *.pxi setlocal filetype=clojure
