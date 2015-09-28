@@ -24,6 +24,7 @@ map <C-p> :CtrlP<Enter>
 map <C-P> :CtrlPClearAllCaches<Enter>:CtrlP<Enter>
 let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|dist|src|temp|development|tags)$'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 
 Plugin 'mileszs/ack.vim'
