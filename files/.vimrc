@@ -38,9 +38,13 @@ let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_slim_checkers = ['slimrb', 'slim_lint']
 
 " Cosmetic
-Plugin 'tomasr/molokai'
-Plugin 'vim-scripts/hexHighlight.vim'
-Plugin 'w0ng/vim-hybrid'
+Plugin 'tomasr/molokai'                 " Slightly less nice colorscheme
+Plugin 'w0ng/vim-hybrid'                " Nice colorscheme
+
+Plugin 'junegunn/goyo.vim'              " Distraction free vim
+Plugin 'junegunn/limelight.vim'         " Dim all but your current paragraph
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 Plugin 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
