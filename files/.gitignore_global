@@ -1,3 +1,4 @@
 .*.sw*
 /tags
 .DS_Store
+.ruby-version
