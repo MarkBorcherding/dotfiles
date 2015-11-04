@@ -107,6 +107,7 @@ set secure                                     " disable unsafe commands in loca
 set t_ut=                                      " make the background work in tmux
 set t_Co=256                                   " Wide columns
 colorscheme hybrid                             " Beauty
+set background=dark
 
 syntax on                                      " Enable syntax highlighting
 filetype on                                    " Enable filetype detection
