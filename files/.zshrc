@@ -56,3 +56,4 @@ bindkey -s "^[Oo" "/"
 
 bindkey "^R" history-incremental-search-backward
 
+eval "$(rbenv init -)"
