@@ -30,7 +30,9 @@ PATH="./node_modules/.bin:$PATH"            # Add the local node modules bins
 PATH="$HOME/pear/bin:$PATH"                 # Pear bins
 PATH="/usr/local/share/npm/bin:$PATH"       # Add the global npm bins to the path
 PATH="$PATH:$HOME/bin"                      # Custom bin
-PATH="./bin:$PATH"                          # add Binstubs to path
+PATH="$HOME/.rbenv/bin:$PATH"               # Add rbenv bins to the path
+PATH="./bin:$PATH"                          # Add local workspace binstubs to the path
+
 export PATH
 
 # Paths
