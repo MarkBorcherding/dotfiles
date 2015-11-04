@@ -2,14 +2,11 @@
 
 eval "$(rbenv init -)"
 
-# enable color support of ls and also add handy aliases
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# some more ls aliases
-alias ls="ls -G "
+alias ls="ls -G --color"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
