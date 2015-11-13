@@ -108,6 +108,8 @@ set t_ut=                                      " make the background work in tmu
 set t_Co=256                                   " Wide columns
 colorscheme hybrid                             " Beauty
 set background=dark
+set incsearch                                  " Find the next match as we type the search
+set hlsearch                                   " Hilight searches by default
 
 syntax on                                      " Enable syntax highlighting
 filetype on                                    " Enable filetype detection
@@ -116,6 +118,13 @@ filetype plugin on                             " Enable filetype-specific plugin
 compiler ruby                                  " Enable compiler support for ruby
 
 :let mapleader = " "                           " Crazy leader
+
+" Clear the search buffer when hitting return
+:nnoremap <CR> :nohlsearch<cr>
+
+autocmd BufWritePre * :%s/\s\+$//e                     " auto remove trailing whitespace
+autocmd Filetype gitcommit setlocal spell textwidth=72 " Spellcheck git commit messages
+autocmd bufread *.pxi setlocal filetype=clojure        " Steal the clojure syntax highlighting for Pixie
 
 " When you’re pressing Escape to leave insert mode in the terminal, it will by
 " default take a second or another keystroke to leave insert mode completely
@@ -130,16 +139,6 @@ if !has('gui_running')
   augroup END
 endif
 
-autocmd BufWritePre * :%s/\s\+$//e     " auto remove trailing whitespace
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Search settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set incsearch        "Find the next match as we type the search
-set hlsearch         "Hilight searches by default
-
-:nnoremap <CR> :nohlsearch<cr>  " Clear the search buffer when hitting return
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
@@ -218,5 +217,3 @@ map <leader>R :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
 map <leader>w :Dispatch cucumber --profile wip<cr>
 
-autocmd Filetype gitcommit setlocal spell textwidth=72
-autocmd bufread *.pxi setlocal filetype=clojure
