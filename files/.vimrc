@@ -62,17 +62,22 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " Language Specific
-Plugin 'ck3g/vim-change-hash-syntax'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-endwise'
+Plugin 'slim-template/vim-slim'
+
+" Ruby
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-rake.git'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'slim-template/vim-slim'
+Plugin 'ck3g/vim-change-hash-syntax'
+
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+runtime macros/matchit.vim
 
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
