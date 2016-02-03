@@ -68,6 +68,7 @@ Plugin 'tpope/vim-surround'
 
 " Language Specific
 Plugin 'slim-template/vim-slim'
+Plugin 'keith/swift.vim'
 
 " Ruby
 Plugin 'tpope/vim-rails.git'
