@@ -33,6 +33,7 @@ if executable('ag')
 endif
 
 Plugin 'scrooloose/syntastic'
+let g:syntastic_cpp_check_header = 1
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_slim_checkers = ['slimrb', 'slim_lint']
@@ -47,6 +48,7 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 let g:airline_theme='powerlineish'
 
@@ -69,6 +71,9 @@ Plugin 'tpope/vim-surround'
 " Language Specific
 Plugin 'slim-template/vim-slim'
 Plugin 'keith/swift.vim'
+Plugin 'jplaut/vim-arduino-ino'
+Plugin 'hashivim/vim-terraform'
+
 
 " Ruby
 Plugin 'tpope/vim-rails.git'
