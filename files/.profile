@@ -32,6 +32,7 @@ PATH="/usr/local/share/npm/bin:$PATH"       # Add the global npm bins to the pat
 PATH="$PATH:$HOME/bin"                      # Custom bin
 PATH="$HOME/.rbenv/bin:$PATH"               # Add rbenv bins to the path
 PATH="./bin:$PATH"                          # Add local workspace binstubs to the path
+PATH="/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2016-01-25-a.xctoolchain/usr/bin/:${PATH}" # Add current swift tools to path
 
 export PATH
 
