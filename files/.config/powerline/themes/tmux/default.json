@@ -29,8 +29,8 @@
         "args": {
           "unit": "F",
           "location_query": "63122",
-          "coldest_temp": 32.0,
-          "hottest_temp": 95.0,
+          "temp_coldest": 30.0,
+          "temp_hottest": 100.0,
           "icons": {
             "day":           "☀️ ",
             "blustery":      "🚩 ",
