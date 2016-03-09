@@ -34,6 +34,8 @@ antigen theme MarkBorcherding/zsh-plugins themes/fooberry
 # Tell antigen that you're done.
 antigen apply
 
+eval "$(rbenv init -)"
+
 source ~/.profile
 
 # Silly 10-Keypad
@@ -56,4 +58,3 @@ bindkey -s "^[Oo" "/"
 
 bindkey "^R" history-incremental-search-backward
 
-eval "$(rbenv init -)"
