@@ -69,11 +69,11 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " Language Specific
-Plugin 'slim-template/vim-slim'
-Plugin 'keith/swift.vim'
-Plugin 'jplaut/vim-arduino-ino'
 Plugin 'hashivim/vim-terraform'
-
+Plugin 'jplaut/vim-arduino-ino'
+Plugin 'keith/swift.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'slim-template/vim-slim'
 
 " Ruby
 Plugin 'tpope/vim-rails.git'
