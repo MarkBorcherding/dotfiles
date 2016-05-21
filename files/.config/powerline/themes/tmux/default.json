@@ -24,30 +24,6 @@
         }
       },
       {
-        "function": "powerline.segments.common.wthr.weather",
-        "name": "weather",
-        "args": {
-          "unit": "F",
-          "location_query": "63122",
-          "temp_coldest": 30.0,
-          "temp_hottest": 100.0,
-          "icons": {
-            "day":           "☀️ ",
-            "blustery":      "🚩 ",
-            "rainy":         "☔ ",
-            "cloudy":        "☁️ ",
-            "snowy":         "❄️ ",
-            "stormy":        "↯ ",
-            "foggy":         "≡ ",
-            "sunny":         "☀️ ",
-            "night":         "🌙 ",
-            "windy":         "⤳ ",
-            "not_available": "❓ ",
-            "unknown":       "⚠️ "
-          }
-        }
-      },
-      {
         "function": "powerline.segments.common.net.hostname",
         "args": {
           "exclude_domain": true
