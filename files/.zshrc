@@ -16,6 +16,7 @@ antigen bundle colorize
 antigen bundle command-not-found
 antigen bundle git
 antigen bundle lein
+antigen bundle mix
 antigen bundle osx
 antigen bundle rails
 antigen bundle rake

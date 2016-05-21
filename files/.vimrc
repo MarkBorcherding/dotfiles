@@ -19,7 +19,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'scrooloose/nerdtree'
 Plugin 'christoomey/vim-tmux-navigator'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 map <C-p> :CtrlP<Enter>
 map <C-P> :CtrlPClearAllCaches<Enter>:CtrlP<Enter>
 let g:ctrlp_working_path_mode = '0'
