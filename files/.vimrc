@@ -69,8 +69,10 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 
 " Language Specific
+Plugin 'elixir-lang/vim-elixir'
 Plugin 'hashivim/vim-terraform'
 Plugin 'jplaut/vim-arduino-ino'
+Plugin 'keith/tmux.vim'
 Plugin 'keith/swift.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'slim-template/vim-slim'
