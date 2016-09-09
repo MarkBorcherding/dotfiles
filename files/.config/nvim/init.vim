@@ -10,10 +10,15 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'ctrlpvim/ctrlp.vim'
 map <C-p> :CtrlP<Enter>
+let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag
+let g:ctrlp_use_caching = 0 " ag is fast enough that CtrlP doesn't need to cache
 
 Plug 'mileszs/ack.vim'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
+
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
 endif
 
 Plug 'scrooloose/syntastic'
