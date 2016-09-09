@@ -24,4 +24,6 @@ brew install \
       libxslt \
       qt4
 
+brew install neovim/neovim/neovim
+
 pip install powerline-status
