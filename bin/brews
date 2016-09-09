@@ -5,15 +5,18 @@ brew update
 # Install the no brainer needs
 brew install \
       curl \
+      ctags \
       git \
       htop-osx \
       iftop \
       python \
+      reattach-to-user-namespace \
       stow \
       the_silver_searcher \
       tmux \
       vim \
-      wget
+      wget \
+      zsh
 
 # Install packages needed for Ruby
 brew install \
