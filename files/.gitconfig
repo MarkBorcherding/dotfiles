@@ -34,7 +34,6 @@
 	default = simple
 [credential]
 	helper = osxkeychain
-	helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
 [merge]
   keepBackup = false;
