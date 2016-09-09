@@ -29,4 +29,6 @@ brew install \
 
 brew install neovim/neovim/neovim
 
+brew tap homebrew/services
+
 pip install powerline-status
