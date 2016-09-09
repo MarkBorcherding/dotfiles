@@ -36,9 +36,6 @@ setup_vim() {
 }
 
 make_non_symlink_dirs() {
-  mkdir -p ~/.profile.d
-  mkdir -p ~/bash_completion.d
-  mkdir -p ~/.bash.d
   mkdir -p ~/.zsh.d
 }
 
