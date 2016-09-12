@@ -7,6 +7,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 Plug 'ctrlpvim/ctrlp.vim'
 map <C-p> :CtrlP<Enter>
@@ -56,6 +57,8 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'hashivim/vim-terraform'
 Plug 'keith/tmux.vim'
 Plug 'slim-template/vim-slim'
+Plug 'derekwyatt/vim-scala'
+Plug 'ensime/ensime-vim'
 
 " Ruby
 Plug 'tpope/vim-rails'
