@@ -2,3 +2,5 @@
 /tags
 .DS_Store
 .ruby-version
+.ensime_cache/
+.ensime

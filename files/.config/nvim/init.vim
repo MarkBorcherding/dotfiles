@@ -6,27 +6,38 @@ Plug 'airblade/vim-gitgutter'
 
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree'
+let g:NERDTreeQuitOnOpen = 1
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 Plug 'ctrlpvim/ctrlp.vim'
 map <C-p> :CtrlP<Enter>
-let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s' " Use ag
+map <C-b> :CtrlPBuffer<Enter>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0 " ag is fast enough that CtrlP doesn't need to cache
+let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_custom_ignore = '\v[\/](\.git|node_modules|dist|src|temp|development|tags)$'
 
 Plug 'mileszs/ack.vim'
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
+let g:ackprg = 'ag --vimgrep'
+set grepprg=ag\ --nogroup\ --nocolor
 
 Plug 'scrooloose/syntastic'
-let g:syntastic_cpp_check_header = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_slim_checkers = ['slimrb', 'slim_lint']
+let g:syntastic_scala_checkers = ['scalac', 'scalastyle', 'ensime']
+let g:syntastic_scala_scalastyle_jar = '/usr/local/Cellar/scalastyle/0.8.0/libexec/scalastyle_2.11-0.8.0-batch.jar'
+let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 
 " Cosmetic
 Plug 'w0ng/vim-hybrid'                " Nice colorscheme
@@ -53,12 +64,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " Language Specific
+Plug 'derekwyatt/vim-scala'
 Plug 'elixir-lang/vim-elixir'
+Plug 'ensime/ensime-vim'
 Plug 'hashivim/vim-terraform'
+Plug 'kchmck/vim-coffee-script'
 Plug 'keith/tmux.vim'
 Plug 'slim-template/vim-slim'
-Plug 'derekwyatt/vim-scala'
-Plug 'ensime/ensime-vim'
 
 " Ruby
 Plug 'tpope/vim-rails'
@@ -105,14 +117,14 @@ filetype indent on                             " Enable filetype-specific indent
 filetype plugin on                             " Enable filetype-specific plugins
 compiler ruby                                  " Enable compiler support for ruby
 
-:let mapleader = " "                           " Crazy leader
+:let mapleader      = " "                      " Crazy leader
+:let maplocalleader = "\\"                     " Normal leader
 
 " Clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>
 
 autocmd BufWritePre * :%s/\s\+$//e                     " auto remove trailing whitespace
 autocmd Filetype gitcommit setlocal spell textwidth=72 " Spellcheck git commit messages
-autocmd bufread *.pxi setlocal filetype=clojure        " Steal the clojure syntax highlighting for Pixie
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
