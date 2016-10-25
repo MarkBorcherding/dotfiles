@@ -17,7 +17,7 @@ export CLICOLOR=1
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
-alias vim='nvim'
+#alias vim='nvim'
 
 # Enable vi mode one the command line
 set -o vi

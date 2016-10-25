@@ -29,13 +29,13 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 
+antigen bundle dannyzen/cf-zsh-autocomplete-plugin
+
 # Load the theme.
 antigen theme MarkBorcherding/zsh-plugins themes/fooberry
 
 # Tell antigen that you're done.
 antigen apply
-
-eval "$(rbenv init -)"
 
 source ~/.profile
 

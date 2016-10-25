@@ -1,3 +1,9 @@
+
+ " map a fe things first so we can setup correct mappings to them when the
+ " plugins get setup
+:let mapleader      = " "                      " Crazy leader
+:let maplocalleader = "\\"                     " Normal leader
+
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'tpope/vim-fugitive'
@@ -7,13 +13,16 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree'
 let g:NERDTreeQuitOnOpen = 1
+map <leader>n :NERDTreeToggle<CR>
+map <leader>N :NERDTreeFind<CR>
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
 Plug 'christoomey/vim-tmux-navigator'
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 Plug 'ctrlpvim/ctrlp.vim'
 map <C-p> :CtrlP<Enter>
-map <C-b> :CtrlPBuffer<Enter>
+map <C--> :CtrlPBuffer<Enter>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0 " ag is fast enough that CtrlP doesn't need to cache
@@ -35,12 +44,14 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_slim_checkers = ['slimrb', 'slim_lint']
-let g:syntastic_scala_checkers = ['scalac', 'scalastyle', 'ensime']
+let g:syntastic_scala_checkers = ['scalac']
 let g:syntastic_scala_scalastyle_jar = '/usr/local/Cellar/scalastyle/0.8.0/libexec/scalastyle_2.11-0.8.0-batch.jar'
 let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 
 " Cosmetic
 Plug 'w0ng/vim-hybrid'                " Nice colorscheme
+Plug 'kien/rainbow_parentheses.vim'
+
 
 Plug 'junegunn/goyo.vim'              " Distraction free vim
 
@@ -66,11 +77,18 @@ Plug 'tpope/vim-surround'
 " Language Specific
 Plug 'derekwyatt/vim-scala'
 Plug 'elixir-lang/vim-elixir'
-Plug 'ensime/ensime-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'kchmck/vim-coffee-script'
 Plug 'keith/tmux.vim'
 Plug 'slim-template/vim-slim'
+
+
+Plug 'ensime/ensime-vim'
+au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
+au FileType scala nnoremap <localleader>ds :EnDeclarationSplit<CR>
+au FileType scala nnoremap <localleader>c :w<CR> :EnTypeCheck<CR>
+au FileType scala nnoremap <localleader>i :EnSuggestImport<CR>
+au FileType scala nnoremap <localleader>oi :EnOrganizeImport<CR>
 
 " Ruby
 Plug 'tpope/vim-rails'
@@ -117,8 +135,6 @@ filetype indent on                             " Enable filetype-specific indent
 filetype plugin on                             " Enable filetype-specific plugins
 compiler ruby                                  " Enable compiler support for ruby
 
-:let mapleader      = " "                      " Crazy leader
-:let maplocalleader = "\\"                     " Normal leader
 
 " Clear the search buffer when hitting return
 :nnoremap <CR> :nohlsearch<cr>

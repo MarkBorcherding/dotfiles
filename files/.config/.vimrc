@@ -4,7 +4,7 @@
 :let mapleader      = " "                      " Crazy leader
 :let maplocalleader = "\\"                     " Normal leader
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
