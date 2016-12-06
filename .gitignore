@@ -24,6 +24,7 @@ Session.vim
 
 files/.vim/bundle/
 files/.vim/bundle/
+files/.vim/plugged/
 files/.config/nvim/plugged/
 
 # Fritzing might not stay
