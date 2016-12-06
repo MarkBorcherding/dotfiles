@@ -20,6 +20,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
+Plug 'Valloric/YouCompleteMe'
+
 Plug 'ctrlpvim/ctrlp.vim'
 map <C-p> :CtrlP<Enter>
 map <C--> :CtrlPBuffer<Enter>
@@ -51,7 +53,7 @@ let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 " Cosmetic
 Plug 'w0ng/vim-hybrid'                " Nice colorscheme
 Plug 'kien/rainbow_parentheses.vim'
-
+nnoremap <leader>p :RainbowParenthesesToggle<CR>
 
 Plug 'junegunn/goyo.vim'              " Distraction free vim
 
@@ -76,28 +78,22 @@ Plug 'tpope/vim-surround'
 
 " Language Specific
 Plug 'derekwyatt/vim-scala'
-Plug 'elixir-lang/vim-elixir'
-Plug 'hashivim/vim-terraform'
 Plug 'kchmck/vim-coffee-script'
 Plug 'keith/tmux.vim'
-Plug 'slim-template/vim-slim'
-
 
 Plug 'ensime/ensime-vim'
-au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
-au FileType scala nnoremap <localleader>ds :EnDeclarationSplit<CR>
-au FileType scala nnoremap <localleader>c :w<CR> :EnTypeCheck<CR>
-au FileType scala nnoremap <localleader>i :EnSuggestImport<CR>
-au FileType scala nnoremap <localleader>oi :EnOrganizeImport<CR>
+autocmd FileType scala nnoremap <localleader>df :EnDeclaration<CR>
+autocmd FileType scala nnoremap <localleader>ds :EnDeclarationSplit<CR>
+autocmd FileType scala nnoremap <localleader>t :EnType<CR>
+autocmd FileType scala nnoremap <localleader>T :EnTypeCheck<CR>
+autocmd FileType scala nnoremap <localleader>i :EnInspectType<CR>
+autocmd FileType scala nnoremap <localleader>I :EnSuggestImport<CR>
+autocmd FileType scala nnoremap <localleader>oi :EnOrganizeImport<CR>
 
 " Ruby
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'vim-ruby/vim-ruby'
-
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'kana/vim-textobj-user'
-runtime macros/matchit.vim
 
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_frontmatter=1

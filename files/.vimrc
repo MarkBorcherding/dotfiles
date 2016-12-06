@@ -4,7 +4,7 @@
 :let mapleader      = " "                      " Crazy leader
 :let maplocalleader = "\\"                     " Normal leader
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -84,9 +84,11 @@ Plug 'slim-template/vim-slim'
 Plug 'ensime/ensime-vim'
 au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
 au FileType scala nnoremap <localleader>ds :EnDeclarationSplit<CR>
-au FileType scala nnoremap <localleader>c :w<CR> :EnTypeCheck<CR>
-au FileType scala nnoremap <localleader>i :EnSuggestImport<CR>
+au FileType scala nnoremap <localleader>I :EnSuggestImport<CR>
+au FileType scala nnoremap <localleader>i :EnInspectType<CR>
 au FileType scala nnoremap <localleader>oi :EnOrganizeImport<CR>
+au FileType scala nnoremap <localleader>T :EnTypeCheck<CR>
+au FileType scala nnoremap <localleader>t :EnType<CR>
 
 " Ruby
 Plug 'tpope/vim-rails'
@@ -217,3 +219,4 @@ map <leader>R :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
 map <leader>w :Dispatch cucumber --profile wip<cr>
 
+set guifont=Fira\ Code:h12
