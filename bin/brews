@@ -6,6 +6,7 @@ brew update
 brew install \
       curl \
       ctags \
+      emacs \
       git \
       htop-osx \
       iftop \
