@@ -15,3 +15,4 @@ set go-=T
 if exists('*HexHighlight()')
   nmap <Leader>h :call HexHighlight()<CR>
 endif
+
