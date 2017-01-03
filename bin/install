@@ -45,16 +45,9 @@ setup_zsh(){
   fi
 }
 
-setup_emacs(){
-  if [ ! -d $HOME/.emacs.d ]; then
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-  fi
-}
-
 has_stow
 make_non_symlink_dirs
 stow_it
 setup_vim
 setup_zsh
-setup_emacs
 echo 'Installation complete'
