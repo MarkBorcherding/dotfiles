@@ -52,6 +52,7 @@ let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 
 " Cosmetic
 Plug 'w0ng/vim-hybrid'                " Nice colorscheme
+Plug 'morhetz/gruvbox'
 Plug 'kien/rainbow_parentheses.vim'
 nnoremap <leader>p :RainbowParenthesesToggle<CR>
 
