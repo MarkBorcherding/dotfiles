@@ -39,3 +39,5 @@ export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 
 # Find where powerline is installed
 export POWERLINE_PATH="$(pip show powerline-status | grep "^Location: "  | grep -o '/.*')/powerline"
+
+[ -f ${HOME}/.profile.secrets ] && source ${HOME}/.profile.secrets
