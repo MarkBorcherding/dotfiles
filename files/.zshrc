@@ -11,7 +11,6 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle battery
 antigen bundle brew
-antigen bundle brew-cask
 antigen bundle colorize
 antigen bundle command-not-found
 antigen bundle git
@@ -22,8 +21,11 @@ antigen bundle rails
 antigen bundle rake
 antigen bundle rbenv
 antigen bundle ruby
+antigen bundle scala
+antigen bundle sbt
 antigen bundle tmux
 antigen bundle tmuxinator
+antigen bundle vault
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
