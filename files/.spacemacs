@@ -58,7 +58,9 @@ values."
      markdown
      org
      react
-     scala
+     (scala :variables scala-auto-insert-asterisk-in-comments t
+                       scala-auto-start-ensime t)
+     slack
      shell
      spell-checking
      yaml
@@ -74,6 +76,7 @@ values."
                                       subatomic-theme    ;; Colors that look be-a-utiful ...and don't get deleted in terminal mode
                                       subatomic256-theme ;; Colors that look OK in terminal mode...and don't get deleted in GUI mode
                                       groovy-mode        ;; Syntax highlighting for jenkins-deploy-file stuff
+                                      load-dir           ;; used to load a bunch of files from Dropbox
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -320,6 +323,15 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  (use-package gruvbox-theme
+    :ensure t
+    :init
+    (disable-theme 'spacemacs-dark)
+    (load-theme 'gruvbox t t)
+    (custom-theme-set-faces 'gruvbox
+                            '(web-mode-html-attr-custom-face ((t (:slant italic))))
+                            '(web-mode-html-attr-name-face ((t (:slant italic)))))
+    (enable-theme 'gruvbox))
 
   (setq-default
    js-indent-level 2
@@ -334,7 +346,6 @@ you should place your code here."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
-  (load-theme 'gruvbox t)
   (setq ensime-sem-high-faces
         '(
           (implicitConversion nil)
@@ -366,15 +377,9 @@ you should place your code here."
     (dolist (checker '(javascript-eslint javascript-standard))
       (flycheck-add-mode checker 'react-mode)))
 
-  (use-package gruvbox-theme
-    :ensure t
-    :init
-    (disable-theme 'spacemacs-dark)
-    (load-theme 'gruvbox t t)
-    (custom-theme-set-faces 'gruvbox
-                            '(web-mode-html-attr-custom-face ((t (:slant italic))))
-                            '(web-mode-html-attr-name-face ((t (:slant italic)))))
-    (enable-theme 'gruvbox))
+  (load "~/Dropbox/.emacs.d/slack.el")
+
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -433,7 +438,7 @@ you should place your code here."
  '(org-agenda-files (quote ("~/Desktop/todo.org")))
  '(package-selected-packages
    (quote
-    (rjsx-mode async exec-path-from-shell evil avy packed nil-theme autothemer js3-mode ob-elixir flycheck-mix flycheck alchemist elixir-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data helm-core zonokai-theme zen-and-art-theme xterm-color ujelly-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme shell-pop reverse-theme railscasts-theme purple-haze-theme professional-theme pastels-on-dark-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme multi-term molokai-theme moe-theme minimal-theme majapahit-theme magit-gh-pulls lush-theme light-soap-theme jazz-theme inkpot-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme github-search github-clone github-browse-file gist gh marshal logito ht gandalf-theme firebelly-theme eshell-z eshell-prompt-extras esh-help dracula-theme django-theme darkmine-theme cyberpunk-theme clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme mwim emoji-cheat-sheet-plus company-emoji noflet spinner hydra smartparens highlight projectile helm dash powerline groovy-mode jenkins slack restclient ob-http helm-dash rainbow-mode rainbow-identifiers color-identifiers-mode kosmos-theme zenburn-theme monokai-theme leuven-theme org-projectile pcache org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot solarized-theme color-theme-sanityinc-solarized twilight-theme tramp-theme firecode-theme darkokai-theme ir-black-theme mustang-theme seoul256-theme yaml-mode web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode play-routes-mode phoenix-dark-pink-theme darkburn-theme zerodark-theme badwolf-theme calmer-forest-theme forest-blue-theme xpm flatui-theme farmhouse-theme espresso-theme eink-theme underwater-theme atom-one-dark-theme spacegray-theme seti-theme color-theme-sanityinc-tomorrow planet-theme niflheim-theme phoenix-dark-mono-theme quasi-monochrome-theme sexy-monochrome-theme monochrome-theme material-theme jbeans-theme heroku-theme flatland-black-theme flatland-theme dakrone-theme dash-at-point smeargle orgit org magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor darktooth-theme subatomic256-theme subatomix256-theme ensime sbt-mode scala-mode mmm-mode markdown-toc markdown-mode gh-md flyspell-correct-helm flyspell-correct auto-dictionary helm-company helm-c-yasnippet company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline restart-emacs request rainbow-delimiters quelpa popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-pathfrom-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
+    (load-directory emojify circe oauth2 websocket load-dir rjsx-mode async exec-path-from-shell evil avy packed nil-theme autothemer js3-mode ob-elixir flycheck-mix flycheck alchemist elixir-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data helm-core zonokai-theme zen-and-art-theme xterm-color ujelly-theme twilight-bright-theme twilight-anti-bright-theme tronesque-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes soothe-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme shell-pop reverse-theme railscasts-theme purple-haze-theme professional-theme pastels-on-dark-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme multi-term molokai-theme moe-theme minimal-theme majapahit-theme magit-gh-pulls lush-theme light-soap-theme jazz-theme inkpot-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme github-search github-clone github-browse-file gist gh marshal logito ht gandalf-theme firebelly-theme eshell-z eshell-prompt-extras esh-help dracula-theme django-theme darkmine-theme cyberpunk-theme clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme mwim emoji-cheat-sheet-plus company-emoji noflet spinner hydra smartparens highlight projectile helm dash powerline groovy-mode jenkins slack restclient ob-http helm-dash rainbow-mode rainbow-identifiers color-identifiers-mode kosmos-theme zenburn-theme monokai-theme leuven-theme org-projectile pcache org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot solarized-theme color-theme-sanityinc-solarized twilight-theme tramp-theme firecode-theme darkokai-theme ir-black-theme mustang-theme seoul256-theme yaml-mode web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor multiple-cursors js2-mode js-doc company-tern dash-functional tern coffee-mode play-routes-mode phoenix-dark-pink-theme darkburn-theme zerodark-theme badwolf-theme calmer-forest-theme forest-blue-theme xpm flatui-theme farmhouse-theme espresso-theme eink-theme underwater-theme atom-one-dark-theme spacegray-theme seti-theme color-theme-sanityinc-tomorrow planet-theme niflheim-theme phoenix-dark-mono-theme quasi-monochrome-theme sexy-monochrome-theme monochrome-theme material-theme jbeans-theme heroku-theme flatland-black-theme flatland-theme dakrone-theme dash-at-point smeargle orgit org magit-gitflow helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor darktooth-theme subatomic256-theme subatomix256-theme ensime sbt-mode scala-mode mmm-mode markdown-toc markdown-mode gh-md flyspell-correct-helm flyspell-correct auto-dictionary helm-company helm-c-yasnippet company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete ws-butler window-numbering which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spacemacs-theme spaceline restart-emacs request rainbow-delimiters quelpa popwin persp-mode pcre2el paradox org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-pathfrom-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu elisp-slime-nav dumb-jump define-word column-enforce-mode clean-aindent-mode auto-highlight-symbol auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#3a3a3a")
  '(pos-tip-foreground-color "#9E9E9E")
