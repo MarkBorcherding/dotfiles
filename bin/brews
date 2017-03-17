@@ -4,17 +4,29 @@ brew update
 
 # Install the no brainer needs
 brew install \
-      curl \
+      awscli \
       ctags \
+      curl \
+      docker-completion \
       emacs \
+      gibo \
       git \
       htop-osx \
       iftop \
+      ispell \
+      node \
       python \
       reattach-to-user-namespace \
+      sbt \
+      scala \
+      scalastyle \
+      shellcheck \
+      speedtest_cli \
       stow \
       the_silver_searcher \
+      tig \
       tmux \
+      typesafe-activator \
       vim \
       wget \
       zsh
