@@ -31,6 +31,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 
+antigen bundle krujos/cf-zsh-autocompletion
+
 antigen bundle dannyzen/cf-zsh-autocomplete-plugin
 
 # Load the theme.
