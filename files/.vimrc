@@ -57,7 +57,7 @@ Plug 'junegunn/goyo.vim'              " Distraction free vim
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
-let g:airline_theme='powerlineish'
+let g:airline_theme='base16'
 
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_start_level = 2
