@@ -70,14 +70,15 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
-                                      play-routes-mode   ;; Get syntax highlights in play routes file
-                                      gruvbox-theme      ;; The best colors
+                                      all-the-icons      ;; Allow icons to be used in places where it makes senseall-the-icons
                                       dracula-theme      ;; The spunky colors
+                                      groovy-mode        ;; Syntax highlighting for jenkins-deploy-file stuff
+                                      gruvbox-theme      ;; The best colors
+                                      load-dir           ;; used to load a bunch of files from Dropbox
+                                      play-routes-mode   ;; Get syntax highlights in play routes file
+                                      restclient         ;; A built in restclient similar to Postman
                                       subatomic-theme    ;; Colors that look be-a-utiful ...and don't get deleted in terminal mode
                                       subatomic256-theme ;; Colors that look OK in terminal mode...and don't get deleted in GUI mode
-                                      groovy-mode        ;; Syntax highlighting for jenkins-deploy-file stuff
-                                      load-dir           ;; used to load a bunch of files from Dropbox
-                                      all-the-icons      ;; Allow icons to be used in places where it makes senseall-the-icons
                                       zoom-window        ;; Zoom frames like tmux zooms panes
                                       )
    ;; A list of packages that cannot be updated.
