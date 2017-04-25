@@ -17,7 +17,7 @@ export CLICOLOR=1
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
-export EDITOR='emacs --tty --alternate-editor=""'
+export EDITOR='emacsclient --tty --alternate-editor=""'
 alias emacs='emacsclient --tty --alternate-editor=""'
 alias emacsgui='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor="" --create-frame --no-wait'
 
