@@ -38,9 +38,12 @@ export PATH
 # Paths
 export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 
+export NVM_DIR="$HOME/.nvm"
+[ -f "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh"
+
 # Find where powerline is installed
 export POWERLINE_PATH="$(pip show powerline-status | grep "^Location: "  | grep -o '/.*')/powerline"
 
 ssh-add -A 2>/dev/null;
 
-[ -f ${HOME}/.profile.secrets ] && source ${HOME}/.profile.secrets
+[ -d ${HOME}/.profile.d ] && for f in ${HOME}/.profile.d/*(N); do source "$f"; done;
