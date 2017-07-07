@@ -19,7 +19,7 @@ export LESSOPEN='|~/.lessfilter %s'
 
 export EDITOR='emacsclient --tty --alternate-editor=""'
 alias emacs='emacsclient --tty --alternate-editor=""'
-alias emacsgui='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor="" --create-frame --no-wait'
+alias emacsgui='emacsclient --alternate-editor="" --create-frame --no-wait'
 
 # Setup the path
 PATH="/usr/local/share/npm/bin:$PATH"       # Add the global npm bins to the path
