@@ -1,9 +1,9 @@
 {
-	"common": {
-		"term_truecolor": false
-	},
-	"ext": {
-		"ipython": {
+  "common": {
+		"term_truecolor": true
+  },
+  "ext": {
+    "ipython": {
 			"colorscheme": "default",
 			"theme": "in",
 			"local_themes": {
@@ -27,10 +27,10 @@
 		"tmux": {
 			"colorscheme": "default",
 			"theme": "default"
-		},
-		"vim": {
-			"colorscheme": "default",
-			"theme": "default",
+    },
+    "vim": {
+      "colorscheme": "default",
+      "theme": "default",
 			"local_themes": {
 				"__tabline__": "tabline",
 
