@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source ~/.profile
+
 # Turn off the spelling correct.
 unsetopt correct_all
 
@@ -41,7 +43,6 @@ antigen theme MarkBorcherding/zsh-plugins themes/fooberry
 # Tell antigen that you're done.
 antigen apply
 
-source ~/.profile
 
 # Silly 10-Keypad
 bindkey -s "^[Op" "0"
@@ -62,4 +63,3 @@ bindkey -s "^[Oj" "*"
 bindkey -s "^[Oo" "/"
 
 bindkey "^R" history-incremental-search-backward
-
