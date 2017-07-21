@@ -404,6 +404,7 @@ you should place your code here."
     (dolist (checker '(javascript-eslint javascript-standard))
       (flycheck-add-mode checker 'react-mode)))
 
+
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
   (defun stylelint-fix-file ()
