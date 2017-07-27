@@ -1,6 +1,5 @@
 #!/bin/sh
 
-eval "$(rbenv init -)"
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -40,6 +39,8 @@ export NODE_PATH="/usr/local/lib/node:/usr/local/lib/node_modules"
 
 export NVM_DIR="$HOME/.nvm"
 [ -f "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh"
+
+eval "$(rbenv init -)"
 
 # Find where powerline is installed
 export POWERLINE_PATH="$(pip show powerline-status | grep "^Location: "  | grep -o '/.*')/powerline"
