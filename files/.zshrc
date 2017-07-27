@@ -18,6 +18,9 @@ antigen bundle command-not-found
 antigen bundle git
 antigen bundle lein
 antigen bundle mix
+antigen bundle node
+antigen bundle npm
+antigen bundle nvm
 antigen bundle osx
 antigen bundle rails
 antigen bundle rake
@@ -37,8 +40,7 @@ antigen bundle krujos/cf-zsh-autocompletion
 
 antigen bundle dannyzen/cf-zsh-autocomplete-plugin
 
-# Load the theme.
-antigen theme MarkBorcherding/zsh-plugins themes/fooberry
+antigen theme markborcherding/zsh-plugins themes/fooberry
 
 # Tell antigen that you're done.
 antigen apply
