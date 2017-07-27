@@ -75,6 +75,7 @@ values."
    dotspacemacs-additional-packages '(
                                       all-the-icons           ;; Allow icons to be used in places where it makes senseall-the-icons
                                       all-the-icons-dired     ;; Use the pretty icons in dirmode
+                                      eslintd-fix             ;; Run eslint --fix on save
                                       groovy-mode             ;; Syntax highlighting for jenkins-deploy-file stuff
                                       gruvbox-theme           ;; The best colors
                                       load-dir                ;; used to load a bunch of files from Dropbox
@@ -369,6 +370,9 @@ you should place your code here."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
+  (add-hook 'js2-mode-hook 'eslintd-fix-mode)
+  (add-hook 'react-mode-hook 'eslintd-fix-mode)
+
   (setq markdown-hide-urls nil
         ensime-sem-high-faces '(
                                 (implicitConversion nil)
@@ -401,4 +405,20 @@ you should place your code here."
       (flycheck-add-mode checker 'react-mode)))
 
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
+
+  (defun stylelint-fix-file ()
+    (interactive)
+    (message "stylelint --fix for file " (buffer-file-name))
+    (shell-command (concat "stylelint --fix " (buffer-file-name))))
+
+  (defun stylelint-fix-file-and-revert ()
+    (interactive)
+    (stylelint-fix-file)
+    (revert-buffer t t))
+
+  (add-hook 'scss-mode-hook
+            (lambda ()
+              (add-hook 'after-save-hook #'stylelint-fix-file-and-revert nil 'make-it-local)))
+
+
 )
