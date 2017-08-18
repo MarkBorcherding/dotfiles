@@ -255,7 +255,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -374,6 +374,19 @@ you should place your code here."
    web-mode-code-indent-offset 2
    web-mode-attr-indent-offset 2)
 
+  (setq js2-mode-show-parse-errors nil
+        js2-mode-show-strict-warnings nil
+        flycheck-disabled-checkers '(javascript-jshint)
+        flycheck-checkers '(javascript-eslint))
+
+  (with-eval-after-load 'flycheck
+    (dolist (checker '(javascript-eslint javascript-standard))
+      (flycheck-add-mode checker 'react-mode)))
+
+  (add-hook 'react-mode-hook 'flycheck-mode)
+  (add-hook 'js2-mode-hook 'flycheck-mode)
+  (add-hook 'scss-mode-hook 'flycheck-mode)
+
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
   (add-hook 'react-mode-hook 'eslintd-fix-mode)
 
@@ -400,14 +413,6 @@ you should place your code here."
   ;; only need exec-path-from-shell on OSX
   ;; this hopefully sets up path and other vars better
   (exec-path-from-shell-initialize)
-
-
-  (setq flycheck-disabled-checkers '(javascript-jshint))
-  (setq flycheck-checkers '(javascript-eslint))
-  (with-eval-after-load 'flycheck
-    (dolist (checker '(javascript-eslint javascript-standard))
-      (flycheck-add-mode checker 'react-mode)))
-  (add-hook 'react-mode-hook 'flycheck-mode)
 
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
@@ -455,7 +460,7 @@ you should place your code here."
  '(evil-visual-state-cursor (quote ("#C5E1A5" box)) t)
  '(evil-want-Y-yank-to-eol nil)
  '(fci-rule-character-color "#192028")
- '(fci-rule-color "#f1c40f" t)
+ '(fci-rule-color "#f1c40f")
  '(foreground-color "#cccccc")
  '(frame-brackground-mode (quote dark))
  '(fringe-mode 6 nil (fringe))
