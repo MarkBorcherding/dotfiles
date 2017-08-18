@@ -1,6 +1,5 @@
 #!/bin/zsh
 
-source ~/.profile
 
 # Turn off the spelling correct.
 unsetopt correct_all
@@ -70,3 +69,5 @@ alias ls="ls -G "
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+source ~/.profile
