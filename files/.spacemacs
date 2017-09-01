@@ -335,7 +335,17 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; Add the time to the modeline
+  (display-time) 
 
+  ;; Stop highlighting the current line to make it easier to see what is
+  ;; visually selected
+  (spacemacs/toggle-highlight-current-line-globally-off) 
+
+  ;; Smartparans are never helpful
+  (spacemacs/toggle-smartparens-globally-off)
+
+  ;; Bring over the zoom window stuff from vim
   (use-package zoom-window
     :ensure t
     :init
@@ -345,6 +355,8 @@ you should place your code here."
       "zz"  'zoom-window-zoom
       "zn"  'zoom-window-next))
 
+  ;; For some reason this doesn't load when you try to include it as a package
+  ;; the standard way. 
   (use-package gruvbox-theme
     :ensure t
     :init
@@ -355,11 +367,13 @@ you should place your code here."
                             '(web-mode-html-attr-name-face ((t (:slant italic)))))
     (enable-theme 'gruvbox))
 
+  ;; Use fancy icons in neotree
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
-  (when (memq window-system '(mac ns x))
-    (exec-path-from-shell-initialize))
-
+  ;; https://github.com/purcell/exec-path-from-shell
+  ;; only need exec-path-from-shell on OSX
+  ;; this hopefully sets up path and other vars better
+  (exec-path-from-shell-initialize)
 
   (setq-default
    js-indent-level 2
@@ -390,6 +404,7 @@ you should place your code here."
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
   (add-hook 'react-mode-hook 'eslintd-fix-mode)
 
+  ;; ensime was really annoying with the implicit conversions
   (setq markdown-hide-urls nil
         ensime-sem-high-faces '(
                                 (implicitConversion nil)
@@ -409,10 +424,6 @@ you should place your code here."
         ensime-tooltip-type-hints t ;; disable typeinspecting tooltips
         )
 
-  ;; https://github.com/purcell/exec-path-from-shell
-  ;; only need exec-path-from-shell on OSX
-  ;; this hopefully sets up path and other vars better
-  (exec-path-from-shell-initialize)
 
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
