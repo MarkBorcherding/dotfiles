@@ -345,6 +345,16 @@ you should place your code here."
   ;; Smartparans are never helpful
   (spacemacs/toggle-smartparens-globally-off)
 
+
+  ;; The default key handling in emacs-mac is different from the official OS X port. 
+  ;; https://github.com/syl20bnr/spacemacs/issues/222#issuecomment-65953919
+  (setq mac-option-modifier 'meta)
+  (setq mac-command-modifier 'super)
+  (setq mac-pass-control-to-system nil)
+  (global-set-key (kbd "s-q") 'save-buffers-kill-emacs)
+  (global-set-key (kbd "s-v") 'yank)
+  (global-set-key (kbd "s-c") 'copy-region-as-kill)
+
   ;; Bring over the zoom window stuff from vim
   (use-package zoom-window
     :ensure t

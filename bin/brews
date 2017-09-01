@@ -4,17 +4,17 @@ brew update
 
 # Install the no brainer needs
 brew install \
+      ack \
       awscli \
       ctags \
       curl \
       docker-completion \
-      emacs \
       gibo \
       git \
       htop-osx \
       iftop \
       ispell \
-      node \
+      jq \
       python \
       reattach-to-user-namespace \
       sbt \
@@ -31,6 +31,11 @@ brew install \
       wget \
       zsh
 
+# Nodey things
+brew install \
+     node \
+     nvm
+
 # Install packages needed for Ruby
 brew install \
       rbenv \
@@ -40,8 +45,10 @@ brew install \
       libxslt \
       qt4
 
-brew install neovim/neovim/neovim
-
 brew tap homebrew/services
+
+# This version of emacs works better with OSX and doesn't have odd color in the spaceline mode-line
+brew tap railwaycat/emacsmacport
+brew install emacs-mac --with-modern-icon
 
 pip install powerline-status
