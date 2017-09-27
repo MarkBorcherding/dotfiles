@@ -385,13 +385,13 @@ you should place your code here."
   ;; this hopefully sets up path and other vars better
   (exec-path-from-shell-initialize)
 
+  ;; Make the title bar a little closer to the background color of gruvbox
+  (set-face-background 'scroll-bar "gray59")
+
   (setq-default
    js-indent-level 2
    js2-strict-missing-semi-warning nil
-
-   ;; js2-mode
    js2-basic-offset 2
-   ;; web-mode
    css-indent-offset 2
    web-mode-markup-indent-offset 2
    web-mode-css-indent-offset 2
