@@ -16,11 +16,12 @@ export CLICOLOR=1
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
-export EDITOR='emacsclient --tty --alternate-editor=""'
+export EDITOR='vim'
 alias emacs='emacsclient --tty --alternate-editor=""'
 alias emacsgui='emacsclient --alternate-editor="" --create-frame --no-wait'
 
 # Setup the path
+PATH="/usr/local/bin:$PATH"                 # Add the homebrew stuff before the existing bins
 PATH="./node_modules/.bin:$PATH"            # Add the local node modules bins
 PATH="$HOME/pear/bin:$PATH"                 # Pear bins
 PATH="$HOME/bin:$PATH"                      # Custom bin
