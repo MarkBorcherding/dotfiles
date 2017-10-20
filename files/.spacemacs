@@ -62,7 +62,9 @@ values."
      imenu-list
      javascript
      markdown
-     org
+     (org :variables org-enable-github-support t
+                     org-enable-bootstrap-support t)
+
      react
      restclient
      (scala :variables

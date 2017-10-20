@@ -45,7 +45,7 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(rbenv init -)"
 
 # Find where powerline is installed
-export POWERLINE_PATH="$(pip show powerline-status | grep "^Location: "  | grep -o '/.*')/powerline"
+export POWERLINE_PATH="$(pip2 show powerline-status | grep "^Location: "  | grep -o '/.*')/powerline"
 
 ssh-add -A 2>/dev/null;
 
