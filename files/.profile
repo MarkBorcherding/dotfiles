@@ -45,3 +45,5 @@ export POWERLINE_PATH="$(pip show powerline-status | grep "^Location: "  | grep 
 ssh-add -A 2>/dev/null;
 
 [ -d ${HOME}/.profile.d ] && for f in ${HOME}/.profile.d/*(N); do source "$f"; done;
+
+export PATH="$HOME/.cargo/bin:$PATH"
