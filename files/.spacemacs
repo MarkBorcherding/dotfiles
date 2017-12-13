@@ -161,7 +161,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Operator Mono"
+   dotspacemacs-default-font '("Operator Mono Light"
                                :size 14
                                :weight light
                                :width normal
@@ -249,10 +249,10 @@ values."
    dotspacemacs-loading-progress-bar nil
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup t
+   dotspacemacs-fullscreen-at-startup nil
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
-   dotspacemacs-fullscreen-use-non-native t
+   dotspacemacs-fullscreen-use-non-native nil
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
@@ -314,27 +314,38 @@ values."
 
 (defun dotspacemacs/user-init ()
   "Initialization function for user code.
-It is called immediately after `dotspacemacs/init', before layer configuration
-executes.
- This function is mostly useful for variables that need to be set
-before packages are loaded. If you are unsure, you should try in setting them in
 
-`dotspacemacs/user-config' first."
-  (push '("melpa-stable" . "stable.melpa.org/packages/") configuration-layer--elpa-archives)
-  (push '("ensime" . "melpa-stable") package-pinned-packages)
+  It is called immediately after `dotspacemacs/init', before layer configuration
+  executes. This function is mostly useful for variables that need to be set
+  before packages are loaded. If you are unsure, you should try in setting them
+  in `dotspacemacs/user-config' first."
+
+  (setq exec-path-from-shell-arguments '("-i"))
 )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
-This function is called at the very end of Spacemacs initialization after
-layers configuration.
-This is the place where most of your configurations should be done. Unless it is
-explicitly specified that a variable should be set before a package is loaded,
-you should place your code here."
+
+  This function is called at the very end of Spacemacs initialization after
+  layers configuration. This is the place where most of your configurations
+  should be done. Unless it is explicitly specified that a variable should be
+  set before a package is loaded, you should place your code here."
 
   ;; Trying to fix stupid spacemacs
   (require 'tramp) ;; https://github.com/syl20bnr/spacemacs/issues/9563#issuecomment-330905391
   (require 'helm-bookmark) ;; https://github.com/syl20bnr/spacemacs/issues/9549#issuecomment-327788403
+
+
+
+
+  ;; Trying to get backward serch working in Ansi-Term again
+  ;; https://github.com/syl20bnr/spacemacs/issues/2345#issuecomment-240634646
+  (defun bb/setup-term-mode ()
+    (evil-local-set-key 'insert (kbd "C-r") 'bb/send-C-r))
+  (defun bb/send-C-r ()
+    (interactive)
+    (term-send-raw-string "\C-r"))
+  (add-hook 'term-mode-hook 'bb/setup-term-mode)
 
   ;; Add the time to the modeline
   (display-time)
@@ -393,7 +404,11 @@ you should place your code here."
                                                              (ruby . t)
                                                              (sh . t)
                                                              (js . t)
+                                                             (cypher . t)
+                                                             (restclient . t)
                                                              )))
+
+  ;; JavaScript Development Settings
 
   (setq-default
    js-indent-level 2
@@ -422,26 +437,6 @@ you should place your code here."
   (add-hook 'react-mode-hook 'eslintd-fix-mode)
 
 
-  ;; ensime was really annoying with the implicit conversions
-  (setq markdown-hide-urls nil
-        ensime-sem-high-faces '(
-                                (implicitConversion nil)
-                                (var . (:foreground "#ff2222"))
-                                (varField . (:foreground "#ff3333"))
-                                (functionCall . (:foreground "#dc9157"))
-                                (object . (:foreground "#D884E3"))
-                                (operator . (:foreground "#cc7832"))
-                                (object . (:foreground "#6897bb" :slant italic))
-                                (package . (:foreground "yellow"))
-                                (deprecated . (:strike-through "#a9b7c6"))
-                                (implicitParams nil)
-                                )
-        ;; ensime-completion-style 'company
-        ;; ensime-sem-high-enabled-p nil ;; disable semantic highlighting
-        ensime-tooltip-hints t ;; disable type-inspecting tooltips
-        ensime-tooltip-type-hints t ;; disable typeinspecting tooltips
-        )
-
 
   (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
@@ -458,6 +453,27 @@ you should place your code here."
   (add-hook 'scss-mode-hook
             (lambda ()
               (add-hook 'after-save-hook #'stylelint-fix-file-and-revert nil 'make-it-local)))
+
+  ;; Scala Settings
+  (setq-default flycheck-scalastylerc "/Users/mborc/source/monsanto/scalastyle-config.xml")
+
+  (setq n4js-cli-program "/usr/local/bin/cypher-shell")
+
+  ;; ensime was really annoying with the implicit conversions
+  (setq markdown-hide-urls nil
+        ensime-sem-high-faces '(
+                                (implicitConversion nil)
+                                (var . (:foreground "#ff2222"))
+                                (varField . (:foreground "#ff3333"))
+                                (functionCall . (:foreground "#dc9157"))
+                                (object . (:foreground "#D884E3"))
+                                (operator . (:foreground "#cc7832"))
+                                (object . (:foreground "#6897bb" :slant italic))
+                                (package . (:foreground "yellow"))
+                                (deprecated . (:strike-through "#a9b7c6"))
+                                (implicitParams nil)
+                                )
+        )
 
 
 )
