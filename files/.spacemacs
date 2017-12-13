@@ -78,6 +78,7 @@ values."
                                       eslintd-fix             ;; Run eslint --fix on save
                                       groovy-mode             ;; Syntax highlighting for jenkins-deploy-file stuff
                                       gruvbox-theme           ;; The best colors
+                                      indium                  ;; Cool javascript stuff
                                       load-dir                ;; used to load a bunch of files from Dropbox
                                       play-routes-mode        ;; Get syntax highlights in play routes file
                                       restclient              ;; A built in restclient similar to Postman
@@ -686,5 +687,6 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(indium-link-face ((t (:inherit link :foreground "RoyalBlue1"))))
  '(scroll-bar ((t (:background "gray16")))))
 )
