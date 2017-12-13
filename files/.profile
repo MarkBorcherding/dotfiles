@@ -28,6 +28,7 @@ PATH="$HOME/bin:$PATH"                      # Custom bin
 PATH="$HOME/.rbenv/bin:$PATH"               # Add rbenv bins to the path
 PATH="./bin:$PATH"                          # Add local workspace binstubs to the path
 PATH="/opt/chefdk/bin:$PATH"                # Put chefdk on the path infront of rbenv shims
+PATH="$HOME/.cargo/bin:$PATH"               # rust stuff
 
 export PATH
 
@@ -45,5 +46,3 @@ export POWERLINE_PATH="$(pip show powerline-status | grep "^Location: "  | grep 
 ssh-add -A 2>/dev/null;
 
 [ -d ${HOME}/.profile.d ] && for f in ${HOME}/.profile.d/*(N); do source "$f"; done;
-
-export PATH="$HOME/.cargo/bin:$PATH"
