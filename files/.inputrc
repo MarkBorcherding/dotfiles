@@ -1,5 +1,5 @@
 "\e[A": history-search-backward
 "\e[B": history-search-forward
-TAB: menu-complete
+# TAB: menu-complete
 set show-all-if-ambiguous on
 set completion-ignore-case on
