@@ -51,13 +51,14 @@ let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 " Cosmetic
 Plug 'w0ng/vim-hybrid'                " Nice colorscheme
 Plug 'morhetz/gruvbox'                " Nice colorscheme2
+Plug 'arcticicestudio/nord-vim'       " brrr....it's cold outside
 
 Plug 'junegunn/goyo.vim'              " Distraction free vim
 
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16'
+" let g:airline_theme='base16'
 
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_start_level = 2
@@ -125,7 +126,7 @@ set exrc                                       " enable per-directory .vimrc fil
 set secure                                     " disable unsafe commands in local .vimrc files
 set t_ut=                                      " make the background work in tmux
 set t_Co=256                                   " Wide columns
-colorscheme gruvbox                            " Beauty
+colorscheme nord                               " Brrr....coldoutside
 set background=dark
 set incsearch                                  " Find the next match as we type the search
 set hlsearch                                   " Hilight searches by default

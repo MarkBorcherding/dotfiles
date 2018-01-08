@@ -17,8 +17,8 @@ export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
 export EDITOR='vim'
-alias emacs='emacsclient --tty --alternate-editor=""'
-alias emacsgui='emacsclient --alternate-editor="" --create-frame --no-wait'
+alias e='emacsclient --tty --alternate-editor=""'
+alias eg='emacsclient --alternate-editor="" --create-frame --no-wait'
 
 # Setup the path
 PATH="/usr/local/bin:$PATH"                 # Add the homebrew stuff before the existing bins
