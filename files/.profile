@@ -26,8 +26,12 @@ PATH="./node_modules/.bin:$PATH"            # Add the local node modules bins
 PATH="$HOME/pear/bin:$PATH"                 # Pear bins
 PATH="$HOME/bin:$PATH"                      # Custom bin
 PATH="$HOME/.rbenv/bin:$PATH"               # Add rbenv bins to the path
-PATH="./bin:$PATH"                          # Add local workspace binstubs to the path
-PATH="/opt/chefdk/bin:$PATH"                # Put chefdk on the path infront of rbenv shims
+PATH="${HOME}/.local/bin:${PATH}"           # Haskell is putting somethings there
+
+# I don't think I'm using this anymore and it is a little less safe since git could drop some unexpected
+# binary in there
+# PATH="./bin:$PATH"                          # Add local workspace binstubs to the path
+
 PATH="$HOME/.cargo/bin:$PATH"               # rust stuff
 
 export PATH

@@ -87,6 +87,10 @@ values."
                                       load-dir                ;; used to load a bunch of files from Dropbox
                                       play-routes-mode        ;; Get syntax highlights in play routes file
                                       zoom-window             ;; Zoom frames like tmux zooms panes
+                                      org                     ;; Just trying to get org-agenda to work
+
+                                      highlight-symbol        ;; See where symbols are used in the buffer
+                                      popup-imenu             ;; Visually jump around a buffer
 
                                       ;; Appearance
                                       gruvbox-theme           ;; The best colors
@@ -96,10 +100,6 @@ values."
                                       subatomic-theme         ;; My original colors
                                       idea-darkula-theme      ;; Make the IntelliJ guys happy when they pair
                                       darcula-theme           ;; another option
-
-
-
-
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -163,8 +163,11 @@ values."
    ;; `recents' `bookmarks' `projects' `agenda' `todos'."
    ;; List sizes may be nil, in which case
    ;; `spacemacs-buffer-startup-lists-length' takes effect.
-   dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+   dotspacemacs-startup-lists '(
+                                (agenda . 5)
+                                (recents . 5)
+                                (projects . 7)
+                                )
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
    ;; Default major mode of the scratch buffer (default `text-mode')
@@ -178,7 +181,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Operator Mono Light"
-                               :size 14
+                               :size 12
                                :weight light
                                :width normal
                                :powerline-scale 1.4)
@@ -336,7 +339,10 @@ values."
   before packages are loaded. If you are unsure, you should try in setting them
   in `dotspacemacs/user-config' first."
 
-  (setq exec-path-from-shell-arguments '("-i"))
+  (setq
+   nord-comment-brightness 10              ;; By default comments are too dim
+   exec-path-from-shell-arguments '("-i")  ;; Try to get rid of that pesky warning about path
+   )
 )
 
 (defun dotspacemacs/user-config ()
@@ -422,6 +428,10 @@ values."
   ;; Make the title bar a little closer to the background color of gruvbox
   (set-face-background 'scroll-bar "gray59") ;; Get a close to natural title bar color
 
+
+  ;; org mode setup
+  (setq org-default-notes-file "~/org/notes.org"
+        org-agenda-files (list "~/org/notes.org"))
   (with-eval-after-load 'org
     (org-babel-do-load-languages 'org-babel-load-languages '(
                                                              (ruby . t)
@@ -430,8 +440,10 @@ values."
                                                              (restclient . t)
                                                              )))
 
-  ;; JavaScript Development Settings
+  (global-set-key (kbd "M-i") 'popup-imenu)       ;; See the visual representation of the buffer
+  (global-set-key (kbd "M-h") 'highlight-symbol)  ;; Toggle highlight on the current symbol
 
+  ;; JavaScript Development Settings
   (setq-default
    js-indent-level 2
    js2-strict-missing-semi-warning nil
@@ -539,13 +551,9 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("7527f3308a83721f9b6d50a36698baaedc79ded9f6d5bd4e9a28a22ab13b3cb1" default)))
- '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (which-key use-package live-py-mode indium groovy-mode dumb-jump magit git-commit ghub helm helm-core zoom-window yapfify yaml-mode xterm-color ws-butler with-editor winum web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen unfill toc-org tagedit symon subatomic-theme string-inflection sql-indent spaceline smeargle slim-mode slack shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor rubocop rspec-mode robe restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin play-routes-mode pippel pip-requirements persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir nord-theme noflet neotree nameless mwim mvn multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode linum-relative link-hint less-css-mode js2-refactor js-doc info+ indent-guide importmagic impatient-mode idea-darkula-theme hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-imports gradle-mode google-translate golden-ratio gnuplot github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy flyspell-correct-helm flycheck-mix flycheck-credo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dracula-theme dockerfile-mode docker diminish diff-hl define-word dash-at-point darcula-theme dactyl-mode cython-mode company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clean-aindent-mode chruby bundler browse-at-remote bind-key auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (popup-imenu highlight-symbol slack scss-mode live-py-mode linum-relative impatient-mode dumb-jump diff-hl ace-window swiper ivy highlight evil marshal markdown-mode flycheck company magit helm helm-core zoom-window yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill undo-tree toc-org tagedit symon subatomic-theme string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode shell-pop sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin play-routes-mode pippel pip-requirements persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir oauth2 nord-theme noflet neotree nameless mwim mvn multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode link-hint less-css-mode js2-refactor js-doc info+ indium indent-guide importmagic idea-darkula-theme hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode goto-chg google-translate golden-ratio gnuplot github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist ghub gh-md fuzzy flyspell-correct-helm flycheck-mix flycheck-credo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emojify emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dracula-theme dockerfile-mode docker diminish define-word dash-at-point darcula-theme dactyl-mode cython-mode counsel-projectile company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clean-aindent-mode circe chruby bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent adaptive-wrap ace-link ace-jump-helm-line ac-ispell)))
  '(zoom-window-mode-line-color "#8f3f71"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
