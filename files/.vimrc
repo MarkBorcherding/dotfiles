@@ -49,15 +49,15 @@ let g:syntastic_scala_scalastyle_jar = '/usr/local/Cellar/scalastyle/0.8.0/libex
 let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 
 " Cosmetic
-Plug 'w0ng/vim-hybrid'                " Nice colorscheme
-Plug 'morhetz/gruvbox'                " Nice colorscheme2
-Plug 'arcticicestudio/nord-vim'       " brrr....it's cold outside
+Plug 'morhetz/gruvbox'                " Nice colorscheme
+Plug 'arcticicestudio/nord-vim'       " Baby it's cold outside
 
 Plug 'junegunn/goyo.vim'              " Distraction free vim
 
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
+" Not needed when using Nord
 " let g:airline_theme='base16'
 
 Plug 'nathanaelkane/vim-indent-guides'
@@ -127,6 +127,7 @@ set secure                                     " disable unsafe commands in loca
 set t_ut=                                      " make the background work in tmux
 set t_Co=256                                   " Wide columns
 colorscheme nord                               " Brrr....coldoutside
+" colorscheme gruvbox                          " Beauty
 set background=dark
 set incsearch                                  " Find the next match as we type the search
 set hlsearch                                   " Hilight searches by default
