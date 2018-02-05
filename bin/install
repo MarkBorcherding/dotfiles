@@ -30,11 +30,6 @@ stow_it() {
   stow --verbose --target="$HOME" $force files || echo "Unable to stow."
 }
 
-setup_vim() {
-  [ ! -d $HOME/.vim/bundle/Vundle.vim ] && echo "Installing Vundle" && git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  vim +PluginInstall +qall
-}
-
 make_non_symlink_dirs() {
   mkdir -p ~/.zsh.d
 }
@@ -48,6 +43,5 @@ setup_zsh(){
 has_stow
 make_non_symlink_dirs
 stow_it
-setup_vim
 setup_zsh
 echo 'Installation complete'

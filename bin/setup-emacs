@@ -1,0 +1,9 @@
+brew tap d12frosted/emacs-plus
+brew install emacs-plus \
+              --with-24bit-color \
+              --with-ctags \
+              --with-dbus \
+              --with-natural-title-bar \
+              --with-pixel-scrolling \
+              --without-spacemacs-icon
+cp -r /usr/local/opt/emacs-mac/Emacs.app ~/Applications

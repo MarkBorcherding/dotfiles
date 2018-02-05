@@ -47,8 +47,4 @@ brew install \
 
 brew tap homebrew/services
 
-# This version of emacs works better with OSX and doesn't have odd color in the spaceline mode-line
-brew tap railwaycat/emacsmacport
-brew install emacs-mac --with-modern-icon
 
-pip install powerline-status
