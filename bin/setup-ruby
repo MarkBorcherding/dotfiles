@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Install packages needed for Ruby
+brew install \
+      rbenv \
+      ruby-build \
+      libxml2 \
+      libxslt 

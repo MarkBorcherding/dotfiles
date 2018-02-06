@@ -1,0 +1,18 @@
+#!/bin/bash
+
+brew update
+
+brew cask install caskroom/versions/java8
+
+brew instal scala \
+            scalastyle \
+            typesafe-activator \
+            sbt
+
+for version in 0.13 1.0; do
+  mkdir -p ~/.sbt/${version}/plugins
+  echo addSbtPlugin\(\"org.ensime\" % \"sbt-ensime\" % \"2.1.0\"\) > ~/.sbt/${version}/plugins/ensime.sbt
+  echo credentials += Credentials\(Path.userHome / \".sbt\" / \".credentials\"\) > ~/.sbt/${version}/plugins/credentials.sbt
+done
+
+

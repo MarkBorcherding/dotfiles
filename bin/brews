@@ -17,9 +17,6 @@ brew install \
       jq \
       python \
       reattach-to-user-namespace \
-      sbt \
-      scala \
-      scalastyle \
       shellcheck \
       speedtest_cli \
       stow \
@@ -30,20 +27,6 @@ brew install \
       vim \
       wget \
       zsh
-
-# Nodey things
-brew install \
-     node \
-     nvm
-
-# Install packages needed for Ruby
-brew install \
-      rbenv \
-      rbenv-gem-rehash \
-      ruby-build \
-      libxml2 \
-      libxslt \
-      qt4
 
 brew tap homebrew/services
 

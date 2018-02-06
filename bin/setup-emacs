@@ -1,3 +1,11 @@
+#!/bin/sh
+
+brew update
+
+brew install ispell \
+             ctags
+
+
 brew tap d12frosted/emacs-plus
 brew install emacs-plus \
               --with-24bit-color \
@@ -6,4 +14,9 @@ brew install emacs-plus \
               --with-natural-title-bar \
               --with-pixel-scrolling \
               --without-spacemacs-icon
+
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+mkdir -p ~/Applications
+
 cp -r /usr/local/opt/emacs-mac/Emacs.app ~/Applications

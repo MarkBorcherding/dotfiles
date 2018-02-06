@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Nodey things
+brew install \
+     node \
+     nvm

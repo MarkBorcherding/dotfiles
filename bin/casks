@@ -3,15 +3,21 @@
 brew install caskroom/cask/brew-cask
 brew cask update
 brew cask upgrade
-brew cask install 1password
-brew cask install dash
-brew cask install dropbox
-brew cask install firefox
-brew cask install flux
-brew cask install insomnia
-brew cask install google-chrome
-brew cask install little-snitch
-brew cask install spectacle
-brew cask install vagrant
-brew cask install vagrant-manager
-brew cask install virtualbox
+
+for cask in \
+    1password \
+    dash /
+    docker /
+    dropbox /
+    firefox /
+    flux /
+    insomnia /
+    google-chrome /
+    little-snitch /
+    spectacle /
+    vagrant /
+    vagrant-manager /
+    virtualbox;
+do
+    brew cask install $cask
+done
