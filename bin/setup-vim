@@ -1,5 +1,7 @@
-  [ ! -d $HOME/.vim/bundle/Vundle.vim ] && \
+[ ! -d $HOME/.vim/bundle/Vundle.vim ] && \
   echo "Installing Vundle" && \
   git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-  vim +PluginInstall +qall
+pip2 install sexpdata websocket-client
+
+vim +PlugInstall +qall
