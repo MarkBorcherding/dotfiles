@@ -15,16 +15,16 @@ antigen bundle brew
 antigen bundle colorize
 antigen bundle command-not-found
 antigen bundle git
-antigen bundle lein
-antigen bundle mix
-antigen bundle node
-antigen bundle npm
-antigen bundle nvm
+#antigen bundle lein
+#antigen bundle mix
+#antigen bundle node
+#antigen bundle npm # This causes problems with the nvm prefix...not sure why
+#antigen bundle nvm
 antigen bundle osx
-antigen bundle rails
-antigen bundle rake
-antigen bundle rbenv
-antigen bundle ruby
+#antigen bundle rails
+#antigen bundle rake
+#antigen bundle rbenv
+#antigen bundle ruby
 antigen bundle scala
 antigen bundle sbt
 antigen bundle tmux
@@ -70,4 +70,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-source ~/.profile
+
+# nvm....just appear in the emacs path please...please please
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

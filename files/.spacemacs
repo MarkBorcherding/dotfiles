@@ -350,6 +350,11 @@ values."
    exec-path-from-shell-arguments '("-i")      ;; Try to get rid of that pesky warning about path
    ispell-program-name "/usr/local/bin/ispell" ;; I don't know why it cannot find this from the path
    )
+
+  ;; https://github.com/purcell/exec-path-from-shell
+  ;; only need exec-path-from-shell on OSX
+  ;; this hopefully sets up path and other vars better
+  (exec-path-from-shell-initialize)
 )
 
 (defun dotspacemacs/user-config ()
@@ -365,7 +370,6 @@ values."
   (require 'helm-bookmark) ;; https://github.com/syl20bnr/spacemacs/issues/9549#issuecomment-327788403
 
   (setq helm-buffers-fuzzy-matching t) ;; Allow helm to fuzzy search in more places
-
 
   ;; start a server so new terminal clients can connect
   (require 'server)
@@ -391,7 +395,7 @@ values."
   ;; Smartparans are never helpful
   (spacemacs/toggle-smartparens-globally-off)
 
-  (setq powerline-default-separator 'arrow)
+  (setq powerline-default-separator 'arrow) ;; Less fancy modeline separator
 
   ;; The default key handling in emacs-mac is different from the official OS X port.
   ;; https://github.com/syl20bnr/spacemacs/issues/222#issuecomment-65953919
@@ -427,13 +431,11 @@ values."
   ;; Use fancy icons in neotree
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
-  ;; https://github.com/purcell/exec-path-from-shell
-  ;; only need exec-path-from-shell on OSX
-  ;; this hopefully sets up path and other vars better
-  (exec-path-from-shell-initialize)
 
   ;; Make the title bar a little closer to the background color of gruvbox
   (set-face-background 'scroll-bar "gray59") ;; Get a close to natural title bar color
+
+  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
 
   ;; org mode setup
@@ -476,10 +478,6 @@ values."
 
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
   (add-hook 'react-mode-hook 'eslintd-fix-mode)
-
-
-
-  (add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
   (defun stylelint-fix-file ()
     (interactive)
@@ -560,7 +558,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ob-cypher zoom-window yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill toc-org tagedit symon subatomic-theme string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode slack shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin popup-imenu play-routes-mode pippel pip-requirements persp-mode password-generator paradox ox-twbs ox-gfm overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir nord-theme noflet neotree nameless n4js mwim mvn multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode live-py-mode linum-relative link-hint less-css-mode js2-refactor js-doc indium indent-guide importmagic impatient-mode idea-darkula-theme hy-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode google-translate golden-ratio gnuplot github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dumb-jump dracula-theme dockerfile-mode docker diminish diff-hl define-word dash-at-point darcula-theme dactyl-mode cython-mode counsel-projectile company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (web-mode paradox orgit nameless mwim meghanada helm-swoop groovy-mode dumb-jump counsel-projectile counsel ivy flycheck company magit magit-popup ghub with-editor helm helm-core simple-httpd org-plus-contrib zoom-window yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill toc-org tagedit symon swiper subatomic-theme string-inflection sql-indent spinner spaceline-all-the-icons smeargle slim-mode slack shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin popup-imenu play-routes-mode pippel pip-requirements persp-mode password-generator ox-twbs ox-gfm overseer org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir ob-cypher nord-theme noflet neotree n4js mvn multi-term move-text mmm-mode minitest maven-test-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode live-py-mode linum-relative link-hint less-css-mode js2-refactor js-doc indium indent-guide importmagic impatient-mode idea-darkula-theme hydra hy-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-imports gradle-mode google-translate golden-ratio gnuplot github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dracula-theme dockerfile-mode docker diminish diff-hl define-word dash-at-point darcula-theme dactyl-mode cython-mode company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

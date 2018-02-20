@@ -30,14 +30,17 @@ PATH="$HOME/.rbenv/bin:$PATH"               # Add rbenv bins to the path
 # binary in there
 # PATH="./bin:$PATH"                          # Add local workspace binstubs to the path
 
-export PATH
+# nvm.....you're a pain...this is what I was doing to set it up
+#export NVM_DIR="$HOME/.nvm"
+#[ -f "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh"
+#export NODE_VERSION="$(nvm current)"
+#export NODE_PATH="$HOME/.nvm/versions/node/$NODE_VERSION"
+#export PATH="$NODE_PATH/bin:$PATH"
 
-# nvm.....you're a pain
+# This is what the install script wanted to do
 export NVM_DIR="$HOME/.nvm"
-[ -f "/usr/local/opt/nvm/nvm.sh" ] && source "/usr/local/opt/nvm/nvm.sh"
-export NODE_VERSION="$(nvm current)"
-export NODE_PATH="$HOME/.nvm/versions/node/$NODE_VERSION"
-export PATH="$NODE_PATH/bin:$PATH"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH
 
