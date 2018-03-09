@@ -83,6 +83,7 @@ values."
    dotspacemacs-additional-packages '(
                                       all-the-icons           ;; Allow icons to be used in places where it makes senseall-the-icons
                                       all-the-icons-dired     ;; Use the pretty icons in dirmode
+                                      add-node-modules-path   ;; Help Emacs find the node modules
                                       eslintd-fix             ;; Run eslint --fix on save
                                       groovy-mode             ;; Syntax highlighting for jenkins-deploy-file stuff
                                       indium                  ;; Cool javascript stuff
@@ -186,7 +187,7 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Operator Mono Light"
+   dotspacemacs-default-font '("Input Mono Light"
                                :size 12
                                :weight light
                                :width normal
@@ -351,6 +352,10 @@ values."
    ispell-program-name "/usr/local/bin/ispell" ;; I don't know why it cannot find this from the path
    )
 
+  (add-to-list 'exec-path "/usr/local/bin") ;; Trying to get Emacs to find the JavaScript tools
+  (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
+  (setq exec-path (append exec-path '("/usr/local/bin")))
+
   ;; https://github.com/purcell/exec-path-from-shell
   ;; only need exec-path-from-shell on OSX
   ;; this hopefully sets up path and other vars better
@@ -366,10 +371,20 @@ values."
   set before a package is loaded, you should place your code here."
 
   ;; Trying to fix stupid spacemacs
-  (require 'tramp) ;; https://github.com/syl20bnr/spacemacs/issues/9563#issuecomment-330905391
+  (require 'tramp)         ;; https://github.com/syl20bnr/spacemacs/issues/9563#issuecomment-330905391
   (require 'helm-bookmark) ;; https://github.com/syl20bnr/spacemacs/issues/9549#issuecomment-327788403
 
-  (setq helm-buffers-fuzzy-matching t) ;; Allow helm to fuzzy search in more places
+
+  (setq
+   helm-buffers-fuzzy-matching t                        ;; Allow helm to fuzzy search in more places
+   ispell-program-name         "/usr/local/bin/ispell"  ;; It forgot where ispell was for some reason
+   eslintd-fix-executable      "/usr/local/bin/eslint_d" ;; Oh path...why are you dumb
+   javascript-eslint           "/usr/local/bin/eslint"   ;;
+   )
+
+  ;; Try to get Emacs to find my eslint for flychecking
+  (eval-after-load 'js-mode
+    '(add-hook 'js-mode-hook #'add-node-modules-path))
 
   ;; start a server so new terminal clients can connect
   (require 'server)
