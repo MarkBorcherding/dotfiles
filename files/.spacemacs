@@ -525,6 +525,8 @@ values."
         ensime-eldoc-hints 'error
         ensime-graphical-tooltips t
         ensime-auto-generate-config t
+        sbt:program-name "/usr/local/bin/sbt"
+
 
         ensime-sem-high-faces '((var . scala-font-lock:var-face)
                                 (val . (:inherit font-lock-constant-face :slant italic))
