@@ -410,7 +410,9 @@ values."
   ;; Smartparans are never helpful
   (spacemacs/toggle-smartparens-globally-off)
 
-  (setq powerline-default-separator 'arrow) ;; Less fancy modeline separator
+  (setq-default line-spacing 3) ;; I need a bit more elbow room here
+
+  (setq powerline-default-separator 'arrow) ;; No need for fancy pants modeline separators
 
   ;; The default key handling in emacs-mac is different from the official OS X port.
   ;; https://github.com/syl20bnr/spacemacs/issues/222#issuecomment-65953919
