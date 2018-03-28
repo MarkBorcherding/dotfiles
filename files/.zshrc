@@ -15,16 +15,7 @@ antigen bundle brew
 antigen bundle colorize
 antigen bundle command-not-found
 antigen bundle git
-#antigen bundle lein
-#antigen bundle mix
-#antigen bundle node
-#antigen bundle npm # This causes problems with the nvm prefix...not sure why
-#antigen bundle nvm
 antigen bundle osx
-#antigen bundle rails
-#antigen bundle rake
-#antigen bundle rbenv
-#antigen bundle ruby
 antigen bundle scala
 antigen bundle sbt
 antigen bundle tmux
@@ -35,6 +26,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 
+antigen bundle lukechilds/zsh-nvm
+
 antigen bundle krujos/cf-zsh-autocompletion
 
 antigen bundle dannyzen/cf-zsh-autocomplete-plugin
@@ -43,7 +36,6 @@ antigen theme markborcherding/zsh-plugins themes/fooberry
 
 # Tell antigen that you're done.
 antigen apply
-
 
 # Silly 10-Keypad
 bindkey -s "^[Op" "0"
@@ -70,8 +62,4 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-
-# nvm....just appear in the emacs path please...please please
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source "$HOME/.profile"

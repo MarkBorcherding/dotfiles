@@ -40,7 +40,8 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(csv
+     elm
      vimscript
      python
      ruby
@@ -55,6 +56,7 @@ values."
      elixir
      emacs-lisp
      emoji
+     ess
      git
      github
      helm
@@ -370,6 +372,9 @@ values."
   should be done. Unless it is explicitly specified that a variable should be
   set before a package is loaded, you should place your code here."
 
+  (setq-default line-spacing 3)
+
+
   ;; Trying to fix stupid spacemacs
   (require 'tramp)         ;; https://github.com/syl20bnr/spacemacs/issues/9563#issuecomment-330905391
   (require 'helm-bookmark) ;; https://github.com/syl20bnr/spacemacs/issues/9549#issuecomment-327788403
@@ -517,7 +522,9 @@ values."
    n4js-cli-program              "~/bin/cypher-shell-nonprod"
    scala-indent:align-parameters t
    scala-indent:align-forms      t
-   ensime-search-interface       'helm)
+   ensime-search-interface       'helm
+   sbt:program-name              "/usr/local/bin/sbt"
+   )
 
   ;; ensime was really annoying with the implicit conversions
   (setq markdown-hide-urls nil
@@ -525,7 +532,6 @@ values."
         ensime-eldoc-hints 'error
         ensime-graphical-tooltips t
         ensime-auto-generate-config t
-        sbt:program-name "/usr/local/bin/sbt"
 
 
         ensime-sem-high-faces '((var . scala-font-lock:var-face)
@@ -577,7 +583,8 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (web-mode paradox orgit nameless mwim meghanada helm-swoop groovy-mode dumb-jump counsel-projectile counsel ivy flycheck company magit magit-popup ghub with-editor helm helm-core simple-httpd org-plus-contrib zoom-window yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill toc-org tagedit symon swiper subatomic-theme string-inflection sql-indent spinner spaceline-all-the-icons smeargle slim-mode slack shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin popup-imenu play-routes-mode pippel pip-requirements persp-mode password-generator ox-twbs ox-gfm overseer org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir ob-cypher nord-theme noflet neotree n4js mvn multi-term move-text mmm-mode minitest maven-test-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode live-py-mode linum-relative link-hint less-css-mode js2-refactor js-doc indium indent-guide importmagic impatient-mode idea-darkula-theme hydra hy-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-themes helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-imports gradle-mode google-translate golden-ratio gnuplot github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elisp-slime-nav editorconfig dracula-theme dockerfile-mode docker diminish diff-hl define-word dash-at-point darcula-theme dactyl-mode cython-mode company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (csv-mode yasnippet-snippets web-mode ruby-hash-syntax rainbow-mode org-mime live-py-mode js2-refactor helm-projectile helm-make groovy-mode evil-org evil-matchit dumb-jump auto-compile counsel swiper ivy smartparens avy flycheck projectile magit magit-popup git-commit ghub helm helm-core emojify spaceline powerline which-key exec-path-from-shell evil org-plus-contrib zoom-window yapfify yaml-mode xterm-color ws-butler with-editor winum web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill undo-tree toc-org tagedit symon subatomic-theme string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode slack shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor rubocop rspec-mode robe restclient-helm restart-emacs rbenv rake rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin popup-imenu play-routes-mode pippel pipenv pip-requirements persp-mode password-generator paradox packed ox-twbs ox-gfm overseer orgit org-projectile org-present org-pomodoro org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir ob-cypher nord-theme noflet neotree nameless n4js mwim mvn multiple-cursors multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode linum-relative link-hint less-css-mode js-doc indium indent-guide importmagic impatient-mode idea-darkula-theme hy-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-mode-manager helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-imports gradle-mode goto-chg google-translate golden-ratio gnuplot github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav editorconfig dracula-theme dockerfile-mode docker diminish diff-hl define-word dash-at-point darcula-theme dactyl-mode cython-mode counsel-projectile company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary all-the-icons-dired alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+ '(zoom-window-mode-line-color "#8f3f71"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
