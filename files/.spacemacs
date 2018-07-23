@@ -64,8 +64,7 @@ values."
      imenu-list
      javascript
      markdown
-     (org :variables org-enable-github-support t
-                     org-enable-bootstrap-support t)
+     org
 
      react
      restclient
@@ -85,10 +84,7 @@ values."
    dotspacemacs-additional-packages '(
                                       all-the-icons           ;; Allow icons to be used in places where it makes senseall-the-icons
                                       all-the-icons-dired     ;; Use the pretty icons in dirmode
-                                      add-node-modules-path   ;; Help Emacs find the node modules
-                                      eslintd-fix             ;; Run eslint --fix on save
                                       groovy-mode             ;; Syntax highlighting for jenkins-deploy-file stuff
-                                      indium                  ;; Cool javascript stuff
                                       load-dir                ;; used to load a bunch of files from Dropbox
                                       play-routes-mode        ;; Get syntax highlights in play routes file
                                       zoom-window             ;; Zoom frames like tmux zooms panes
@@ -97,18 +93,25 @@ values."
                                       highlight-symbol        ;; See where symbols are used in the buffer
                                       popup-imenu             ;; Visually jump around a buffer
 
+                                      ;; Neo4j Stuff
                                       cypher-mode             ;; Syntax Highlighting for Neo4j Cypher Queries
-                                      ob-cypher               ;; org mode the cyphers
+                                      ;; ob-cypher               ;; org mode the cyphers
                                       n4js                    ;; Open a cypher shell inside emacs
+
+                                      ;; JavaScript stuff
+                                      indium                  ;; Cool javascript stuff
+                                      eslintd-fix             ;; Run eslint --fix on save
+                                      add-node-modules-path   ;; Help Emacs find the node modules
+                                      rjsx-mode               ;; A better react mode
 
                                       ;; Appearance
                                       gruvbox-theme           ;; The best colors
                                       material-theme          ;; less than the best colors
-                                      dracula-theme           ;; ok colors
+                                      ;;dracula-theme           ;; ok colors
                                       nord-theme              ;; you got the blues colors
-                                      subatomic-theme         ;; My original colors
-                                      idea-darkula-theme      ;; Make the IntelliJ guys happy when they pair
-                                      darcula-theme           ;; another option
+                                      ;;subatomic-theme         ;; My original colors
+                                      ;;idea-darkula-theme      ;; Make the IntelliJ guys happy when they pair
+                                      ;;darcula-theme           ;; another option
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -158,7 +161,7 @@ values."
    ;; (default 'vim)
    dotspacemacs-editing-style 'vim
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
-   dotspacemacs-verbose-loading nil
+   dotspacemacs-verbose-loading t
    ;; Specify the startup banner. Default value is `official', it displays
    ;; the official spacemacs logo. An integer value is the index of text
    ;; banner, `random' chooses a random text banner in `core/banners'
@@ -176,6 +179,7 @@ values."
                                 (agenda . 5)
                                 (recents . 5)
                                 (projects . 7)
+                                (todos . 3)
                                 )
    ;; True if the home buffer should respond to resize events.
    dotspacemacs-startup-buffer-responsive t
@@ -248,7 +252,7 @@ values."
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
    ;; If non nil, `helm' will try to minimize the space it uses. (default nil)
-   dotspacemacs-helm-resize t
+   dotspacemacs-helm-resize nil
    ;; if non nil, the helm header is hidden when there is only one source.
    ;; (default nil)
    dotspacemacs-helm-no-header nil
@@ -349,19 +353,19 @@ values."
   in `dotspacemacs/user-config' first."
 
   (setq
-   nord-comment-brightness 10                  ;; By default comments are too dim
-   exec-path-from-shell-arguments '("-i")      ;; Try to get rid of that pesky warning about path
-   ispell-program-name "/usr/local/bin/ispell" ;; I don't know why it cannot find this from the path
+   nord-comment-brightness 10                     ;; By default comments are too dim
+   ispell-program-name "/usr/local/bin/ispell"    ;; I don't know why it cannot find this from the path
+
+   ;; doesn't add all the things to the path
+   ;;exec-path-from-shell-rc-file-path "~/.zshrc" ;; Still trying to get Emacs happy with the path
+   ;;                                               ;; https://github.com/purcell/exec-path-from-shell/pull/79#issuecomment-381283092
+   ;;exec-path-from-shell-shell-name "zsh"
+   ;;exec-path-from-shell-arguments '()
    )
 
   (add-to-list 'exec-path "/usr/local/bin") ;; Trying to get Emacs to find the JavaScript tools
   (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
   (setq exec-path (append exec-path '("/usr/local/bin")))
-
-  ;; https://github.com/purcell/exec-path-from-shell
-  ;; only need exec-path-from-shell on OSX
-  ;; this hopefully sets up path and other vars better
-  (exec-path-from-shell-initialize)
 )
 
 (defun dotspacemacs/user-config ()
@@ -373,7 +377,6 @@ values."
   set before a package is loaded, you should place your code here."
 
   (setq-default line-spacing 3)
-
 
   ;; Trying to fix stupid spacemacs
   (require 'tramp)         ;; https://github.com/syl20bnr/spacemacs/issues/9563#issuecomment-330905391
@@ -392,9 +395,15 @@ values."
     '(add-hook 'js-mode-hook #'add-node-modules-path))
 
   ;; start a server so new terminal clients can connect
-  (require 'server)
-  (unless (server-running-p)
-   (server-start))
+;;  (setq
+;   server-use-tcp  t
+;;   server-host     "127.0.0.1"
+;;   server-port     "6789"
+;;   server-auth-dir "~/.emacs.d/server"
+;;   server-auth-key "slIDK9lrP>Kgc-Tz{Xx_(lG{m4K]#{E}bvV*?@#p,].=gn~m7.AS%D@pc9DD>;l{")
+;;  (require 'server)
+;;  (unless (server-running-p)
+;;    (server-start))
 
   ;; Trying to get backward serch working in Ansi-Term again
   ;; https://github.com/syl20bnr/spacemacs/issues/2345#issuecomment-240634646
@@ -419,6 +428,10 @@ values."
 
   (setq powerline-default-separator 'arrow) ;; No need for fancy pants modeline separators
 
+  ;; Get the natural color title bar
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark)) ;; or dark - depending on your theme
+
   ;; The default key handling in emacs-mac is different from the official OS X port.
   ;; https://github.com/syl20bnr/spacemacs/issues/222#issuecomment-65953919
   (setq mac-option-modifier 'meta)
@@ -440,15 +453,16 @@ values."
 
   ;; For some reason this doesn't load when you try to include it as a package
   ;; the standard way.
-  ;; (use-package gruvbox-theme
-  ;;   :ensure t
-  ;;   :init
-  ;;   (disable-theme 'spacemacs-dark)
-  ;;   (load-theme 'gruvbox t t)
-  ;;   (custom-theme-set-faces 'gruvbox
-  ;;                           '(web-mode-html-attr-custom-face ((t (:slant italic))))
-  ;;                           '(web-mode-html-attr-name-face ((t (:slant italic)))))
-  ;;   (enable-theme 'gruvbox))
+  ;;(use-package gruvbox-theme
+  ;;  :ensure t
+  ;;  :init
+  ;;  (disable-theme 'spacemacs-dark)
+  ;;  (disable-theme 'nord)
+  ;;  (load-theme 'gruvbox t t)
+  ;;  (custom-theme-set-faces 'gruvbox
+  ;;                          '(web-mode-html-attr-custom-face ((t (:slant italic))))
+  ;;                          '(web-mode-html-attr-name-face ((t (:slant italic)))))
+  ;;  (enable-theme 'gruvbox))
 
   ;; Use fancy icons in neotree
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
@@ -466,7 +480,7 @@ values."
   (with-eval-after-load 'org
     (org-babel-do-load-languages 'org-babel-load-languages '(
                                                              (ruby . t)
-                                                             (sh . t)
+                                                             (shell . t)
                                                              (js . t)
                                                              (restclient . t)
                                                              )))
@@ -492,7 +506,8 @@ values."
 
   (with-eval-after-load 'flycheck
     (dolist (checker '(javascript-eslint javascript-standard))
-      (flycheck-add-mode checker 'react-mode)))
+      (flycheck-add-mode checker 'react-mode)
+      (flycheck-add-mode checker 'rjsx-mode)))
 
   (add-hook 'react-mode-hook 'flycheck-mode)
   (add-hook 'js2-mode-hook 'flycheck-mode)
@@ -500,6 +515,14 @@ values."
 
   (add-hook 'js2-mode-hook 'eslintd-fix-mode)
   (add-hook 'react-mode-hook 'eslintd-fix-mode)
+
+;;  (setq auto-mode-alist (rassq-delete-all 'react-mode auto-mode-alist))
+;;  (use-package rjsx-mode
+;;    :ensure t
+;;    :init
+;;    (add-hook 'rjsx-mode-hook 'flycheck-mode)
+;;    (add-hook 'rjsx-mode-hook 'eslintd-fix-mode)
+;;    (add-to-list 'auto-mode-alist '("\\.jsx\\" . rjsx-mode)))
 
   (defun stylelint-fix-file ()
     (interactive)
@@ -519,7 +542,6 @@ values."
   (setq-default flycheck-scalastylerc "/Users/mborc/source/monsanto/scalastyle-config.xml")
 
   (setq
-   n4js-cli-program              "~/bin/cypher-shell-nonprod"
    scala-indent:align-parameters t
    scala-indent:align-forms      t
    ensime-search-interface       'helm
@@ -532,7 +554,6 @@ values."
         ensime-eldoc-hints 'error
         ensime-graphical-tooltips t
         ensime-auto-generate-config t
-
 
         ensime-sem-high-faces '((var . scala-font-lock:var-face)
                                 (val . (:inherit font-lock-constant-face :slant italic))
@@ -568,6 +589,49 @@ values."
         ;;                         )
         )
 
+  (defhydra hydra-neo4j ()
+    "neo4j"
+    ("g" text-scale-increase "in")
+    ("l" text-scale-decrease "out"))
+
+
+  (defun vault-secret (path field) "Read a secret from vault"
+         (shell-command-to-string (concat "vault read -field=" field " " path)))
+
+  (defun neo4j-password (server-name) "Get the neo4j password from vault"
+         (cond ((string-prefix-p "uiqa" server-name) (vault-secret "secret/customer360/nonprod/partyapi/uiqa" "pass"))
+               (t (vault-secret "secret/customer360/Identity/nonprod/neo4j" "password"))))
+
+  (defun n4js-connect (server-name)
+      "Connect neo4j shell to a server name"
+      (setq n4js-cli-program "ssh")
+      (setq n4js-cli-arguments
+            '("-t"
+              (concat "neo-" server-name)
+              "cypher-shell"
+              "-u" "neo4j"
+              "-a" (concat "bolt"
+                           (cond ((string-prefix-p "uiqa" server-name) "+routing"))
+                           "://localhost:7687")
+              "-p" (neo4j-password server-name)))
+      (message n4js-cli-arguments)
+      (n4js-start))
+
+
+  (defhydra hydra-buffer-menu (:color pink
+                               :hint nil)
+  "
+  ^uidev^             ^uiqa^
+  ^^^^^^^^----------------------------
+  _d_: uidev          _q1_: uiqa-c1
+  ^ ^:                _q2_: uiqa-c2
+  "
+    ("d" (n4js-connect "uidev"))
+    ("q1" (n4js-connect "uiqa-c1"))
+    ("q2" (n4js-connect "uiqa-c2"))
+    )
+
+
 
 )
 
@@ -583,8 +647,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (csv-mode yasnippet-snippets web-mode ruby-hash-syntax rainbow-mode org-mime live-py-mode js2-refactor helm-projectile helm-make groovy-mode evil-org evil-matchit dumb-jump auto-compile counsel swiper ivy smartparens avy flycheck projectile magit magit-popup git-commit ghub helm helm-core emojify spaceline powerline which-key exec-path-from-shell evil org-plus-contrib zoom-window yapfify yaml-mode xterm-color ws-butler with-editor winum web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill undo-tree toc-org tagedit symon subatomic-theme string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode slack shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor rubocop rspec-mode robe restclient-helm restart-emacs rbenv rake rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin popup-imenu play-routes-mode pippel pipenv pip-requirements persp-mode password-generator paradox packed ox-twbs ox-gfm overseer orgit org-projectile org-present org-pomodoro org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir ob-cypher nord-theme noflet neotree nameless n4js mwim mvn multiple-cursors multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode linum-relative link-hint less-css-mode js-doc indium indent-guide importmagic impatient-mode idea-darkula-theme hy-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-mode-manager helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-imports gradle-mode goto-chg google-translate golden-ratio gnuplot github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav editorconfig dracula-theme dockerfile-mode docker diminish diff-hl define-word dash-at-point darcula-theme dactyl-mode cython-mode counsel-projectile company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode coffee-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary all-the-icons-dired alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
- '(zoom-window-mode-line-color "#8f3f71"))
+    (yasnippet-snippets string-inflection pyvenv pipenv meghanada magit-gh-pulls helm-projectile evil-nerd-commenter counsel-projectile counsel swiper ivy json-mode ess smartparens flycheck projectile magit git-commit ghub helm use-package org-plus-contrib zoom-window yapfify yaml-mode xterm-color ws-butler with-editor winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen unfill toc-org tagedit symon subatomic-theme sql-indent spaceline-all-the-icons smeargle slim-mode slack shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pytest pyenv-mode py-isort pug-mode popwin popup-imenu play-routes-mode pippel pip-requirements persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir nord-theme noflet neotree nameless n4js mwim mvn multi-term move-text mmm-mode minitest maven-test-mode material-theme markdown-toc magithub magit-svn magit-gitflow macrostep lorem-ipsum load-dir livid-mode live-py-mode link-hint less-css-mode json-snatcher json-reformat json-navigator js2-refactor js-doc indium indent-guide importmagic impatient-mode idea-darkula-theme hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav editorconfig dumb-jump dracula-theme dotenv-mode dockerfile-mode docker diminish diff-hl define-word dash-at-point dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote bind-key auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
