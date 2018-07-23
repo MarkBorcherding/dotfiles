@@ -19,4 +19,4 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 mkdir -p ~/Applications
 
-cp -r /usr/local/opt/emacs-mac/Emacs.app ~/Applications
+cp -rf /usr/local/opt/emacs-plus/Emacs.app ~/Applications
