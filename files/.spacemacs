@@ -193,9 +193,9 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Input Mono Light"
+   dotspacemacs-default-font '("Input Mono"
                                :size 12
-                               :weight light
+                               ;; :weight light
                                :width normal
                                :powerline-scale 1.4)
    ;; The leader key
@@ -278,10 +278,10 @@ values."
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil to boost the loading time. (default t)
-   dotspacemacs-loading-progress-bar nil
+   dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -454,15 +454,22 @@ values."
   ;; For some reason this doesn't load when you try to include it as a package
   ;; the standard way.
   ;;(use-package gruvbox-theme
-  ;;  :ensure t
-  ;;  :init
-  ;;  (disable-theme 'spacemacs-dark)
-  ;;  (disable-theme 'nord)
-  ;;  (load-theme 'gruvbox t t)
-  ;;  (custom-theme-set-faces 'gruvbox
-  ;;                          '(web-mode-html-attr-custom-face ((t (:slant italic))))
-  ;;                          '(web-mode-html-attr-name-face ((t (:slant italic)))))
-  ;;  (enable-theme 'gruvbox))
+  ;; :ensure t
+  ;; :init
+  ;; (disable-theme 'spacemacs-dark)
+  ;; (disable-theme 'nord)
+  ;; (load-theme 'gruvbox t t)
+  ;;
+  ;;(custom-theme-set-faces 'gruvbox
+  ;;                      '(web-mode-html-attr-custom-face ((t (:slant italic))))
+  ;;                      '(web-mode-html-attr-name-face ((t (:slant italic)))))
+  ;;
+  ;; (enable-theme 'gruvbox))
+
+  (custom-theme-set-faces 'nord
+                          '(web-mode-html-attr-custom-face ((t (:slant italic))))
+                          '(web-mode-html-attr-name-face ((t (:slant italic)))))
+
 
   ;; Use fancy icons in neotree
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
@@ -647,7 +654,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yasnippet-snippets string-inflection pyvenv pipenv meghanada magit-gh-pulls helm-projectile evil-nerd-commenter counsel-projectile counsel swiper ivy json-mode ess smartparens flycheck projectile magit git-commit ghub helm use-package org-plus-contrib zoom-window yapfify yaml-mode xterm-color ws-butler with-editor winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen unfill toc-org tagedit symon subatomic-theme sql-indent spaceline-all-the-icons smeargle slim-mode slack shell-pop scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pytest pyenv-mode py-isort pug-mode popwin popup-imenu play-routes-mode pippel pip-requirements persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir nord-theme noflet neotree nameless n4js mwim mvn multi-term move-text mmm-mode minitest maven-test-mode material-theme markdown-toc magithub magit-svn magit-gitflow macrostep lorem-ipsum load-dir livid-mode live-py-mode link-hint less-css-mode json-snatcher json-reformat json-navigator js2-refactor js-doc indium indent-guide importmagic impatient-mode idea-darkula-theme hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav editorconfig dumb-jump dracula-theme dotenv-mode dockerfile-mode docker diminish diff-hl define-word dash-at-point dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote bind-key auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (subatomic-theme idea-darkula-theme dracula-theme zoom-window yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill toc-org tagedit symon string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode slack shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin popup-imenu play-routes-mode pippel pipenv pip-requirements persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir nord-theme noflet neotree nameless n4js mwim mvn multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode live-py-mode link-hint json-navigator js-doc indium indent-guide importmagic impatient-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode dockerfile-mode docker diminish diff-hl define-word dash-at-point dactyl-mode cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
