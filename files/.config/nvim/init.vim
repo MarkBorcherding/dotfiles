@@ -52,7 +52,9 @@ let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 
 " Cosmetic
 Plug 'w0ng/vim-hybrid'                " Nice colorscheme
-Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'                " old favorite
+Plug 'arcticicestudio/nord-vim'       " Baby it's cold outside
+Plug 'drewtempelmeyer/palenight.vim'  " Let's try something _darker_
 Plug 'kien/rainbow_parentheses.vim'
 nnoremap <leader>p :RainbowParenthesesToggle<CR>
 
@@ -121,7 +123,7 @@ set exrc                                       " enable per-directory .vimrc fil
 set secure                                     " disable unsafe commands in local .vimrc files
 set t_ut=                                      " make the background work in tmux
 set t_Co=256                                   " Wide columns
-colorscheme hybrid                             " Beauty
+colorscheme palenight                             " Beauty
 set background=dark
 set incsearch                                  " Find the next match as we type the search
 set hlsearch                                   " Hilight searches by default
@@ -216,3 +218,17 @@ map <leader>R :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
 map <leader>w :Dispatch cucumber --profile wip<cr>
 
+
+
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+ " map a fe things first so we can setup correct mappings to them when the
