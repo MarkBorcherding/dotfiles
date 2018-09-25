@@ -46,8 +46,8 @@ values."
      python
      ruby
      sql
-     ;; Nyan cat looks fine in Gruvbox, but not so much in Nord
-     ;; (colors :variables colors-enable-nyan-cat-progress-bar t)
+     ;; (colors :variables colors-enable-nyan-cat-progress-bar t) ;; Nyan cat looks fine in Gruvbox, but not so much in Nord
+     csharp
      colors
      auto-completion
      better-defaults
@@ -65,16 +65,15 @@ values."
      javascript
      markdown
      org
-
      react
      restclient
-     (scala :variables
-            scala-auto-insert-asterisk-in-comments t
-            scala-auto-start-ensime t)
+     (scala :variables scala-auto-insert-asterisk-in-comments t scala-auto-start-ensime t)
      slack
      shell
+     shell-scripts
      spell-checking
      tmux
+     typescript
      yaml
      )
    ;; List of additional packages that will be installed without being
@@ -107,11 +106,8 @@ values."
                                       ;; Appearance
                                       gruvbox-theme           ;; The best colors
                                       material-theme          ;; less than the best colors
-                                      ;;dracula-theme           ;; ok colors
                                       nord-theme              ;; you got the blues colors
-                                      ;;subatomic-theme         ;; My original colors
-                                      ;;idea-darkula-theme      ;; Make the IntelliJ guys happy when they pair
-                                      ;;darcula-theme           ;; another option
+                                      kaolin-themes           ;; trying some new themes
                                       )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -188,7 +184,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(nord gruvbox spacemacs-dark idea-darkula dracula subatomic)
+   dotspacemacs-themes '(gruvbox kaolin-eclipse nord spacemacs-dark idea-darkula dracula subatomic)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -453,22 +449,22 @@ values."
 
   ;; For some reason this doesn't load when you try to include it as a package
   ;; the standard way.
-  ;;(use-package gruvbox-theme
+  ;; (use-package gruvbox-theme
   ;; :ensure t
   ;; :init
   ;; (disable-theme 'spacemacs-dark)
   ;; (disable-theme 'nord)
   ;; (load-theme 'gruvbox t t)
-  ;;
-  ;;(custom-theme-set-faces 'gruvbox
+
+  ;; (custom-theme-set-faces 'gruvbox
   ;;                      '(web-mode-html-attr-custom-face ((t (:slant italic))))
   ;;                      '(web-mode-html-attr-name-face ((t (:slant italic)))))
-  ;;
+
   ;; (enable-theme 'gruvbox))
 
-  (custom-theme-set-faces 'nord
-                          '(web-mode-html-attr-custom-face ((t (:slant italic))))
-                          '(web-mode-html-attr-name-face ((t (:slant italic)))))
+  ;; (custom-theme-set-faces 'nord
+  ;;                         '(web-mode-html-attr-custom-face ((t (:slant italic))))
+  ;;                         '(web-mode-html-attr-name-face ((t (:slant italic)))))
 
 
   ;; Use fancy icons in neotree
@@ -654,7 +650,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (subatomic-theme idea-darkula-theme dracula-theme zoom-window yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill toc-org tagedit symon string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode slack shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode popwin popup-imenu play-routes-mode pippel pipenv pip-requirements persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir nord-theme noflet neotree nameless n4js mwim mvn multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode live-py-mode link-hint json-navigator js-doc indium indent-guide importmagic impatient-mode hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elm-mode elisp-slime-nav editorconfig dumb-jump dotenv-mode dockerfile-mode docker diminish diff-hl define-word dash-at-point dactyl-mode cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (kaolin-themes doom-modeline docker counsel-projectile counsel autothemer projectile magit pythonic zoom-window yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill toc-org tide tagedit tablist symon swiper subatomic-theme string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode slack shrink-path shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin popup-imenu play-routes-mode pippel pipenv pip-requirements persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file omnisharp ob-restclient ob-http ob-elixir nord-theme noflet neotree nameless n4js mwim mvn multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode live-py-mode link-hint json-navigator json-mode js-doc insert-shebang indium indent-guide importmagic impatient-mode idea-darkula-theme hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo flycheck-bashate fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emoji-cheat-sheet-plus emmet-mode elm-test-runner elm-mode elisp-slime-nav eldoc-eval editorconfig dumb-jump dracula-theme dotenv-mode dockerfile-mode docker-tramp diminish diff-hl define-word dash-at-point dactyl-mode cython-mode csv-mode company-web company-tern company-statistics company-shell company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
