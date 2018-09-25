@@ -20,7 +20,6 @@ antigen bundle osx
 antigen bundle scala
 antigen bundle sbt
 antigen bundle tmux
-antigen bundle tmuxinator
 antigen bundle vault
 
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -28,10 +27,6 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 
 antigen bundle lukechilds/zsh-nvm
-
-antigen bundle krujos/cf-zsh-autocompletion
-
-antigen bundle dannyzen/cf-zsh-autocomplete-plugin
 
 antigen theme markborcherding/zsh-plugins themes/fooberry
 
@@ -58,7 +53,7 @@ bindkey -s "^[Oo" "/"
 
 bindkey "^R" history-incremental-search-backward
 
-alias ls="ls -G "
+alias ls='ls -G'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'

@@ -50,7 +50,9 @@ let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 
 " Cosmetic
 Plug 'morhetz/gruvbox'                " Nice colorscheme
-Plug 'arcticicestudio/nord-vim'       " Baby it's cold outside
+"Plug 'arcticicestudio/nord-vim'       " Baby it's cold outside
+"Plug 'drewtempelmeyer/palenight.vim'  " Let's try something _darker_
+
 
 Plug 'junegunn/goyo.vim'              " Distraction free vim
 
@@ -83,14 +85,14 @@ Plug 'keith/tmux.vim'
 Plug 'slim-template/vim-slim'
 
 
-Plug 'ensime/ensime-vim'
-au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
-au FileType scala nnoremap <localleader>ds :EnDeclarationSplit<CR>
-au FileType scala nnoremap <localleader>I :EnSuggestImport<CR>
-au FileType scala nnoremap <localleader>i :EnInspectType<CR>
-au FileType scala nnoremap <localleader>oi :EnOrganizeImport<CR>
-au FileType scala nnoremap <localleader>T :EnTypeCheck<CR>
-au FileType scala nnoremap <localleader>t :EnType<CR>
+" Plug 'ensime/ensime-vim'
+" au FileType scala nnoremap <localleader>df :EnDeclaration<CR>
+" au FileType scala nnoremap <localleader>ds :EnDeclarationSplit<CR>
+" au FileType scala nnoremap <localleader>I :EnSuggestImport<CR>
+" au FileType scala nnoremap <localleader>i :EnInspectType<CR>
+" au FileType scala nnoremap <localleader>oi :EnOrganizeImport<CR>
+" au FileType scala nnoremap <localleader>T :EnTypeCheck<CR>
+" au FileType scala nnoremap <localleader>t :EnType<CR>
 
 " Ruby
 Plug 'tpope/vim-rails'
@@ -126,8 +128,9 @@ set exrc                                       " enable per-directory .vimrc fil
 set secure                                     " disable unsafe commands in local .vimrc files
 set t_ut=                                      " make the background work in tmux
 set t_Co=256                                   " Wide columns
-colorscheme nord                               " Brrr....coldoutside
-" colorscheme gruvbox                          " Beauty
+" colorscheme palenight                          " purple theme
+" colorscheme nord                             " Brrr....coldoutside
+colorscheme gruvbox                          " Beauty
 set background=dark
 set incsearch                                  " Find the next match as we type the search
 set hlsearch                                   " Hilight searches by default
@@ -222,4 +225,4 @@ map <leader>R :call RunNearestTest()<cr>
 map <leader>a :call RunTests('')<cr>
 map <leader>w :Dispatch cucumber --profile wip<cr>
 
-set guifont=Fira\ Code:h12
+" set guifont=Fira\ Code:h12
