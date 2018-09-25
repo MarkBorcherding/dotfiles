@@ -19,6 +19,10 @@ export EDITOR='emacsclient --tty --alternate-editor=""'
 alias e='emacsclient --tty --alternate-editor=""'
 alias eg='emacsclient --alternate-editor="" --create-frame --no-wait'
 
+# Add the directories from files found in /etc/path.d
+if [ -x /usr/libexec/path_helper ]; then
+	  eval `/usr/libexec/path_helper -s`
+fi
 
 # Setup the path
 PATH="/usr/local/bin:$PATH"                 # Add the homebrew stuff before the existing bins
@@ -35,7 +39,6 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(rbenv init -)"
 
 export PATH
-
 
 ssh-add -A 2>/dev/null;
 
