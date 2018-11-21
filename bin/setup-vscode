@@ -1,0 +1,61 @@
+#!/bin/bash
+
+echo
+if brew cask list --versions visual-studio-code > /dev/null; then
+    echo "Visual Studio Code is installed"
+else
+    echo "Install Visual Studio Code"
+    brew cask install visual-studio-code
+fi
+echo
+
+
+
+EXTENSION=(
+abotteram.typescript-react-snippets
+adamsome.vscode-theme-gruvbox-minor
+arcticicestudio.nord-visual-studio-code
+atian25.copy-syntax
+benfahrenheit.vscode-surround
+christian-kohler.npm-intellisense
+CodeStream.codestream
+CoenraadS.bracket-pair-colorizer
+dbaeumer.vscode-eslint
+donjayamanne.githistory
+eamodio.gitlens
+eg2.tslint
+eg2.vscode-npm-script
+Equinusocio.vsc-material-theme
+formulahendry.dotnet
+fthiagogv.theme-material-ocean-next-plus
+gamunu.vscode-yarn
+hbenl.vscode-test-explorer
+hbenl.vscode-test-explorer-liveshare
+jdinhlife.gruvbox
+jpoissonnier.vscode-styled-components
+karigari.chat
+KishoreIthadi.dotnet-core-essentials
+lostfields.nodejs-repl
+mariusschulz.yarn-lock-syntax
+mikestead.dotenv
+ms-vscode.csharp
+ms-vscode.PowerShell
+ms-vsliveshare.vsliveshare
+ms-vsliveshare.vsliveshare-audio
+ms-vsliveshare.vsliveshare-pack
+ms-vsts.team
+msjsdiag.debugger-for-chrome
+Orta.vscode-jest
+PeterJausovec.vscode-docker
+PKief.material-icon-theme
+streetsidesoftware.code-spell-checker
+timothymclane.react-redux-es6-snippets
+tomphilbin.gruvbox-themes
+tootone.org-mode
+vscodevim.vim
+WallabyJs.quokka-vscode
+whizkydee.material-palenight-theme
+)
+
+echo Installing extensions
+echo $EXTENSION | xargs -n 1 code --install-extension
