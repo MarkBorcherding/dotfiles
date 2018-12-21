@@ -30,3 +30,11 @@ files/.config/nvim/plugged/
 # Fritzing might not stay
 files/.config/Fritzing/
 
+
+# Misc ignores I don't care to track
+files/.config/NuGet
+files/.config/QtProject
+files/.config/configstore
+files/.config/stetic
+files/.config/xbuild
+
