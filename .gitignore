@@ -37,4 +37,5 @@ files/.config/QtProject
 files/.config/configstore
 files/.config/stetic
 files/.config/xbuild
+files/.config/htop
 
