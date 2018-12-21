@@ -40,6 +40,9 @@
 [merge]
   keepBackup = false;
   tool = vimdiff
+	conflictstyle = diff3
+  keepTemporaries = false
+  keepBackup = false
 
 [mergetool "p4merge"]
   cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
@@ -52,3 +55,5 @@
 	includeStatusHeader = false
 	includePullRequestsSection = false
 	includeIssuesSection = false
+[mergetool]
+	keepBackup = false
