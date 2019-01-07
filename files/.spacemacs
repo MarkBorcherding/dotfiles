@@ -593,51 +593,45 @@ values."
         ;;                         )
         )
 
-  (defhydra hydra-neo4j ()
-    "neo4j"
-    ("g" text-scale-increase "in")
-    ("l" text-scale-decrease "out"))
+  (use-package all-the-icons
+    :ensure t
+    :config
 
+    ;; plain ol js stuff
+    (add-to-list 'all-the-icons-icon-alist
+                 '("\\.test\\.js$"
+                   all-the-icons-fileicon "test-js"
+                   :height 1.0
+                   :face all-the-icons-yellow))
 
-  (defun vault-secret (path field) "Read a secret from vault"
-         (shell-command-to-string (concat "vault read -field=" field " " path)))
+    ;; react js stuff
+    (add-to-list 'all-the-icons-icon-alist
+                 '("\\.test\\.jsx$"
+                   all-the-icons-fileicon "test-react"
+                   :height 1.0
+                   :face all-the-icons-cyan-alt))
 
-  (defun neo4j-password (server-name) "Get the neo4j password from vault"
-         (cond ((string-prefix-p "uiqa" server-name) (vault-secret "secret/customer360/nonprod/partyapi/uiqa" "pass"))
-               (t (vault-secret "secret/customer360/Identity/nonprod/neo4j" "password"))))
+    ;; typescript stuff
+    (add-to-list 'all-the-icons-icon-alist
+                 '("\\.ts$"
+                   all-the-icons-fileicon "typescript"
+                   :height 1.0
+                   :face all-the-icons-blue-alt))
 
-  (defun n4js-connect (server-name)
-      "Connect neo4j shell to a server name"
-      (setq n4js-cli-program "ssh")
-      (setq n4js-cli-arguments
-            '("-t"
-              (concat "neo-" server-name)
-              "cypher-shell"
-              "-u" "neo4j"
-              "-a" (concat "bolt"
-                           (cond ((string-prefix-p "uiqa" server-name) "+routing"))
-                           "://localhost:7687")
-              "-p" (neo4j-password server-name)))
-      (message n4js-cli-arguments)
-      (n4js-start))
+    (add-to-list 'all-the-icons-icon-alist
+                 '("\\.tsx$"
+                   all-the-icons-fileicon "tsx"
+                   :height 1.0
+                   :face all-the-icons-blue-alt))
 
+    (add-to-list 'all-the-icons-icon-alist
+                 '("\\.test\\.tsx$"
+                   all-the-icons-fileicon "test-typescript"
+                   :height 1.0
+                   :face all-the-icons-blue-alt))
 
-  (defhydra hydra-buffer-menu (:color pink
-                               :hint nil)
-  "
-  ^uidev^             ^uiqa^
-  ^^^^^^^^----------------------------
-  _d_: uidev          _q1_: uiqa-c1
-  ^ ^:                _q2_: uiqa-c2
-  "
-    ("d" (n4js-connect "uidev"))
-    ("q1" (n4js-connect "uiqa-c1"))
-    ("q2" (n4js-connect "uiqa-c2"))
     )
-
-
-
-)
+  )
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
@@ -651,7 +645,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (pyvenv evil-surround doom-modeline diff-hl ace-window counsel ivy ess projectile magit git-commit ghub helm helm-core typescript-mode zoom-window yasnippet-snippets yapfify yaml-mode xterm-color ws-butler writeroom-mode with-editor winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill treepy toc-org tide tagedit symon swiper subatomic-theme string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pytest pyenv-mode py-isort pug-mode prettier-js popwin popup-imenu play-routes-mode pippel pipenv pip-requirements persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir nord-theme noflet neotree nameless n4js mwim mvn multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode live-py-mode link-hint kaolin-themes julia-mode json-navigator js-doc insert-shebang indium indent-guide importmagic impatient-mode idea-darkula-theme hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports graphql gradle-mode google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo flycheck-bashate fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emojify emoji-cheat-sheet-plus emmet-mode elm-test-runner elm-mode elisp-slime-nav eldoc-eval editorconfig dumb-jump dracula-theme dotenv-mode dockerfile-mode docker diminish define-word dash-at-point dactyl-mode cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-shell company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent ace-link ace-jump-helm-line ac-ispell))))
+    (doom-modeline elixir-mode evil zoom-window yasnippet-snippets yapfify yaml-mode xterm-color ws-butler writeroom-mode winum which-key web-mode web-beautify volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package unfill undo-tree toc-org tide tagedit symon subatomic-theme string-inflection sql-indent spaceline-all-the-icons smeargle slim-mode shrink-path shell-pop seeing-is-believing scss-mode sass-mode rvm ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocop rspec-mode robe rjsx-mode restclient-helm restart-emacs rbenv rake rainbow-mode rainbow-identifiers rainbow-delimiters pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin popup-imenu play-routes-mode pippel pipenv pip-requirements persp-mode password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-restclient ob-http ob-elixir nord-theme noflet neotree nameless n4js mwim mvn multi-term move-text mmm-mode minitest meghanada maven-test-mode material-theme markdown-toc magithub magit-svn magit-gitflow magit-gh-pulls macrostep lorem-ipsum load-dir livid-mode live-py-mode link-hint kaolin-themes json-navigator js-doc insert-shebang indium indent-guide importmagic impatient-mode idea-darkula-theme hungry-delete hl-todo highlight-symbol highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-dash helm-css-scss helm-company helm-c-yasnippet helm-ag gruvbox-theme groovy-mode groovy-imports gradle-mode goto-chg google-translate golden-ratio gnuplot gitignore-templates github-search github-clone gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md fuzzy font-lock+ flyspell-correct-helm flycheck-mix flycheck-credo flycheck-bashate fish-mode fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu ess-R-data-view eslintd-fix eshell-z eshell-prompt-extras esh-help ensime emojify emoji-cheat-sheet-plus emmet-mode elm-test-runner elm-mode elisp-slime-nav eldoc-eval editorconfig dumb-jump dracula-theme dotenv-mode dockerfile-mode docker diminish diff-hl define-word dash-at-point dactyl-mode cython-mode csv-mode counsel-projectile company-web company-tern company-statistics company-shell company-restclient company-emoji company-emacs-eclim company-anaconda column-enforce-mode color-identifiers-mode clean-aindent-mode chruby centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile all-the-icons-dired alchemist aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
