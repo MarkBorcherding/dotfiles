@@ -15,7 +15,7 @@ export CLICOLOR=1
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
-export EDITOR='emacsclient --tty --alternate-editor=""'
+export EDITOR='vim'
 alias e='emacsclient --tty --alternate-editor=""'
 alias eg='emacsclient --alternate-editor="" --create-frame --no-wait'
 
