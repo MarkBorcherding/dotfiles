@@ -8,11 +8,8 @@ brew install ispell \
 
 brew tap d12frosted/emacs-plus
 brew install emacs-plus \
-              --with-24bit-color \
               --with-ctags \
               --with-dbus \
-              --with-natural-title-bar \
-              --with-pixel-scrolling \
               --without-spacemacs-icon
 
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
