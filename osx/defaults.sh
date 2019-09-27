@@ -41,3 +41,4 @@ defaults write com.apple.Safari HomePage -string "https://en.wikipedia.org/wiki/
 defaults write com.apple.Safari ShowFavoritesBar -bool false
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
