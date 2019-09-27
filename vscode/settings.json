@@ -1,0 +1,196 @@
+{
+  "workbench.colorTheme": "Gruvbox Minor Dark Medium",
+  "editor.fontFamily": "Input Mono",
+  "workbench.activityBar.visible": false,
+  "editor.hover.enabled": true,
+  "terminal.integrated.fontWeightBold": "normal",
+  "explorer.openEditors.visible": 0,
+  "terminal.integrated.lineHeight": 1.4,
+  "window.zoomLevel": 1,
+  "editor.fontSize": 10,
+  "editor.cursorStyle": "block-outline",
+  "terminal.integrated.fontSize": 10,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
+    }
+  ],
+  "files.associations": {
+    "*.targets": "makefile"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.fontFamily": "Input Mono",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.minimap.enabled": false,
+  "cSpell.userWords": [
+    "assistive",
+    "captcha",
+    "cond"
+  ],
+  "bracketPairColorizer.consecutivePairColors": [
+    "()",
+    "[]",
+    "{}",
+    [
+      "<",
+      "</"
+    ],
+    [
+      "<",
+      "/>"
+    ],
+    [
+      "#7c6f64",
+      "#a89984",
+      "#d5c4a1",
+      "#8ec07c",
+      "#83a598",
+      "#d3869b",
+      "#fb4934",
+      "#fe8019",
+      "#fabd2f",
+      "#b8bb26"
+    ],
+    "#cc241d"
+  ],
+  "bracketPairColorizer.forceIterationColorCycle": true,
+  "bracketPairColorizer.showVerticalScopeLine": false,
+  "bracketPairColorizer.showHorizontalScopeLine": false,
+  "workbench.editor.highlightModifiedTabs": true,
+  "gitlens.views.fileHistory.enabled": false,
+  "gitlens.views.lineHistory.enabled": false,
+  "breadcrumbs.enabled": true,
+  "workbench.colorCustomizations": {
+    "editorHoverWidget.background": "#3c3836"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "jest.pathToJest": "./node_modules/.bin/jest  -- ",
+  "tslint.autoFixOnSave": true,
+  "editor.parameterHints.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+  },
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "todohighlight.keywords": [
+    {
+      "text": "IMPROVE",
+      "color": "orange",
+      "backgroundColor": "rgba(0,0,0,0)",
+      "isWholeLine": true
+    }
+  ],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "debug.console.fontSize": 10,
+  "jest.pathToConfig": "./jest.config.js",
+  "jest.rootPath": "./ElectronUI/",
+  "workbench.editor.showTabs": false,
+  "cSpell.enabledLanguageIds": [
+    "asciidoc",
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "git-commit",
+    "go",
+    "handlebars",
+    "haskell",
+    "html",
+    "jade",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "latex",
+    "less",
+    "markdown",
+    "php",
+    "plaintext",
+    "pug",
+    "python",
+    "restructuredtext",
+    "rust",
+    "scala",
+    "scss",
+    "text",
+    "typescript",
+    "yaml",
+    "yml"
+  ]
+}
