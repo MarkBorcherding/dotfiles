@@ -10,10 +10,10 @@ brew tap d12frosted/emacs-plus
 brew install emacs-plus \
               --with-ctags \
               --with-dbus \
-              --without-spacemacs-icon
+              --with-modern-icon
 
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-mkdir -p ~/Applications
+#mkdir -p ~/Applications
 
-cp -rf /usr/local/opt/emacs-plus/Emacs.app ~/Applications
+#cp -rf /usr/local/opt/emacs-plus/Emacs.app ~/Applications
