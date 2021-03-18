@@ -137,10 +137,19 @@ function! SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-augroup my_colours
+function! SynGroup()
+    let l:s = synID(line('.'), col('.'), 1)
+    echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
+endfun
+
+augroup material_needs_color_tweaks
   autocmd!
-  autocmd ColorScheme material hi SpellBad cterm=reverse ctermfg=1 ctermbg=226
-  autocmd ColorScheme material hi gitcommitSummary ctermfg=5
+
+  " Mispelled words
+  autocmd ColorScheme material hi SpellBad ctermfg=1 ctermbg=none
+
+  " Grammar corrections
+  autocmd ColorScheme material hi SpellCap ctermfg=12 ctermbg=none
 augroup END
 
 colorscheme gruvbox                          " Beauty
