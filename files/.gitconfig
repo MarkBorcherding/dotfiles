@@ -1,6 +1,9 @@
 [user]
-	email = markborcherding@gmail.com
 	name = Mark Borcherding
+	email = mark.borcherding@wwt.com
+
+[includeIf "gitdir:~/source/markborcherding/"]
+	include = ~/.gitconfig_personal
 
 [color]
   ui = true

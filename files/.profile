@@ -36,7 +36,7 @@ PATH="$HOME/.rbenv/bin:$PATH"               # Add rbenv bins to the path
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 2>/dev/null  # This loads nvm
 
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 export PATH
 

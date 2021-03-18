@@ -5,6 +5,8 @@ source "$HOME/.profile"
 # Turn off the spelling correct.
 unsetopt correct_all
 
+export ZSH_THEME_RUBY_VERSION="N"
+
 source ~/.antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -59,3 +61,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+for file in ~/.zsh.d/**; do
+    source "$file"
+done

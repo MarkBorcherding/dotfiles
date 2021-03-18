@@ -50,8 +50,8 @@ let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 
 " Cosmetic
 Plug 'morhetz/gruvbox'                " Nice colorscheme
-"Plug 'arcticicestudio/nord-vim'       " Baby it's cold outside
-"Plug 'drewtempelmeyer/palenight.vim'  " Let's try something _darker_
+Plug 'arcticicestudio/nord-vim'       " Baby it's cold outside
+Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 
 Plug 'junegunn/goyo.vim'              " Distraction free vim
@@ -77,12 +77,12 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " Language Specific
-Plug 'derekwyatt/vim-scala'
-Plug 'elixir-lang/vim-elixir'
-Plug 'hashivim/vim-terraform'
-Plug 'kchmck/vim-coffee-script'
+"#Plug 'derekwyatt/vim-scala'
+"#Plug 'elixir-lang/vim-elixir'
+"#Plug 'hashivim/vim-terraform'
+"#Plug 'kchmck/vim-coffee-script'
 Plug 'keith/tmux.vim'
-Plug 'slim-template/vim-slim'
+"Plug 'slim-template/vim-slim'
 
 
 " Plug 'ensime/ensime-vim'
@@ -128,10 +128,32 @@ set exrc                                       " enable per-directory .vimrc fil
 set secure                                     " disable unsafe commands in local .vimrc files
 set t_ut=                                      " make the background work in tmux
 set t_Co=256                                   " Wide columns
-" colorscheme palenight                          " purple theme
-" colorscheme nord                             " Brrr....coldoutside
+
+
+function! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+augroup my_colours
+  autocmd!
+  autocmd ColorScheme material hi SpellBad cterm=reverse ctermfg=1 ctermbg=226
+  autocmd ColorScheme material hi gitcommitSummary ctermfg=5
+augroup END
+
 colorscheme gruvbox                          " Beauty
+if $INSIDE_IDEA == "yes"
+  colorscheme material                         " Match IntelliJ
+elseif $TERM_PROGRAM == "vscode"
+  colorscheme material                         " Match VSCode
+else
+  colorscheme gruvbox                          " Beauty
+endif
 set background=dark
+
+
 set incsearch                                  " Find the next match as we type the search
 set hlsearch                                   " Hilight searches by default
 
