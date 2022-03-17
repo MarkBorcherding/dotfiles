@@ -153,12 +153,13 @@ augroup material_needs_color_tweaks
 augroup END
 
 colorscheme gruvbox                          " Beauty
-if $INSIDE_IDEA == "yes"
+if $TERM_PROGRAM == "idea"
   colorscheme material                         " Match IntelliJ
 elseif $TERM_PROGRAM == "vscode"
   colorscheme material                         " Match VSCode
 else
-  colorscheme gruvbox                          " Beauty
+  "colorscheme gruvbox                          " Beauty
+  colorscheme material                         " Match VSCode
 endif
 set background=dark
 

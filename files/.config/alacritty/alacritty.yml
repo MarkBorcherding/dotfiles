@@ -13,18 +13,55 @@ env:
   # `infocmp xterm-256color`.
   TERM: xterm-256color
 
-# Window dimensions in character columns and lines
-# (changes require restart)
-dimensions:
-  columns: 80
-  lines: 24
+# Shell
+#
+# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
+# Entries in shell.args are passed unmodified as arguments to the shell.
+shell:
+  program: /usr/local/bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
 
-# Adds this many blank pixels of padding around the window
-# Units are physical pixels; this is not DPI aware.
-# (change requires restart)
-padding:
-  x: 2
-  y: 2
+window:
+
+  # Background opacity
+  opacity: 0.95
+
+  # Window dimensions in character columns and lines
+  # (changes require restart)
+  dimensions:
+    columns: 200
+    lines: 50
+
+  # Adds this many blank pixels of padding around the window
+  # Units are physical pixels; this is not DPI aware.
+  # (change requires restart)
+  padding:
+    x: 2
+    y: 2
+
+  # Window decorations
+  #
+  # Available values:
+  # - full: borders and title bar
+  # - none: neither borders nor title bar
+  # - transparent: title bar, transparent background and title bar buttons
+  # - buttonless: title bar, transparent background, but no title bar buttons
+  decorations: buttonless
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Windowed
+
 
 # Display tabs using this many cells (changes require restart)
 tabspaces: 8
@@ -37,43 +74,53 @@ font:
   # The normal (roman) font face to use.
   normal:
     family: Input Mono
+    style: Light
     # Style can be specified to pick a specific face.
-    # style: Regular
 
   # The bold font face
   bold:
     family: Input Mono
-    style: Regular
     # Style can be specified to pick a specific face.
-    # style: Bold
+    style:  Medium
 
   # The italic font face
   italic:
     family: Operator Mono
-    style: Italic
+    style: Medium Italic
     # Style can be specified to pick a specific face.
     # style: Italic
 
   # Point size of the font
-  size: 12.0
+  size: 13
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
   offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increase the x offset to move the glyph to
   # the right, increase the y offset to move the glyph upward.
   glyph_offset:
-    x: 0.0
-    y: 0.0
+    x: 0
+    y: 0
 
-  # OS X only: use thin stroke font rendering. Thin strokes are suitable
-  # for retina displays, but for non-retina you probably want this set to
-  # false.
-  use_thin_strokes: false
+  # Thin stroke font rendering (macOS only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina you
+  # probably want this set to false.
+  #
+  # macOS >= 10.14.x:
+  #
+  # If the font quality on non-retina display looks bad then set
+  # `use_thin_strokes` to `true` and enable font smoothing by running the
+  # following command:
+  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
+  #
+  # This is a global setting and will require a log out or restart to take
+  # effect.
+  use_thin_strokes: true
 
 # Should display the render timer
 render_timer: false
@@ -82,76 +129,180 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
-# Nord
-colors:
-#  primary:
-#    background: '0x2E3440'
-#    foreground: '0xD8DEE9'
-#  cursor:
-#    text: '0x2E3440'
-#    cursor: '0xD8DEE9'
-#  normal:
-#    black: '0x3B4252'
-#    red: '0xBF616A'
-#    green: '0xA3BE8C'
-#    yellow: '0xEBCB8B'
-#    blue: '0x81A1C1'
-#    magenta: '0xB48EAD'
-#    cyan: '0x88C0D0'
-#    white: '0xE5E9F0'
-#  bright:
-#    black: '0x4C566A'
-#    red: '0xBF616A'
-#    green: '0xA3BE8C'
-#    yellow: '0xEBCB8B'
-#    blue: '0x81A1C1'
-#    magenta: '0xB48EAD'
-#    cyan: '0x8FBCBB'
-#    white: '0xECEFF4'
+# # Nord
+# colors:
+#   primary:
+#     background: '0x2E3440'
+#     foreground: '0xD8DEE9'
+#   cursor:
+#     text: '0x2E3440'
+#     cursor: '0xD8DEE9'
+#   normal:
+#     black: '0x3B4252'
+#     red: '0xBF616A'
+#     green: '0xA3BE8C'
+#     yellow: '0xEBCB8B'
+#     blue: '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan: '0x88C0D0'
+#     white: '0xE5E9F0'
+#   bright:
+#     black: '0x4C566A'
+#     red: '0xBF616A'
+#     green: '0xA3BE8C'
+#     yellow: '0xEBCB8B'
+#     blue: '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan: '0x8FBCBB'
+#     white: '0xECEFF4'
 
-# # Colors (Gruvbox)
-#   # Default colors
+# Colors (Material Theme)
+#colors:
+#  # Default colors
+#  primary:
+#    background: '0x1e282d'
+#    foreground: '0xc4c7d1'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x666666'
+#    red:     '0xeb606b'
+#    green:   '0xc3e88d'
+#    yellow:  '0xf7eb95'
+#    blue:    '0x80cbc4'
+#    magenta: '0xff2f90'
+#    cyan:    '0xaeddff'
+#    white:   '0xffffff'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0xff262b'
+#    red:     '0xeb606b'
+#    green:   '0xc3e88d'
+#    yellow:  '0xf7eb95'
+#    blue:    '0x7dc6bf'
+#    magenta: '0x6c71c4'
+#    cyan:    '0x35434d'
+#    white:   '0xffffff'
+#
+
+# Base16 OceanicNext 256 - alacritty color config
+# https://github.com/voronianski/oceanic-next-color-scheme
+colors:
+  # Default colors
   primary:
-    background: '0x282828'
-    foreground: '0xebdbb2'
+    background: '0x1b2b34'
+    foreground: '0xc0c5ce'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
-    text: '0x000000'
-    cursor: '0xffffff'
+    text: '0x1b2b34'
+    cursor: '0xc0c5ce'
 
   # Normal colors
   normal:
-    black:   '0x282828'
-    red:     '0xcc241d'
-    green:   '0x98971a'
-    yellow:  '0xd79921'
-    blue:    '0x458588'
-    magenta: '0xb16286'
-    cyan:    '0x689d69'
-    white:   '0xebdbb2'
+    black:   '0x1b2b34'
+    red:     '0xec5f67'
+    green:   '0x99c794'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xc0c5ce'
 
   # Bright colors
   bright:
-    black:   '0x504945'
-    red:     '0xfb4934'
-    green:   '0xb8bb26'
-    yellow:  '0xfabd2f'
-    blue:    '0x83a598'
-    magenta: '0xd3869b'
-    cyan:    '0x8ec07c'
-    white:   '0xfbf1c7'
-
-  # Dim colors (Optional)
-  dim:
-    black:   '0x333333'
-    red:     '0xf2777a'
-    green:   '0x99cc99'
-    yellow:  '0xffcc66'
+    black:   '0x65737e'
+    red:     '0xec5f67'
+    green:   '0x99c794'
+    yellow:  '0xfac863'
     blue:    '0x6699cc'
-    magenta: '0xcc99cc'
-    cyan:    '0x66cccc'
-    white:   '0xdddddd'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xd8dee9'
+
+  indexed_colors:
+    - { index: 16, color: '0xf99157' }
+    - { index: 17, color: '0xab7967' }
+    - { index: 18, color: '0x343d46' }
+    - { index: 19, color: '0x4f5b66' }
+    - { index: 20, color: '0xa7adba' }
+    - { index: 21, color: '0xcdd3de' }
+
+# Colors (Pale Night)
+#colors:
+#
+#  # Default colors
+#  primary:
+#    background: '0x292D3E'
+#    foreground: '0xA6ACCD'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x5B607F'
+#    red:     '0xFF5370'
+#    green:   '0xC3E88D'
+#    yellow:  '0xFFCB6B'
+#    blue:    '0x82AAFF'
+#    magenta: '0xC792EA'
+#    cyan:    '0x89DDFF'
+#    white:   '0xF0F0F0'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0x7379A1'
+#    red:     '0xFF8796'
+#    green:   '0xC3E8A0'
+#    yellow:  '0xFFF0A8'
+#    blue:    '0xB0CAFF'
+#    magenta: '0xD6BCEA'
+#    cyan:    '0xBDEEFF'
+#    white:   '0xffffff'
+
+
+# # Colors (Gruvbox)
+#   # Default colors
+#  primary:
+#    background: '0x282828'
+#    foreground: '0xebdbb2'
+#
+#  # Colors the cursor will use if `custom_cursor_colors` is true
+#  cursor:
+#    text: '0x000000'
+#    cursor: '0xffffff'
+#
+#  # Normal colors
+#  normal:
+#    black:   '0x282828'
+#    red:     '0xcc241d'
+#    green:   '0x98971a'
+#    yellow:  '0xd79921'
+#    blue:    '0x458588'
+#    magenta: '0xb16286'
+#    cyan:    '0x689d69'
+#    white:   '0xebdbb2'
+#
+#  # Bright colors
+#  bright:
+#    black:   '0x504945'
+#    red:     '0xfb4934'
+#    green:   '0xb8bb26'
+#    yellow:  '0xfabd2f'
+#    blue:    '0x83a598'
+#    magenta: '0xd3869b'
+#    cyan:    '0x8ec07c'
+#    white:   '0xfbf1c7'
+#
+#  # Dim colors (Optional)
+#  dim:
+#    black:   '0x333333'
+#    red:     '0xf2777a'
+#    green:   '0x99cc99'
+#    yellow:  '0xffcc66'
+#    blue:    '0x6699cc'
+#    magenta: '0xcc99cc'
+#    cyan:    '0x66cccc'
+#    white:   '0xdddddd'
 
 
 # Visual Bell
@@ -180,8 +331,6 @@ visual_bell:
   animation: EaseOutExpo
   duration: 0
 
-# Background opacity
-background_opacity: 1.0
 
 # Mouse bindings
 #
@@ -212,16 +361,6 @@ hide_cursor_when_typing: false
 
 # Live config reload (changes require restart)
 live_config_reload: true
-
-# Shell
-#
-# You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
-# Entries in shell.args are passed unmodified as arguments to the shell.
-#
-# shell:
-#   program: /bin/bash
-#   args:
-#     - --login
 
 # Key bindings
 #

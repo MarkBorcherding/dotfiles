@@ -7,12 +7,12 @@ brew install ispell \
 
 
 brew tap d12frosted/emacs-plus
-brew install emacs-plus \
+brew install emacs-plus@29 \
               --with-ctags \
               --with-dbus \
               --with-modern-icon
 
-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+#git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 #mkdir -p ~/Applications
 

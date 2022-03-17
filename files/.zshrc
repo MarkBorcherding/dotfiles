@@ -18,7 +18,7 @@ antigen bundle brew
 antigen bundle colorize
 antigen bundle command-not-found
 antigen bundle git
-antigen bundle osx
+antigen bundle macos
 antigen bundle scala
 antigen bundle sbt
 antigen bundle tmux
@@ -30,10 +30,11 @@ antigen bundle zsh-users/zsh-history-substring-search
 
 antigen bundle lukechilds/zsh-nvm
 
-antigen theme markborcherding/zsh-plugins themes/fooberry
+antigen theme denysdovhan/spaceship-prompt
 
 # Tell antigen that you're done.
 antigen apply
+
 
 # Silly 10-Keypad
 bindkey -s "^[Op" "0"
@@ -62,6 +63,15 @@ alias l='ls -CF'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+# Switch to emacs mode on the prompt
+bindkey -e
+
 for file in ~/.zsh.d/**; do
     source "$file"
 done
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
