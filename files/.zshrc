@@ -1,10 +1,12 @@
 #!/bin/zsh
-
 source "$HOME/.profile"
+
+# list all the commands being executed to help debugging speed
+# set -x
+
 
 # Turn off the spelling correct.
 unsetopt correct_all
-
 export ZSH_THEME_RUBY_VERSION="N"
 
 source ~/.antigen/antigen.zsh
@@ -13,22 +15,20 @@ source ~/.antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle battery
 antigen bundle brew
 antigen bundle colorize
 antigen bundle command-not-found
 antigen bundle git
 antigen bundle macos
-antigen bundle scala
-antigen bundle sbt
 antigen bundle tmux
-antigen bundle vault
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-history-substring-search
 
-antigen bundle lukechilds/zsh-nvm
+antigen bundle Aloxaf/fzf-tab
+
+#antigen bundle lukechilds/zsh-nvm
 
 antigen theme denysdovhan/spaceship-prompt
 
@@ -61,7 +61,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# no longer using yarn
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
@@ -75,3 +76,13 @@ done
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+## opam configuration
+#[[ ! -r /Users/borcherm/.opam/opam-init/init.zsh ]] || source /Users/borcherm/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+fpath+=~/.zfunc
+
+
+

@@ -27,7 +27,7 @@ shell:
 window:
 
   # Background opacity
-  opacity: 0.95
+  opacity: 1
 
   # Window dimensions in character columns and lines
   # (changes require restart)
@@ -106,22 +106,6 @@ font:
     x: 0
     y: 0
 
-  # Thin stroke font rendering (macOS only)
-  #
-  # Thin strokes are suitable for retina displays, but for non-retina you
-  # probably want this set to false.
-  #
-  # macOS >= 10.14.x:
-  #
-  # If the font quality on non-retina display looks bad then set
-  # `use_thin_strokes` to `true` and enable font smoothing by running the
-  # following command:
-  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
-  #
-  # This is a global setting and will require a log out or restart to take
-  # effect.
-  use_thin_strokes: true
-
 # Should display the render timer
 render_timer: false
 
@@ -188,76 +172,76 @@ custom_cursor_colors: false
 
 # Base16 OceanicNext 256 - alacritty color config
 # https://github.com/voronianski/oceanic-next-color-scheme
-colors:
-  # Default colors
-  primary:
-    background: '0x1b2b34'
-    foreground: '0xc0c5ce'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text: '0x1b2b34'
-    cursor: '0xc0c5ce'
-
-  # Normal colors
-  normal:
-    black:   '0x1b2b34'
-    red:     '0xec5f67'
-    green:   '0x99c794'
-    yellow:  '0xfac863'
-    blue:    '0x6699cc'
-    magenta: '0xc594c5'
-    cyan:    '0x5fb3b3'
-    white:   '0xc0c5ce'
-
-  # Bright colors
-  bright:
-    black:   '0x65737e'
-    red:     '0xec5f67'
-    green:   '0x99c794'
-    yellow:  '0xfac863'
-    blue:    '0x6699cc'
-    magenta: '0xc594c5'
-    cyan:    '0x5fb3b3'
-    white:   '0xd8dee9'
-
-  indexed_colors:
-    - { index: 16, color: '0xf99157' }
-    - { index: 17, color: '0xab7967' }
-    - { index: 18, color: '0x343d46' }
-    - { index: 19, color: '0x4f5b66' }
-    - { index: 20, color: '0xa7adba' }
-    - { index: 21, color: '0xcdd3de' }
-
-# Colors (Pale Night)
 #colors:
-#
 #  # Default colors
 #  primary:
-#    background: '0x292D3E'
-#    foreground: '0xA6ACCD'
+#    background: '0x1b2b34'
+#    foreground: '0xc0c5ce'
+#
+#  # Colors the cursor will use if `custom_cursor_colors` is true
+#  cursor:
+#    text: '0x1b2b34'
+#    cursor: '0xc0c5ce'
 #
 #  # Normal colors
 #  normal:
-#    black:   '0x5B607F'
-#    red:     '0xFF5370'
-#    green:   '0xC3E88D'
-#    yellow:  '0xFFCB6B'
-#    blue:    '0x82AAFF'
-#    magenta: '0xC792EA'
-#    cyan:    '0x89DDFF'
-#    white:   '0xF0F0F0'
+#    black:   '0x1b2b34'
+#    red:     '0xec5f67'
+#    green:   '0x99c794'
+#    yellow:  '0xfac863'
+#    blue:    '0x6699cc'
+#    magenta: '0xc594c5'
+#    cyan:    '0x5fb3b3'
+#    white:   '0xc0c5ce'
 #
 #  # Bright colors
 #  bright:
-#    black:   '0x7379A1'
-#    red:     '0xFF8796'
-#    green:   '0xC3E8A0'
-#    yellow:  '0xFFF0A8'
-#    blue:    '0xB0CAFF'
-#    magenta: '0xD6BCEA'
-#    cyan:    '0xBDEEFF'
-#    white:   '0xffffff'
+#    black:   '0x65737e'
+#    red:     '0xec5f67'
+#    green:   '0x99c794'
+#    yellow:  '0xfac863'
+#    blue:    '0x6699cc'
+#    magenta: '0xc594c5'
+#    cyan:    '0x5fb3b3'
+#    white:   '0xd8dee9'
+#
+#  indexed_colors:
+#    - { index: 16, color: '0xf99157' }
+#    - { index: 17, color: '0xab7967' }
+#    - { index: 18, color: '0x343d46' }
+#    - { index: 19, color: '0x4f5b66' }
+#    - { index: 20, color: '0xa7adba' }
+#    - { index: 21, color: '0xcdd3de' }
+#
+# Colors (Pale Night)
+colors:
+
+  # Default colors
+  primary:
+    background: '0x292D3E'
+    foreground: '0xA6ACCD'
+
+  # Normal colors
+  normal:
+    black:   '0x5B607F'
+    red:     '0xFF5370'
+    green:   '0xC3E88D'
+    yellow:  '0xFFCB6B'
+    blue:    '0x82AAFF'
+    magenta: '0xC792EA'
+    cyan:    '0x89DDFF'
+    white:   '0xF0F0F0'
+
+  # Bright colors
+  bright:
+    black:   '0x7379A1'
+    red:     '0xFF8796'
+    green:   '0xC3E8A0'
+    yellow:  '0xFFF0A8'
+    blue:    '0xB0CAFF'
+    magenta: '0xD6BCEA'
+    cyan:    '0xBDEEFF'
+    white:   '0xffffff'
 
 
 # # Colors (Gruvbox)

@@ -20,7 +20,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
-Plug 'Valloric/YouCompleteMe'
+"Plug 'Valloric/YouCompleteMe'
 
 Plug 'ctrlpvim/ctrlp.vim'
 map <C-p> :CtrlP<Enter>
@@ -51,14 +51,14 @@ let g:syntastic_scala_scalastyle_jar = '/usr/local/Cellar/scalastyle/0.8.0/libex
 let g:syntastic_scala_scalastyle_config_file = 'scalastyle-config.xml'
 
 " Cosmetic
-Plug 'w0ng/vim-hybrid'                " Nice colorscheme
-Plug 'morhetz/gruvbox'                " old favorite
-Plug 'arcticicestudio/nord-vim'       " Baby it's cold outside
+"Plug 'w0ng/vim-hybrid'                " Nice colorscheme
+"Plug 'morhetz/gruvbox'                " old favorite
+"Plug 'arcticicestudio/nord-vim'       " Baby it's cold outside
 Plug 'drewtempelmeyer/palenight.vim'  " Let's try something _darker_
 Plug 'kien/rainbow_parentheses.vim'
 nnoremap <leader>p :RainbowParenthesesToggle<CR>
 
-Plug 'junegunn/goyo.vim'              " Distraction free vim
+"Plug 'junegunn/goyo.vim'              " Distraction free vim
 
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -73,30 +73,30 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray28 ctermbg=238
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=gray27 ctermbg=236
 
 " Text Manipulation
-Plug 'junegunn/vim-easy-align'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-endwise'
+"Plug 'junegunn/vim-easy-align'
+"Plug 'terryma/vim-multiple-cursors'
+"Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " Language Specific
-Plug 'derekwyatt/vim-scala'
-Plug 'kchmck/vim-coffee-script'
-Plug 'keith/tmux.vim'
+"Plug 'derekwyatt/vim-scala'
+"Plug 'kchmck/vim-coffee-script'
+"Plug 'keith/tmux.vim'
 
-Plug 'ensime/ensime-vim'
-autocmd FileType scala nnoremap <localleader>df :EnDeclaration<CR>
-autocmd FileType scala nnoremap <localleader>ds :EnDeclarationSplit<CR>
-autocmd FileType scala nnoremap <localleader>t :EnType<CR>
-autocmd FileType scala nnoremap <localleader>T :EnTypeCheck<CR>
-autocmd FileType scala nnoremap <localleader>i :EnInspectType<CR>
-autocmd FileType scala nnoremap <localleader>I :EnSuggestImport<CR>
-autocmd FileType scala nnoremap <localleader>oi :EnOrganizeImport<CR>
+"Plug 'ensime/ensime-vim'
+"autocmd FileType scala nnoremap <localleader>df :EnDeclaration<CR>
+"autocmd FileType scala nnoremap <localleader>ds :EnDeclarationSplit<CR>
+"autocmd FileType scala nnoremap <localleader>t :EnType<CR>
+"autocmd FileType scala nnoremap <localleader>T :EnTypeCheck<CR>
+"autocmd FileType scala nnoremap <localleader>i :EnInspectType<CR>
+"autocmd FileType scala nnoremap <localleader>I :EnSuggestImport<CR>
+"autocmd FileType scala nnoremap <localleader>oi :EnOrganizeImport<CR>
 
 " Ruby
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
-Plug 'vim-ruby/vim-ruby'
+"Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rake'
+"Plug 'vim-ruby/vim-ruby'
 
 Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_frontmatter=1
